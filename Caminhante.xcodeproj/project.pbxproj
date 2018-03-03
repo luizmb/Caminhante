@@ -24,6 +24,29 @@
 		D5658E47204B0DF8008D45E7 /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E46204B0DF8008D45E7 /* DeviceState.swift */; };
 		D5658E48204B0DF8008D45E7 /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E46204B0DF8008D45E7 /* DeviceState.swift */; };
 		D5658E4A204B1500008D45E7 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E49204B1500008D45E7 /* AppStateTests.swift */; };
+		D5658E51204B2BBE008D45E7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E50204B2BBE008D45E7 /* Store.swift */; };
+		D5658E52204B2BBE008D45E7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E50204B2BBE008D45E7 /* Store.swift */; };
+		D5658E54204B2C0D008D45E7 /* ActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E53204B2C0D008D45E7 /* ActionRequest.swift */; };
+		D5658E55204B2C0D008D45E7 /* ActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E53204B2C0D008D45E7 /* ActionRequest.swift */; };
+		D5658E57204B2C46008D45E7 /* ActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E56204B2C46008D45E7 /* ActionDispatcher.swift */; };
+		D5658E58204B2C46008D45E7 /* ActionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E56204B2C46008D45E7 /* ActionDispatcher.swift */; };
+		D5658E5A204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E59204B2C87008D45E7 /* ActionDispatcher.DI.swift */; };
+		D5658E5B204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E59204B2C87008D45E7 /* ActionDispatcher.DI.swift */; };
+		D5658E5D204B2CEF008D45E7 /* StateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E5C204B2CEF008D45E7 /* StateProvider.swift */; };
+		D5658E5E204B2CEF008D45E7 /* StateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E5C204B2CEF008D45E7 /* StateProvider.swift */; };
+		D5658E60204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E5F204B2CFD008D45E7 /* StateProvider.DI.swift */; };
+		D5658E61204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E5F204B2CFD008D45E7 /* StateProvider.DI.swift */; };
+		D5658E63204B2ECF008D45E7 /* EntryPointReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E62204B2ECF008D45E7 /* EntryPointReducer.swift */; };
+		D5658E64204B2ECF008D45E7 /* EntryPointReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E62204B2ECF008D45E7 /* EntryPointReducer.swift */; };
+		D5658E66204B2F41008D45E7 /* RouterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E65204B2F41008D45E7 /* RouterReducer.swift */; };
+		D5658E67204B2F41008D45E7 /* RouterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E65204B2F41008D45E7 /* RouterReducer.swift */; };
+		D5658E69204B2F83008D45E7 /* RouterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E68204B2F83008D45E7 /* RouterAction.swift */; };
+		D5658E6A204B2F83008D45E7 /* RouterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E68204B2F83008D45E7 /* RouterAction.swift */; };
+		D5658E6C204B345A008D45E7 /* ActivityAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E6B204B345A008D45E7 /* ActivityAction.swift */; };
+		D5658E6D204B345A008D45E7 /* ActivityAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E6B204B345A008D45E7 /* ActivityAction.swift */; };
+		D5658E6F204B34AC008D45E7 /* ActivityReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */; };
+		D5658E70204B34AC008D45E7 /* ActivityReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */; };
+		D5658E73204B372F008D45E7 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E72204B372F008D45E7 /* StoreTests.swift */; };
 		D5975CD52049D1830004F371 /* CommonLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D5975CD32049D1830004F371 /* CommonLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5975CE72049D2D40004F371 /* CommonLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D5975CD32049D1830004F371 /* CommonLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5975D062049D6790004F371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D052049D6790004F371 /* AppDelegate.swift */; };
@@ -191,6 +214,18 @@
 		D5658E43204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 		D5658E46204B0DF8008D45E7 /* DeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
 		D5658E49204B1500008D45E7 /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
+		D5658E50204B2BBE008D45E7 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D5658E53204B2C0D008D45E7 /* ActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequest.swift; sourceTree = "<group>"; };
+		D5658E56204B2C46008D45E7 /* ActionDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDispatcher.swift; sourceTree = "<group>"; };
+		D5658E59204B2C87008D45E7 /* ActionDispatcher.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDispatcher.DI.swift; sourceTree = "<group>"; };
+		D5658E5C204B2CEF008D45E7 /* StateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProvider.swift; sourceTree = "<group>"; };
+		D5658E5F204B2CFD008D45E7 /* StateProvider.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProvider.DI.swift; sourceTree = "<group>"; };
+		D5658E62204B2ECF008D45E7 /* EntryPointReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPointReducer.swift; sourceTree = "<group>"; };
+		D5658E65204B2F41008D45E7 /* RouterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterReducer.swift; sourceTree = "<group>"; };
+		D5658E68204B2F83008D45E7 /* RouterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterAction.swift; sourceTree = "<group>"; };
+		D5658E6B204B345A008D45E7 /* ActivityAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAction.swift; sourceTree = "<group>"; };
+		D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReducer.swift; sourceTree = "<group>"; };
+		D5658E72204B372F008D45E7 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 		D5975CD02049D1830004F371 /* CommonLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5975CD32049D1830004F371 /* CommonLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonLibrary.h; sourceTree = "<group>"; };
 		D5975CD42049D1830004F371 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -309,6 +344,64 @@
 			path = State;
 			sourceTree = "<group>";
 		};
+		D5658E4B204B2AE0008D45E7 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				D5658E4C204B2B6E008D45E7 /* Action */,
+				D5658E4D204B2B83008D45E7 /* ActionRequest */,
+				D5658E4E204B2B8E008D45E7 /* Reducer */,
+				D5658E4F204B2B94008D45E7 /* Store */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		D5658E4C204B2B6E008D45E7 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				D5658E6B204B345A008D45E7 /* ActivityAction.swift */,
+				D5658E68204B2F83008D45E7 /* RouterAction.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		D5658E4D204B2B83008D45E7 /* ActionRequest */ = {
+			isa = PBXGroup;
+			children = (
+				D5658E53204B2C0D008D45E7 /* ActionRequest.swift */,
+			);
+			path = ActionRequest;
+			sourceTree = "<group>";
+		};
+		D5658E4E204B2B8E008D45E7 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */,
+				D5658E62204B2ECF008D45E7 /* EntryPointReducer.swift */,
+				D5658E65204B2F41008D45E7 /* RouterReducer.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
+		D5658E4F204B2B94008D45E7 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				D5658E59204B2C87008D45E7 /* ActionDispatcher.DI.swift */,
+				D5658E56204B2C46008D45E7 /* ActionDispatcher.swift */,
+				D5658E5F204B2CFD008D45E7 /* StateProvider.DI.swift */,
+				D5658E5C204B2CEF008D45E7 /* StateProvider.swift */,
+				D5658E50204B2BBE008D45E7 /* Store.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		D5658E71204B371F008D45E7 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				D5658E72204B372F008D45E7 /* StoreTests.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
 		D5975CD12049D1830004F371 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +425,7 @@
 				D5975CE12049D1AE0004F371 /* Info-watchOS.plist */,
 				D59AF53A204A1C9E00BB8DA5 /* Extensions */,
 				D5975D582049F6C40004F371 /* Model */,
+				D5658E4B204B2AE0008D45E7 /* Redux */,
 				D59AF547204A379B00BB8DA5 /* Service */,
 			);
 			path = CommonLibrary;
@@ -397,11 +491,12 @@
 		D5975D64204A05410004F371 /* CommonLibraryTests */ = {
 			isa = PBXGroup;
 			children = (
-				D59AF53D204A1E0C00BB8DA5 /* Extensions */,
-				D5975D6E204A061D0004F371 /* Model */,
-				D5658E20204A4666008D45E7 /* Service */,
 				D5975D65204A05410004F371 /* BaseTests.swift */,
+				D59AF53D204A1E0C00BB8DA5 /* Extensions */,
 				D5975D67204A05410004F371 /* Info.plist */,
+				D5975D6E204A061D0004F371 /* Model */,
+				D5658E71204B371F008D45E7 /* Redux */,
+				D5658E20204A4666008D45E7 /* Service */,
 			);
 			path = CommonLibraryTests;
 			sourceTree = "<group>";
@@ -863,24 +958,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5658E5D204B2CEF008D45E7 /* StateProvider.swift in Sources */,
+				D5658E51204B2BBE008D45E7 /* Store.swift in Sources */,
 				D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */,
 				D5658E47204B0DF8008D45E7 /* DeviceState.swift in Sources */,
+				D5658E6F204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
 				D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */,
+				D5658E66204B2F41008D45E7 /* RouterReducer.swift in Sources */,
+				D5658E5A204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */,
 				D59AF546204A335D00BB8DA5 /* PhotoResponseStatus.swift in Sources */,
+				D5658E6C204B345A008D45E7 /* ActivityAction.swift in Sources */,
+				D5658E69204B2F83008D45E7 /* RouterAction.swift in Sources */,
 				D5658E3B204B0C22008D45E7 /* Activity.swift in Sources */,
 				D5658E41204B0CF1008D45E7 /* SnapshotPoint.swift in Sources */,
 				D5E7209A204A16B4005E4E3B /* PhotoResponse.swift in Sources */,
+				D5658E57204B2C46008D45E7 /* ActionDispatcher.swift in Sources */,
 				D59AF55E204A3B4000BB8DA5 /* PhotoEndpoint.URLEndpoint.swift in Sources */,
 				D59AF557204A391500BB8DA5 /* PhotoAPI.swift in Sources */,
 				D5658E38204B063C008D45E7 /* AppState.swift in Sources */,
 				D59AF55B204A39DE00BB8DA5 /* FlickrAPI.swift in Sources */,
 				D59AF54E204A38EF00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */,
+				D5658E60204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF54B204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
 				D59AF561204A3CC800BB8DA5 /* URLRequest.swift in Sources */,
+				D5658E54204B2C0D008D45E7 /* ActionRequest.swift in Sources */,
 				D5975D5A2049F6DD0004F371 /* Photo.swift in Sources */,
 				D59AF545204A335700BB8DA5 /* PhotoResponseErrorCode.swift in Sources */,
 				D59AF53C204A1CAA00BB8DA5 /* Codable.swift in Sources */,
 				D5975D5C204A02E50004F371 /* PhotoSize.swift in Sources */,
+				D5658E63204B2ECF008D45E7 /* EntryPointReducer.swift in Sources */,
 				D5658E44204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				D5658E3E204B0C3A008D45E7 /* ActivityState.swift in Sources */,
 			);
@@ -890,24 +996,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5658E5E204B2CEF008D45E7 /* StateProvider.swift in Sources */,
+				D5658E52204B2BBE008D45E7 /* Store.swift in Sources */,
 				D5658E2A204A56E1008D45E7 /* Constants.secret.swift in Sources */,
 				D5658E48204B0DF8008D45E7 /* DeviceState.swift in Sources */,
+				D5658E70204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
 				D59AF550204A38F600BB8DA5 /* Photo.swift in Sources */,
+				D5658E67204B2F41008D45E7 /* RouterReducer.swift in Sources */,
+				D5658E5B204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */,
 				D59AF554204A38FA00BB8DA5 /* PhotoResponseStatus.swift in Sources */,
+				D5658E6D204B345A008D45E7 /* ActivityAction.swift in Sources */,
+				D5658E6A204B2F83008D45E7 /* RouterAction.swift in Sources */,
 				D5658E3C204B0C22008D45E7 /* Activity.swift in Sources */,
 				D5658E42204B0CF1008D45E7 /* SnapshotPoint.swift in Sources */,
 				D59AF54F204A38F300BB8DA5 /* PhotoSize.swift in Sources */,
+				D5658E58204B2C46008D45E7 /* ActionDispatcher.swift in Sources */,
 				D59AF55F204A3B4000BB8DA5 /* PhotoEndpoint.URLEndpoint.swift in Sources */,
 				D59AF558204A391500BB8DA5 /* PhotoAPI.swift in Sources */,
 				D5658E39204B063C008D45E7 /* AppState.swift in Sources */,
 				D59AF55C204A39DE00BB8DA5 /* FlickrAPI.swift in Sources */,
 				D59AF54C204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
+				D5658E61204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF553204A38FA00BB8DA5 /* PhotoResponsePage.swift in Sources */,
 				D59AF562204A3CC800BB8DA5 /* URLRequest.swift in Sources */,
+				D5658E55204B2C0D008D45E7 /* ActionRequest.swift in Sources */,
 				D59AF555204A390100BB8DA5 /* Codable.swift in Sources */,
 				D59AF552204A38FA00BB8DA5 /* PhotoResponseErrorCode.swift in Sources */,
 				D59AF551204A38FA00BB8DA5 /* PhotoResponse.swift in Sources */,
 				D59AF54D204A38EE00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */,
+				D5658E64204B2ECF008D45E7 /* EntryPointReducer.swift in Sources */,
 				D5658E45204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				D5658E3F204B0C3A008D45E7 /* ActivityState.swift in Sources */,
 			);
@@ -944,6 +1061,7 @@
 				D5658E22204A468D008D45E7 /* PhotoServiceEndpointTests.swift in Sources */,
 				D5975D70204A062A0004F371 /* PhotoTests.swift in Sources */,
 				D5975D66204A05410004F371 /* BaseTests.swift in Sources */,
+				D5658E73204B372F008D45E7 /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

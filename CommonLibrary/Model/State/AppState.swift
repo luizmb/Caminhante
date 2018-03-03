@@ -8,10 +8,15 @@
 import Foundation
 
 public struct AppState {
-    public var currentActivity: Activity
+    public var currentActivity: Activity?
     public var deviceState: DeviceState
 
-    public init(currentActivity: Activity, deviceState: DeviceState) {
+    public init() {
+        currentActivity = nil
+        deviceState = DeviceState(isInBackground: false, isActive: true, hasLocationPermission: false, hasHealthPermission: false)
+    }
+
+    public init(currentActivity: Activity?, deviceState: DeviceState) {
         self.currentActivity = currentActivity
         self.deviceState = deviceState
     }
