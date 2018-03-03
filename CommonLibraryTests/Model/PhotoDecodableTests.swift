@@ -39,15 +39,15 @@ class PhotoDecodableTests: BaseTests {
                 """
 
     func testJsonDecoder() {
-        let photoResult = try! JSONDecoder().decode(PhotoResult.self, from: json.data(using: .utf8)!)
-        expect(photoResult.status) == "ok"
-        expect(photoResult.photosPage.currentPage) == 1
-        expect(photoResult.photosPage.pageCount) == 540
-        expect(photoResult.photosPage.pageSize) == 1
-        expect(photoResult.photosPage.filterCount) == 540
-        expect(photoResult.photosPage.photos.count) == 1
+        let photoResponse = try! JSONDecoder().decode(PhotoResponse.self, from: json.data(using: .utf8)!)
+        expect(photoResponse.status) == "ok"
+        expect(photoResponse.responsePage.currentPage) == 1
+        expect(photoResponse.responsePage.pageCount) == 540
+        expect(photoResponse.responsePage.pageSize) == 1
+        expect(photoResponse.responsePage.filterCount) == 540
+        expect(photoResponse.responsePage.photos.count) == 1
 
-        let photo = photoResult.photosPage.photos.first!
+        let photo = photoResponse.responsePage.photos.first!
         expect(photo.id) == "28062536909"
         expect(photo.owner) == "142801205@N06"
         expect(photo.secret) == "dbd6a30d6c"

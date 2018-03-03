@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct PhotoPageResult: Codable {
+public struct PhotoResponsePage: Codable {
     public let currentPage: Int
     public let pageCount: Int
     public let pageSize: Int
@@ -15,7 +15,7 @@ public struct PhotoPageResult: Codable {
     public let photos: [Photo]
 }
 
-extension PhotoPageResult {
+extension PhotoResponsePage {
     enum CodingKeys: String, CodingKey {
         case currentPage = "page"
         case pageCount = "pages"

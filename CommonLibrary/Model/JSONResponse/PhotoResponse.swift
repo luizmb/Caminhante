@@ -7,14 +7,14 @@
 
 import Foundation
 
-public struct PhotoResult: Codable {
-    public let photosPage: PhotoPageResult
+public struct PhotoResponse: Codable {
+    public let responsePage: PhotoResponsePage
     public let status: String
 }
 
-extension PhotoResult {
+extension PhotoResponse {
     enum CodingKeys: String, CodingKey {
-        case photosPage = "photos"
+        case responsePage = "photos"
         case status = "stat"
     }
 }

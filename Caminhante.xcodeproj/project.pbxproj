@@ -34,7 +34,7 @@
 		D5975D552049DA930004F371 /* KleinKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D402049D7930004F371 /* KleinKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5975D5A2049F6DD0004F371 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D592049F6DD0004F371 /* Photo.swift */; };
 		D5975D5C204A02E50004F371 /* PhotoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D5B204A02E50004F371 /* PhotoSize.swift */; };
-		D5975D5E204A04750004F371 /* PhotoPageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D5D204A04750004F371 /* PhotoPageResult.swift */; };
+		D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D5D204A04750004F371 /* PhotoResponsePage.swift */; };
 		D5975D66204A05410004F371 /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D65204A05410004F371 /* BaseTests.swift */; };
 		D5975D68204A05410004F371 /* CommonLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975CD02049D1830004F371 /* CommonLibrary.framework */; };
 		D5975D70204A062A0004F371 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D6F204A062A0004F371 /* PhotoTests.swift */; };
@@ -42,7 +42,7 @@
 		D59AF53C204A1CAA00BB8DA5 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF53B204A1CAA00BB8DA5 /* Codable.swift */; };
 		D59AF53F204A1E2600BB8DA5 /* CodableExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF53E204A1E2600BB8DA5 /* CodableExtensionsTests.swift */; };
 		D5E72094204A100E005E4E3B /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D3E2049D7820004F371 /* KleinKit.framework */; };
-		D5E7209A204A16B4005E4E3B /* PhotoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E72099204A16B4005E4E3B /* PhotoResult.swift */; };
+		D5E7209A204A16B4005E4E3B /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E72099204A16B4005E4E3B /* PhotoResponse.swift */; };
 		D5E7209C204A1768005E4E3B /* PhotoDecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E7209B204A1768005E4E3B /* PhotoDecodableTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -168,7 +168,7 @@
 		D5975D402049D7930004F371 /* KleinKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KleinKit.framework; path = Carthage/Build/watchOS/KleinKit.framework; sourceTree = "<group>"; };
 		D5975D592049F6DD0004F371 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		D5975D5B204A02E50004F371 /* PhotoSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSize.swift; sourceTree = "<group>"; };
-		D5975D5D204A04750004F371 /* PhotoPageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPageResult.swift; sourceTree = "<group>"; };
+		D5975D5D204A04750004F371 /* PhotoResponsePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponsePage.swift; sourceTree = "<group>"; };
 		D5975D63204A05410004F371 /* CommonLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5975D65204A05410004F371 /* BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTests.swift; sourceTree = "<group>"; };
 		D5975D67204A05410004F371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		D5975D75204A0DB70004F371 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		D59AF53B204A1CAA00BB8DA5 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		D59AF53E204A1E2600BB8DA5 /* CodableExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensionsTests.swift; sourceTree = "<group>"; };
-		D5E72099204A16B4005E4E3B /* PhotoResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResult.swift; sourceTree = "<group>"; };
+		D5E72099204A16B4005E4E3B /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		D5E7209B204A1768005E4E3B /* PhotoDecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDecodableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -302,9 +302,8 @@
 		D5975D582049F6C40004F371 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D59AF540204A2A8500BB8DA5 /* JSONResponse */,
 				D5975D592049F6DD0004F371 /* Photo.swift */,
-				D5975D5D204A04750004F371 /* PhotoPageResult.swift */,
-				D5E72099204A16B4005E4E3B /* PhotoResult.swift */,
 				D5975D5B204A02E50004F371 /* PhotoSize.swift */,
 			);
 			path = Model;
@@ -344,6 +343,15 @@
 				D59AF53E204A1E2600BB8DA5 /* CodableExtensionsTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D59AF540204A2A8500BB8DA5 /* JSONResponse */ = {
+			isa = PBXGroup;
+			children = (
+				D5E72099204A16B4005E4E3B /* PhotoResponse.swift */,
+				D5975D5D204A04750004F371 /* PhotoResponsePage.swift */,
+			);
+			path = JSONResponse;
 			sourceTree = "<group>";
 		};
 		D5EEB97D2049D0BA00F37A36 = {
@@ -743,8 +751,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5975D5E204A04750004F371 /* PhotoPageResult.swift in Sources */,
-				D5E7209A204A16B4005E4E3B /* PhotoResult.swift in Sources */,
+				D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */,
+				D5E7209A204A16B4005E4E3B /* PhotoResponse.swift in Sources */,
 				D5975D5A2049F6DD0004F371 /* Photo.swift in Sources */,
 				D59AF53C204A1CAA00BB8DA5 /* Codable.swift in Sources */,
 				D5975D5C204A02E50004F371 /* PhotoSize.swift in Sources */,
