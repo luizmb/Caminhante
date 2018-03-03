@@ -41,6 +41,8 @@
 		D5975D76204A0DB70004F371 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D75204A0DB70004F371 /* Nimble.framework */; };
 		D59AF53C204A1CAA00BB8DA5 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF53B204A1CAA00BB8DA5 /* Codable.swift */; };
 		D59AF53F204A1E2600BB8DA5 /* CodableExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF53E204A1E2600BB8DA5 /* CodableExtensionsTests.swift */; };
+		D59AF545204A335700BB8DA5 /* PhotoResponseErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF541204A320000BB8DA5 /* PhotoResponseErrorCode.swift */; };
+		D59AF546204A335D00BB8DA5 /* PhotoResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF543204A32EA00BB8DA5 /* PhotoResponseStatus.swift */; };
 		D5E72094204A100E005E4E3B /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D3E2049D7820004F371 /* KleinKit.framework */; };
 		D5E7209A204A16B4005E4E3B /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E72099204A16B4005E4E3B /* PhotoResponse.swift */; };
 		D5E7209C204A1768005E4E3B /* PhotoDecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E7209B204A1768005E4E3B /* PhotoDecodableTests.swift */; };
@@ -176,6 +178,8 @@
 		D5975D75204A0DB70004F371 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		D59AF53B204A1CAA00BB8DA5 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		D59AF53E204A1E2600BB8DA5 /* CodableExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensionsTests.swift; sourceTree = "<group>"; };
+		D59AF541204A320000BB8DA5 /* PhotoResponseErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponseErrorCode.swift; sourceTree = "<group>"; };
+		D59AF543204A32EA00BB8DA5 /* PhotoResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponseStatus.swift; sourceTree = "<group>"; };
 		D5E72099204A16B4005E4E3B /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		D5E7209B204A1768005E4E3B /* PhotoDecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDecodableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -349,7 +353,9 @@
 			isa = PBXGroup;
 			children = (
 				D5E72099204A16B4005E4E3B /* PhotoResponse.swift */,
+				D59AF541204A320000BB8DA5 /* PhotoResponseErrorCode.swift */,
 				D5975D5D204A04750004F371 /* PhotoResponsePage.swift */,
+				D59AF543204A32EA00BB8DA5 /* PhotoResponseStatus.swift */,
 			);
 			path = JSONResponse;
 			sourceTree = "<group>";
@@ -752,8 +758,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */,
+				D59AF546204A335D00BB8DA5 /* PhotoResponseStatus.swift in Sources */,
 				D5E7209A204A16B4005E4E3B /* PhotoResponse.swift in Sources */,
 				D5975D5A2049F6DD0004F371 /* Photo.swift in Sources */,
+				D59AF545204A335700BB8DA5 /* PhotoResponseErrorCode.swift in Sources */,
 				D59AF53C204A1CAA00BB8DA5 /* Codable.swift in Sources */,
 				D5975D5C204A02E50004F371 /* PhotoSize.swift in Sources */,
 			);
