@@ -106,3 +106,18 @@ extension Photo {
         self.isFamily = try container.decodeBoolOrInt(forKey: .isFamily)
     }
 }
+
+extension Photo: Equatable {
+    public static func == (lhs: Photo, rhs: Photo) -> Bool {
+        return
+            lhs.id == rhs.id &&
+            lhs.owner == rhs.owner &&
+            lhs.secret == rhs.secret &&
+            lhs.server == rhs.server &&
+            lhs.farm == rhs.farm &&
+            lhs.title == rhs.title &&
+            lhs.isPublic == rhs.isPublic &&
+            lhs.isFriend == rhs.isFriend &&
+            lhs.isFamily == rhs.isFamily
+    }
+}
