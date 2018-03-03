@@ -7,17 +7,48 @@
 
 import Foundation
 
+/// Flickr Photo entity
 public struct Photo: Codable {
+
+    /// Photo ID on Flickr
     public let id: String
+
+    /// Owner ID on Flickr
     public let owner: String
+
+    /// Photo verification hash
     public let secret: String
+
+    /// Server where photo is stored
     public let server: String
+
+    /// Farm ID for the server where photo is stored
     public let farm: Int
+
+    /// Photo title
     public let title: String
+
+    /// Public can be shown without authentication
     public let isPublic: Bool
+
+    /// Photo owner is friend of authenticated user
     public let isFriend: Bool
+
+    /// Photo owner is within the same family as authenticated user
     public let isFamily: Bool
 
+    /// Default initializer with all properties
+    ///
+    /// - Parameters:
+    ///   - id: Photo ID on Flickr
+    ///   - owner: Owner ID on Flickr
+    ///   - secret: Photo verification hash
+    ///   - server: Server where photo is stored
+    ///   - farm: Farm ID for the server where photo is stored
+    ///   - title: Photo title
+    ///   - isPublic: Public can be shown without authentication
+    ///   - isFriend: Photo owner is friend of authenticated user
+    ///   - isFamily: Photo owner is within the same family as authenticated user
     public init(id: String, owner: String, secret: String,
                 server: String, farm: Int, title: String,
                 isPublic: Bool, isFriend: Bool, isFamily: Bool) {
@@ -34,14 +65,21 @@ public struct Photo: Codable {
 }
 
 extension Photo {
+
+    /// Get the Flickr URL for this photo, given a size
+    ///
+    /// - Parameter size: Photo size
+    /// - Returns: Photo Flickr URL for the given size
     public func url(for size: PhotoSize) -> URL {
         return URL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_\(size.rawValue).jpg")!
     }
 
+    /// Get the Flickr URL for this photo, optimized for iPhone screen
     public var iPhoneUrl: URL {
         return url(for: .medium800)
     }
 
+    /// Get the Flickr URL for this photo, optimized for Apple Watch screen
     public var watchUrl: URL {
         return url(for: .small320)
     }
