@@ -10,6 +10,11 @@ import Foundation
 public struct Activity {
     public var state: ActivityState
     public var snapshotPoints: [SnapshotPoint]
+
+    public init(state: ActivityState, snapshotPoints: [SnapshotPoint]) {
+        self.state = state
+        self.snapshotPoints = snapshotPoints
+    }
 }
 
 extension Activity: Equatable {

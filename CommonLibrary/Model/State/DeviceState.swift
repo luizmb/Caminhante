@@ -12,6 +12,13 @@ public struct DeviceState {
     public var isActive: Bool
     public var hasLocationPermission: Bool
     public var hasHealthPermission: Bool
+
+    public init(isInBackground: Bool, isActive: Bool, hasLocationPermission: Bool, hasHealthPermission: Bool) {
+        self.isInBackground = isInBackground
+        self.isActive = isActive
+        self.hasLocationPermission = hasLocationPermission
+        self.hasHealthPermission = hasHealthPermission
+    }
 }
 
 extension DeviceState: Equatable {

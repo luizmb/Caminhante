@@ -23,6 +23,7 @@
 		D5658E45204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E43204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift */; };
 		D5658E47204B0DF8008D45E7 /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E46204B0DF8008D45E7 /* DeviceState.swift */; };
 		D5658E48204B0DF8008D45E7 /* DeviceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E46204B0DF8008D45E7 /* DeviceState.swift */; };
+		D5658E4A204B1500008D45E7 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E49204B1500008D45E7 /* AppStateTests.swift */; };
 		D5975CD52049D1830004F371 /* CommonLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D5975CD32049D1830004F371 /* CommonLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5975CE72049D2D40004F371 /* CommonLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D5975CD32049D1830004F371 /* CommonLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5975D062049D6790004F371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D052049D6790004F371 /* AppDelegate.swift */; };
@@ -189,6 +190,7 @@
 		D5658E40204B0CF1008D45E7 /* SnapshotPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotPoint.swift; sourceTree = "<group>"; };
 		D5658E43204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 		D5658E46204B0DF8008D45E7 /* DeviceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceState.swift; sourceTree = "<group>"; };
+		D5658E49204B1500008D45E7 /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
 		D5975CD02049D1830004F371 /* CommonLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5975CD32049D1830004F371 /* CommonLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonLibrary.h; sourceTree = "<group>"; };
 		D5975CD42049D1830004F371 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			children = (
 				D5975D6F204A062A0004F371 /* PhotoTests.swift */,
 				D5E7209B204A1768005E4E3B /* PhotoDecodableTests.swift */,
+				D5658E49204B1500008D45E7 /* AppStateTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -936,6 +939,7 @@
 				D59AF53F204A1E2600BB8DA5 /* CodableExtensionsTests.swift in Sources */,
 				D59AF564204A3CFA00BB8DA5 /* URLRequestExtensionsTests.swift in Sources */,
 				D5658E24204A4899008D45E7 /* IntegrationFlickrTests.swift in Sources */,
+				D5658E4A204B1500008D45E7 /* AppStateTests.swift in Sources */,
 				D5E7209C204A1768005E4E3B /* PhotoDecodableTests.swift in Sources */,
 				D5658E22204A468D008D45E7 /* PhotoServiceEndpointTests.swift in Sources */,
 				D5975D70204A062A0004F371 /* PhotoTests.swift in Sources */,

@@ -10,10 +10,17 @@ import Foundation
 public struct AppState {
     public var currentActivity: Activity
     public var deviceState: DeviceState
+
+    public init(currentActivity: Activity, deviceState: DeviceState) {
+        self.currentActivity = currentActivity
+        self.deviceState = deviceState
+    }
 }
 
 extension AppState: Equatable {
     public static func == (lhs: AppState, rhs: AppState) -> Bool {
-        return lhs.currentActivity == rhs.currentActivity
+        return
+            lhs.currentActivity == rhs.currentActivity &&
+            lhs.deviceState == rhs.deviceState
     }
 }
