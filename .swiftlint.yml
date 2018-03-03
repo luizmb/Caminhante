@@ -1,0 +1,53 @@
+line_length: 145
+file_length:
+  warning: 500
+  error: 1000
+type_body_length:
+  warning: 250
+  error: 300
+function_parameter_count:
+  warning: 6
+  error: 8
+nesting:
+  type_level: 6
+identifier_name:
+  min_length:
+    error: 3
+  excluded:
+    - id
+    - fn
+    - v1
+    - v2
+type_name:
+  min_length:
+    warning: 2
+    error: 1
+  excluded:
+    - Id
+    - V1
+    - V2
+disabled_rules:
+  - force_try
+  - force_cast
+excluded:
+  - Carthage
+  - Crashlytics.framework
+  - Pods
+  - .build
+  - DerivedData
+opt_in_rules: # some rules are only opt-in
+  - closure_end_indentation
+  - closure_spacing
+  - conditional_binding_cascade
+  - empty_count
+  - explicit_failure_calls
+  - explicit_init
+  - first_where
+  - force_https
+  - nimble_operator
+  - number_separator
+  - object_literal
+  - overridden_super_call
+  - redundant_nil_coalescing
+  - sorted_imports
+  - syntactic_sugar
