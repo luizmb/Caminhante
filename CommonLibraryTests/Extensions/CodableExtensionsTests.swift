@@ -5,27 +5,6 @@
 //  Created by Luiz Rodrigo Martins Barbosa on 03.03.18.
 //
 
-import Foundation
-//
-//extension KeyedDecodingContainer {
-//    func decodeIntOrString(forKey key: K) throws -> Int {
-//        if let value = try? self.decode(Int.self, forKey: key) {
-//            return value
-//        }
-//
-//        let string = try self.decode(String.self, forKey: key)
-//        return Int(string)!
-//    }
-//
-//    func decodeBoolOrInt(forKey key: K) throws -> Bool {
-//        if let value = try? self.decode(Bool.self, forKey: key) {
-//            return value
-//        }
-//
-//        let int = try self.decode(Int.self, forKey: key)
-//        return int != 0
-//}
-
 @testable import CommonLibrary
 import Foundation
 import Nimble

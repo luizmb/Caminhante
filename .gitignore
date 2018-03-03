@@ -52,3 +52,5 @@ AWRConstants.m
 *.DSYM
 *.DSYM.zip
 *.dSYM.zip
+
+**/Constants.secret.swift

@@ -80,4 +80,7 @@ public enum PhotoResponseErrorCode: Int, Codable {
     /// Bad URL found
     /// One or more arguments contained a URL that has been used for abuse on Flickr.
     case badURLFound = 116
+
+    /// Unknown error
+    case unknown = 999
 }
