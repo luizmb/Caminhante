@@ -14,27 +14,27 @@ public struct RouterReducer: Reducer {
 
         var stateCopy = currentState
 
-//        #if os(iOS)
-//            switch routerAction {
-//            case .didStart(let application, let navigationController):
-//                stateCopy.application = application
-//                stateCopy.navigation = .still(at: .root())
-//                stateCopy.navigationController = navigationController
+        #if os(iOS)
+            switch routerAction {
+            case .didStart(let application, let navigationController):
+                stateCopy.deviceState.application = application
+                stateCopy.deviceState.navigation = .still(at: .root())
+                stateCopy.deviceState.navigationController = navigationController
 //            case .willNavigate(let route):
 //                stateCopy.navigation = .navigating(route)
 //            case .didNavigate(let destination):
 //                stateCopy.navigation = .still(at: destination)
-//            }
-//        #else
-//            switch routerAction {
-//            case .didStart:
-//                stateCopy.navigation = .still(at: .root())
+            }
+        #else
+            switch routerAction {
+            case .didStart:
+                stateCopy.deviceState.navigation = .still(at: .root())
 //            case .willNavigate(let route):
 //                stateCopy.navigation = .navigating(route)
 //            case .didNavigate(let destination):
 //                stateCopy.navigation = .still(at: destination)
-//            }
-//        #endif
+            }
+        #endif
 
         return stateCopy
     }

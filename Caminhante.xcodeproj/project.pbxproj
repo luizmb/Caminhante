@@ -47,6 +47,20 @@
 		D5658E6F204B34AC008D45E7 /* ActivityReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */; };
 		D5658E70204B34AC008D45E7 /* ActivityReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */; };
 		D5658E73204B372F008D45E7 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E72204B372F008D45E7 /* StoreTests.swift */; };
+		D5658E79204B3991008D45E7 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5658E78204B3991008D45E7 /* Activity.storyboard */; };
+		D5658E7D204B3B59008D45E7 /* ActivityControlsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E7C204B3B59008D45E7 /* ActivityControlsInterfaceController.swift */; };
+		D5658E7F204B3B70008D45E7 /* ActivitySnapshotsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E7E204B3B70008D45E7 /* ActivitySnapshotsInterfaceController.swift */; };
+		D5658E82204B44CD008D45E7 /* DefaultMapResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */; };
+		D5658E83204B44CE008D45E7 /* DefaultMapResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */; };
+		D5658E85204B454A008D45E7 /* BootstrapActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E84204B454A008D45E7 /* BootstrapActionRequest.swift */; };
+		D5658E88204B4750008D45E7 /* KnownRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E87204B4750008D45E7 /* KnownRoute.swift */; };
+		D5658E89204B4750008D45E7 /* KnownRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E87204B4750008D45E7 /* KnownRoute.swift */; };
+		D5658E8B204B476E008D45E7 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E8A204B476E008D45E7 /* NavigationRoute.swift */; };
+		D5658E8C204B476E008D45E7 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E8A204B476E008D45E7 /* NavigationRoute.swift */; };
+		D5658E8E204B478A008D45E7 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E8D204B478A008D45E7 /* NavigationState.swift */; };
+		D5658E8F204B478A008D45E7 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E8D204B478A008D45E7 /* NavigationState.swift */; };
+		D5658E91204B47A5008D45E7 /* NavigationTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E90204B47A5008D45E7 /* NavigationTree.swift */; };
+		D5658E92204B47A5008D45E7 /* NavigationTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E90204B47A5008D45E7 /* NavigationTree.swift */; };
 		D5975CD52049D1830004F371 /* CommonLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D5975CD32049D1830004F371 /* CommonLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5975CE72049D2D40004F371 /* CommonLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D5975CD32049D1830004F371 /* CommonLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5975D062049D6790004F371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D052049D6790004F371 /* AppDelegate.swift */; };
@@ -54,10 +68,8 @@
 		D5975D0B2049D6790004F371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5975D092049D6790004F371 /* Main.storyboard */; };
 		D5975D0D2049D6790004F371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5975D0C2049D6790004F371 /* Assets.xcassets */; };
 		D5975D102049D6790004F371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5975D0E2049D6790004F371 /* LaunchScreen.storyboard */; };
-		D5975D1B2049D69E0004F371 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5975D192049D69E0004F371 /* Interface.storyboard */; };
 		D5975D1D2049D69E0004F371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5975D1C2049D69E0004F371 /* Assets.xcassets */; };
 		D5975D242049D69F0004F371 /* Caminhante watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D5975D232049D69F0004F371 /* Caminhante watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D5975D292049D69F0004F371 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D282049D69F0004F371 /* InterfaceController.swift */; };
 		D5975D2B2049D69F0004F371 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D2A2049D69F0004F371 /* ExtensionDelegate.swift */; };
 		D5975D2D2049D69F0004F371 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D2C2049D69F0004F371 /* NotificationController.swift */; };
 		D5975D2F2049D69F0004F371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5975D2E2049D69F0004F371 /* Assets.xcassets */; };
@@ -226,6 +238,15 @@
 		D5658E6B204B345A008D45E7 /* ActivityAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAction.swift; sourceTree = "<group>"; };
 		D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReducer.swift; sourceTree = "<group>"; };
 		D5658E72204B372F008D45E7 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
+		D5658E78204B3991008D45E7 /* Activity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		D5658E7C204B3B59008D45E7 /* ActivityControlsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityControlsInterfaceController.swift; sourceTree = "<group>"; };
+		D5658E7E204B3B70008D45E7 /* ActivitySnapshotsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySnapshotsInterfaceController.swift; sourceTree = "<group>"; };
+		D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMapResolver.swift; sourceTree = "<group>"; };
+		D5658E84204B454A008D45E7 /* BootstrapActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapActionRequest.swift; sourceTree = "<group>"; };
+		D5658E87204B4750008D45E7 /* KnownRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownRoute.swift; sourceTree = "<group>"; };
+		D5658E8A204B476E008D45E7 /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
+		D5658E8D204B478A008D45E7 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
+		D5658E90204B47A5008D45E7 /* NavigationTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTree.swift; sourceTree = "<group>"; };
 		D5975CD02049D1830004F371 /* CommonLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5975CD32049D1830004F371 /* CommonLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonLibrary.h; sourceTree = "<group>"; };
 		D5975CD42049D1830004F371 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -239,11 +260,9 @@
 		D5975D0F2049D6790004F371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5975D112049D6790004F371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5975D172049D69E0004F371 /* Caminhante watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Caminhante watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5975D1A2049D69E0004F371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D5975D1C2049D69E0004F371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5975D1E2049D69E0004F371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5975D232049D69F0004F371 /* Caminhante watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Caminhante watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5975D282049D69F0004F371 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		D5975D2A2049D69F0004F371 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		D5975D2C2049D69F0004F371 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		D5975D2E2049D69F0004F371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -402,6 +421,33 @@
 			path = Redux;
 			sourceTree = "<group>";
 		};
+		D5658E7A204B3AF3008D45E7 /* ActivitySnapshots */ = {
+			isa = PBXGroup;
+			children = (
+				D5658E7E204B3B70008D45E7 /* ActivitySnapshotsInterfaceController.swift */,
+			);
+			path = ActivitySnapshots;
+			sourceTree = "<group>";
+		};
+		D5658E7B204B3B1E008D45E7 /* ActivityControls */ = {
+			isa = PBXGroup;
+			children = (
+				D5658E7C204B3B59008D45E7 /* ActivityControlsInterfaceController.swift */,
+			);
+			path = ActivityControls;
+			sourceTree = "<group>";
+		};
+		D5658E86204B4739008D45E7 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				D5658E87204B4750008D45E7 /* KnownRoute.swift */,
+				D5658E8A204B476E008D45E7 /* NavigationRoute.swift */,
+				D5658E8D204B478A008D45E7 /* NavigationState.swift */,
+				D5658E90204B47A5008D45E7 /* NavigationTree.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		D5975CD12049D1830004F371 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,9 +493,9 @@
 		D5975D182049D69E0004F371 /* Caminhante watchOS */ = {
 			isa = PBXGroup;
 			children = (
-				D5975D192049D69E0004F371 /* Interface.storyboard */,
 				D5975D1C2049D69E0004F371 /* Assets.xcassets */,
 				D5975D1E2049D69E0004F371 /* Info.plist */,
+				D5658E78204B3991008D45E7 /* Activity.storyboard */,
 			);
 			path = "Caminhante watchOS";
 			sourceTree = "<group>";
@@ -457,12 +503,14 @@
 		D5975D272049D69F0004F371 /* Caminhante watchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D5975D282049D69F0004F371 /* InterfaceController.swift */,
+				D5658E7B204B3B1E008D45E7 /* ActivityControls */,
+				D5658E7A204B3AF3008D45E7 /* ActivitySnapshots */,
 				D5975D2A2049D69F0004F371 /* ExtensionDelegate.swift */,
 				D5975D2C2049D69F0004F371 /* NotificationController.swift */,
 				D5975D2E2049D69F0004F371 /* Assets.xcassets */,
 				D5975D302049D69F0004F371 /* Info.plist */,
 				D5975D312049D69F0004F371 /* PushNotificationPayload.apns */,
+				D5658E84204B454A008D45E7 /* BootstrapActionRequest.swift */,
 			);
 			path = "Caminhante watchOS Extension";
 			sourceTree = "<group>";
@@ -480,6 +528,7 @@
 		D5975D582049F6C40004F371 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D5658E86204B4739008D45E7 /* Navigation */,
 				D59AF540204A2A8500BB8DA5 /* JSONResponse */,
 				D5658E36204B063B008D45E7 /* State */,
 				D5975D592049F6DD0004F371 /* Photo.swift */,
@@ -547,6 +596,7 @@
 				D59AF548204A37E300BB8DA5 /* PhotoServiceEndpoint.swift */,
 				D59AF54A204A38E600BB8DA5 /* PhotoAPI.DI.swift */,
 				D59AF556204A391500BB8DA5 /* PhotoAPI.swift */,
+				D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -804,8 +854,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5658E79204B3991008D45E7 /* Activity.storyboard in Resources */,
 				D5975D1D2049D69E0004F371 /* Assets.xcassets in Resources */,
-				D5975D1B2049D69E0004F371 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,12 +1026,17 @@
 				D59AF55E204A3B4000BB8DA5 /* PhotoEndpoint.URLEndpoint.swift in Sources */,
 				D59AF557204A391500BB8DA5 /* PhotoAPI.swift in Sources */,
 				D5658E38204B063C008D45E7 /* AppState.swift in Sources */,
+				D5658E88204B4750008D45E7 /* KnownRoute.swift in Sources */,
+				D5658E8E204B478A008D45E7 /* NavigationState.swift in Sources */,
 				D59AF55B204A39DE00BB8DA5 /* FlickrAPI.swift in Sources */,
 				D59AF54E204A38EF00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */,
 				D5658E60204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF54B204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
+				D5658E8B204B476E008D45E7 /* NavigationRoute.swift in Sources */,
+				D5658E91204B47A5008D45E7 /* NavigationTree.swift in Sources */,
 				D59AF561204A3CC800BB8DA5 /* URLRequest.swift in Sources */,
 				D5658E54204B2C0D008D45E7 /* ActionRequest.swift in Sources */,
+				D5658E83204B44CE008D45E7 /* DefaultMapResolver.swift in Sources */,
 				D5975D5A2049F6DD0004F371 /* Photo.swift in Sources */,
 				D59AF545204A335700BB8DA5 /* PhotoResponseErrorCode.swift in Sources */,
 				D59AF53C204A1CAA00BB8DA5 /* Codable.swift in Sources */,
@@ -1014,12 +1069,17 @@
 				D59AF55F204A3B4000BB8DA5 /* PhotoEndpoint.URLEndpoint.swift in Sources */,
 				D59AF558204A391500BB8DA5 /* PhotoAPI.swift in Sources */,
 				D5658E39204B063C008D45E7 /* AppState.swift in Sources */,
+				D5658E89204B4750008D45E7 /* KnownRoute.swift in Sources */,
+				D5658E8F204B478A008D45E7 /* NavigationState.swift in Sources */,
 				D59AF55C204A39DE00BB8DA5 /* FlickrAPI.swift in Sources */,
 				D59AF54C204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
 				D5658E61204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF553204A38FA00BB8DA5 /* PhotoResponsePage.swift in Sources */,
+				D5658E8C204B476E008D45E7 /* NavigationRoute.swift in Sources */,
+				D5658E92204B47A5008D45E7 /* NavigationTree.swift in Sources */,
 				D59AF562204A3CC800BB8DA5 /* URLRequest.swift in Sources */,
 				D5658E55204B2C0D008D45E7 /* ActionRequest.swift in Sources */,
+				D5658E82204B44CD008D45E7 /* DefaultMapResolver.swift in Sources */,
 				D59AF555204A390100BB8DA5 /* Codable.swift in Sources */,
 				D59AF552204A38FA00BB8DA5 /* PhotoResponseErrorCode.swift in Sources */,
 				D59AF551204A38FA00BB8DA5 /* PhotoResponse.swift in Sources */,
@@ -1043,9 +1103,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5658E85204B454A008D45E7 /* BootstrapActionRequest.swift in Sources */,
+				D5658E7F204B3B70008D45E7 /* ActivitySnapshotsInterfaceController.swift in Sources */,
 				D5975D2D2049D69F0004F371 /* NotificationController.swift in Sources */,
 				D5975D2B2049D69F0004F371 /* ExtensionDelegate.swift in Sources */,
-				D5975D292049D69F0004F371 /* InterfaceController.swift in Sources */,
+				D5658E7D204B3B59008D45E7 /* ActivityControlsInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1115,14 +1177,6 @@
 				D5975D0F2049D6790004F371 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		D5975D192049D69E0004F371 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D5975D1A2049D69E0004F371 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -5,12 +5,18 @@
 //  Created by Luiz Rodrigo Martins Barbosa on 02.03.18.
 //
 
+import CommonLibrary
 import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
+    override init() {
+        super.init()
+        DefaultMapResolver.map()
+    }
+
     func applicationDidFinishLaunching() {
-        // Perform any final initialization of your application.
+         actionDispatcher.async(BootstrapActionRequest.boot)
     }
 
     func applicationDidBecomeActive() {
@@ -49,5 +55,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
-
 }
+
+extension ExtensionDelegate: HasActionDispatcher { }

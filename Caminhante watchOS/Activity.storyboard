@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yMb-WB-JvG">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <scenes>
+        <!--Activity Controls Interface Controller-->
+        <scene sceneID="vAI-Dd-Io9">
+            <objects>
+                <controller id="yMb-WB-JvG" customClass="ActivityControlsInterfaceController" customModule="Caminhante_watchOS_Extension">
+                    <items>
+                        <group width="1" height="1" heightAdjustment="-2" alignment="left" layout="vertical" spacing="3" id="SNr-Lu-Pzr">
+                            <items>
+                                <group width="1" height="0.5" alignment="left" spacing="3" id="zjV-6O-LNf">
+                                    <items>
+                                        <button width="0.5" height="1" alignment="left" title="Start" id="lyl-Gg-ebK">
+                                            <color key="backgroundColor" red="0.053331163194444448" green="0.3830837673611111" blue="0.00033646567799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="startButtonTap" destination="yMb-WB-JvG" id="isQ-ve-hd0"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.5" height="1" alignment="left" title="Pause" id="egp-PK-eB1">
+                                            <color key="backgroundColor" red="0.76771375868055558" green="0.73790147569444442" blue="0.070237554609775543" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="pauseButtonTap" destination="yMb-WB-JvG" id="C30-KV-UWO"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" height="0.5" alignment="left" spacing="3" id="t4X-eh-dVh">
+                                    <items>
+                                        <button width="0.5" height="1" alignment="left" title="Finish" id="7tu-v3-wuE">
+                                            <color key="backgroundColor" red="0.58338758680555558" green="0.0" blue="0.070237554609775543" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="finishButtonTap" destination="yMb-WB-JvG" id="j8Q-X9-qdI"/>
+                                            </connections>
+                                        </button>
+                                        <button width="0.5" height="1" alignment="left" title="Reset" id="wK0-Yh-8et">
+                                            <color key="backgroundColor" red="0.44672309027777779" green="0.46424696180555558" blue="0.63099500868055558" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="resetButtonTap" destination="yMb-WB-JvG" id="GIm-Xy-VbP"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="finishButton" destination="7tu-v3-wuE" id="tJ6-ne-YbW"/>
+                        <outlet property="pauseButton" destination="egp-PK-eB1" id="HVF-GX-b42"/>
+                        <outlet property="resetButton" destination="wK0-Yh-8et" id="jrk-Z4-bnr"/>
+                        <outlet property="startButton" destination="lyl-Gg-ebK" id="gtw-MT-eWM"/>
+                        <segue destination="ROW-xX-BkU" kind="relationship" relationship="nextPage" id="h5S-bg-Z0n"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-59" y="83"/>
+        </scene>
+        <!--Activity Snapshots Interface Controller-->
+        <scene sceneID="aZu-o3-RGA">
+            <objects>
+                <controller id="ROW-xX-BkU" customClass="ActivitySnapshotsInterfaceController" customModule="Caminhante_watchOS_Extension">
+                    <items>
+                        <table alignment="left" id="ikg-Gg-0LZ">
+                            <items>
+                                <tableRow id="HLA-gn-Orh">
+                                    <group key="rootItem" width="1" alignment="left" id="ZJx-pq-ZdD"/>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="81"/>
+        </scene>
+    </scenes>
+</document>
