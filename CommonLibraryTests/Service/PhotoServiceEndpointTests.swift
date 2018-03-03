@@ -20,6 +20,17 @@ class PhotoServiceEndpointTests: BaseTests {
                                                                         pageSize: 10)
         let sut = publicPhotoNearby.urlRequest(with: "https://test.co/api")
         expect(sut.httpMethod) == "GET"
-        expect(sut.url?.absoluteString) == "https://test.co/api?nojsoncallback=1&page=1&method=flickr.photos.search&format=json&lon=21.9&radius=1&lat=43.2&safe_search=2&per_page=10&radius_units=km"
+        expect(sut.url?.absoluteString) ==
+            "https://test.co/api" +
+            "?nojsoncallback=1" +
+            "&page=1" +
+            "&method=flickr.photos.search" +
+            "&format=json" +
+            "&lon=21.9" +
+            "&radius=1" +
+            "&lat=43.2" +
+            "&safe_search=2" +
+            "&per_page=10" +
+            "&radius_units=km"
     }
 }
