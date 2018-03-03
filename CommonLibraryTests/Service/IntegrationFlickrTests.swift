@@ -18,7 +18,7 @@ class IntegrationFlickrTests: BaseTests {
         let apple = CLLocationCoordinate2D(latitude: 37.332_624_1,
                                            longitude: -122.030_862_1)
 
-        waitUntil { done in
+        waitUntil(timeout: 3) { done in
             client.request(.publicPhotosNearby(location: apple, page: 1, pageSize: 1)) { httpResult in
                 switch httpResult {
                 case .success(let data):
@@ -36,7 +36,7 @@ class IntegrationFlickrTests: BaseTests {
         let apple = CLLocationCoordinate2D(latitude: 37.332_624_1,
                                            longitude: -122.030_862_1)
 
-        waitUntil { done in
+        waitUntil(timeout: 3) { done in
             client.request(.publicPhotosNearby(location: apple, page: 1, pageSize: 1)) { httpResult in
                 let jsonResult: Result<PhotoResponse> = httpResult.flatMap(JsonParser.decode)
                 switch jsonResult {
@@ -56,7 +56,7 @@ class IntegrationFlickrTests: BaseTests {
         let apple = CLLocationCoordinate2D(latitude: 337.332_624_1,
                                            longitude: -122.030_862_1)
 
-        waitUntil { done in
+        waitUntil(timeout: 3) { done in
             client.request(.publicPhotosNearby(location: apple, page: 1, pageSize: 1)) { httpResult in
                 let jsonResult: Result<PhotoResponse> = httpResult.flatMap(JsonParser.decode)
                 switch jsonResult {

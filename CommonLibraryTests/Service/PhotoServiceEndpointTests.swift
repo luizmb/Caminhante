@@ -33,4 +33,30 @@ class PhotoServiceEndpointTests: BaseTests {
             "&per_page=10" +
             "&radius_units=km"
     }
+
+    class SomethingWithPhotoAPI: HasPhotoAPI {
+    }
+
+    func testPhotoAPIInjector() {
+        let injector = Injector.shared as! Injector
+        injector.mapper.mapSingleton(PhotoAPI.self) { FlickrAPI.shared }
+
+        let somethingWithPhotoAPI = SomethingWithPhotoAPI()
+        expect(somethingWithPhotoAPI.photoAPI).to(beAnInstanceOf(FlickrAPI.self))
+
+        let injectedPhotoAPI = somethingWithPhotoAPI.photoAPI as! FlickrAPI
+        let singletonPhotoAPI = FlickrAPI.shared as! FlickrAPI
+        expect(injectedPhotoAPI === singletonPhotoAPI).to(beTrue())
+    }
+
+    func testPhotoAPIStaticInjector() {
+        let injector = Injector.shared as! Injector
+        injector.mapper.mapSingleton(PhotoAPI.self) { FlickrAPI.shared }
+
+        expect(SomethingWithPhotoAPI.photoAPI).to(beAnInstanceOf(FlickrAPI.self))
+
+        let injectedPhotoAPI = SomethingWithPhotoAPI.photoAPI as! FlickrAPI
+        let singletonPhotoAPI = FlickrAPI.shared as! FlickrAPI
+        expect(injectedPhotoAPI === singletonPhotoAPI).to(beTrue())
+    }
 }
