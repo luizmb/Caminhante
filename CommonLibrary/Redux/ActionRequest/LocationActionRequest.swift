@@ -25,7 +25,7 @@ extension LocationActionRequest: ActionRequest {
 
             let significantChange = currentState.significantDistance.converted(to: .meters).value
 
-            if let lastKnownLocation = activity.snapshotPoints.last?.location,
+            if let lastKnownLocation = activity.snapshotPoints.first?.location,
                 location.distance(from: lastKnownLocation) < significantChange {
                 return
             }
