@@ -18,6 +18,8 @@
 		D50CBF12204C492E003A337E /* LocationActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF11204C492E003A337E /* LocationActionRequest.swift */; };
 		D50CBF13204C492E003A337E /* LocationActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF11204C492E003A337E /* LocationActionRequest.swift */; };
 		D50CBF15204C6107003A337E /* BootstrapActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF14204C6107003A337E /* BootstrapActionRequest.swift */; };
+		D50CBF17204C72BD003A337E /* ActivityActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF16204C72BD003A337E /* ActivityActionRequest.swift */; };
+		D50CBF18204C72BD003A337E /* ActivityActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF16204C72BD003A337E /* ActivityActionRequest.swift */; };
 		D53125F2204B658B00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F1204B658B00D3A756 /* HealthKit.framework */; };
 		D53125F5204B65AF00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F4204B65AF00D3A756 /* HealthKit.framework */; };
 		D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125F6204B684F00D3A756 /* CoreLocationTracker.swift */; };
@@ -257,6 +259,7 @@
 		D50CBF0E204C45BB003A337E /* PhotoReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReducer.swift; sourceTree = "<group>"; };
 		D50CBF11204C492E003A337E /* LocationActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationActionRequest.swift; sourceTree = "<group>"; };
 		D50CBF14204C6107003A337E /* BootstrapActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapActionRequest.swift; sourceTree = "<group>"; };
+		D50CBF16204C72BD003A337E /* ActivityActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityActionRequest.swift; sourceTree = "<group>"; };
 		D53125F0204B658B00D3A756 /* Caminhante watchOS Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caminhante watchOS Extension.entitlements"; sourceTree = "<group>"; };
 		D53125F1204B658B00D3A756 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		D53125F3204B65AF00D3A756 /* Caminhante.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caminhante.entitlements; sourceTree = "<group>"; };
@@ -466,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				D5658E53204B2C0D008D45E7 /* ActionRequest.swift */,
+				D50CBF16204C72BD003A337E /* ActivityActionRequest.swift */,
 				D50CBF11204C492E003A337E /* LocationActionRequest.swift */,
 				D50CBF07204C3851003A337E /* PhotoActionRequest.swift */,
 			);
@@ -1117,6 +1121,7 @@
 			files = (
 				D5658E5D204B2CEF008D45E7 /* StateProvider.swift in Sources */,
 				D5658E51204B2BBE008D45E7 /* Store.swift in Sources */,
+				D50CBF17204C72BD003A337E /* ActivityActionRequest.swift in Sources */,
 				D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */,
 				D5312604204B700100D3A756 /* Permission.swift in Sources */,
 				D5658E47204B0DF8008D45E7 /* DeviceState.swift in Sources */,
@@ -1175,6 +1180,7 @@
 			files = (
 				D5658E5E204B2CEF008D45E7 /* StateProvider.swift in Sources */,
 				D5658E52204B2BBE008D45E7 /* Store.swift in Sources */,
+				D50CBF18204C72BD003A337E /* ActivityActionRequest.swift in Sources */,
 				D5658E2A204A56E1008D45E7 /* Constants.secret.swift in Sources */,
 				D5312605204B700100D3A756 /* Permission.swift in Sources */,
 				D5658E48204B0DF8008D45E7 /* DeviceState.swift in Sources */,

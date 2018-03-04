@@ -8,8 +8,8 @@
 import KleinKit
 
 public enum ActivityAction: Action {
-    case startActivity
-    case pauseActivity
-    case finishActivity
-    case resetActivity
+    case activityDidStart
+    case activityDidPause
+    case activityDidFinish
+    case activityDidReset
 }

@@ -15,16 +15,16 @@ public struct ActivityReducer: Reducer {
         var stateCopy = currentState
 
         switch activityAction {
-        case .startActivity:
+        case .activityDidStart:
             stateCopy.currentActivity = stateCopy.currentActivity ?? Activity(state: .inProgress, snapshotPoints: [])
             stateCopy.currentActivity?.state = .inProgress
-        case .pauseActivity:
+        case .activityDidPause:
             stateCopy.currentActivity = stateCopy.currentActivity ?? Activity(state: .paused, snapshotPoints: [])
             stateCopy.currentActivity?.state = .paused
-        case .finishActivity:
+        case .activityDidFinish:
             stateCopy.currentActivity = stateCopy.currentActivity ?? Activity(state: .finished, snapshotPoints: [])
             stateCopy.currentActivity?.state = .finished
-        case .resetActivity:
+        case .activityDidReset:
             stateCopy.currentActivity = nil
         }
         return stateCopy

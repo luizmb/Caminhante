@@ -53,19 +53,19 @@ class ActivityControlsInterfaceController: WKInterfaceController {
     }
 
     @IBAction func startButtonTap() {
-        actionDispatcher.dispatch(ActivityAction.startActivity)
+        actionDispatcher.async(ActivityActionRequest.startActivity)
     }
 
     @IBAction func pauseButtonTap() {
-        actionDispatcher.dispatch(ActivityAction.pauseActivity)
+        actionDispatcher.async(ActivityActionRequest.pauseActivity)
     }
 
     @IBAction func finishButtonTap() {
-        actionDispatcher.dispatch(ActivityAction.finishActivity)
+        actionDispatcher.async(ActivityActionRequest.finishActivity)
     }
 
     @IBAction func resetButtonTap() {
-        actionDispatcher.dispatch(ActivityAction.resetActivity)
+        actionDispatcher.async(ActivityActionRequest.resetActivity)
     }
 }
 
