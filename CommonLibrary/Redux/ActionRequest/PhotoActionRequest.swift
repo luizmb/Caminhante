@@ -37,10 +37,14 @@ extension PhotoActionRequest: ActionRequest {
         return { result in
             var photoInformationResult: Result<PhotoInformation> = result.flatMap(JsonParser.decode)
 
-            if case var .success(photoInformation) = photoInformationResult {
+            switch photoInformationResult {
+            case .success(var photoInformation):
                 let task = fetchPhotoBytes(for: photoInformation, with: store)
                 photoInformation.image = .syncing(task: task, oldValue: nil)
                 photoInformationResult = .success(photoInformation)
+            case .failure(let error):
+                let json = result.map { String(data: $0, encoding: .utf8) }
+                print("Error \(error). Data: \(json)")
             }
 
             store.dispatch(PhotoAction.gotPhotoInformation(photoInformationResult, at: location))

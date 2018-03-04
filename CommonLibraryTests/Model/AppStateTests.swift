@@ -12,15 +12,19 @@ import Nimble
 import XCTest
 
 class AppStateTests: BaseTests {
-    let apple = CLLocationCoordinate2D(latitude: 37.332_624_1,
-                                       longitude: -122.030_862_1)
+    let apple = CLLocation(coordinate: CLLocationCoordinate2D(latitude: 37.332_624_1,
+                                                              longitude: -122.030_862_1),
+                                altitude: CLLocationDistance(),
+                                horizontalAccuracy: CLLocationAccuracy(),
+                                verticalAccuracy: CLLocationAccuracy(),
+                                timestamp: Date())
 
     let time = Date(timeIntervalSinceReferenceDate: 0)
 
     let uuid = UUID(uuidString: "9035C568-C8FF-415E-BAB4-03AB1BA9CE36")!
 
     var snapshotPoint: SnapshotPoint {
-        return .init(identifier: uuid, coordinate: .loaded(.success(apple)), photo: .neverLoaded, time: time)
+        return .init(identifier: uuid, location: apple, photo: .neverLoaded, time: time)
     }
 
     var activity: Activity {
@@ -28,7 +32,7 @@ class AppStateTests: BaseTests {
     }
 
     var deviceState: DeviceState {
-        return .init(isInBackground: false, isActive: true, hasLocationPermission: true, hasHealthPermission: true)
+        return .init(isInBackground: false, isActive: true, locationPermission: .authorized, healthPermission: .authorized)
     }
 
     var appState: AppState {
