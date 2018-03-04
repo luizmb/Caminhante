@@ -13,6 +13,10 @@ public enum PhotoActionRequest {
     case startSnapshotProcess(newLocation: CLLocation)
 }
 
+public enum PhotoError: Error {
+    case noPhotosForThisLocation
+}
+
 extension PhotoActionRequest: ActionRequest {
     public func execute(getState: @escaping () -> AppState,
                         dispatch: @escaping DispatchFunction,
@@ -35,16 +39,18 @@ extension PhotoActionRequest: ActionRequest {
 
     private static func photoInformationReceived(from location: CLLocation, with store: StoreAccessors) -> (Result<Data>) -> Void {
         return { result in
-            var photoInformationResult: Result<PhotoInformation> = result.flatMap(JsonParser.decode)
+            let photoResponseResult: Result<PhotoResponse> = result.flatMap(JsonParser.decode)
+            let photoInformationResult: Result<PhotoInformation> = photoResponseResult.flatMap { response in
+                if let page = response.responsePage,
+                    page.photos.count == 1,
+                    var photoInformation = page.photos.first {
 
-            switch photoInformationResult {
-            case .success(var photoInformation):
-                let task = fetchPhotoBytes(for: photoInformation, with: store)
-                photoInformation.image = .syncing(task: task, oldValue: nil)
-                photoInformationResult = .success(photoInformation)
-            case .failure(let error):
-                let json = result.map { String(data: $0, encoding: .utf8) }
-                print("Error \(error). Data: \(json)")
+                    let task = fetchPhotoBytes(for: photoInformation, with: store)
+                    photoInformation.image = .syncing(task: task, oldValue: nil)
+                    return .success(photoInformation)
+                }
+
+                return .failure(PhotoError.noPhotosForThisLocation)
             }
 
             store.dispatch(PhotoAction.gotPhotoInformation(photoInformationResult, at: location))
