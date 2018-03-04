@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D53125F2204B658B00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F1204B658B00D3A756 /* HealthKit.framework */; };
+		D53125F5204B65AF00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F4204B65AF00D3A756 /* HealthKit.framework */; };
+		D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125F6204B684F00D3A756 /* CoreLocationTracker.swift */; };
+		D53125F8204B684F00D3A756 /* CoreLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125F6204B684F00D3A756 /* CoreLocationTracker.swift */; };
+		D53125FA204B686200D3A756 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125F9204B686200D3A756 /* LocationTracker.swift */; };
+		D53125FB204B686200D3A756 /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125F9204B686200D3A756 /* LocationTracker.swift */; };
+		D53125FD204B686F00D3A756 /* LocationTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125FC204B686F00D3A756 /* LocationTracker.DI.swift */; };
+		D53125FE204B686F00D3A756 /* LocationTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125FC204B686F00D3A756 /* LocationTracker.DI.swift */; };
+		D5312601204B6F1F00D3A756 /* LocationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312600204B6F1F00D3A756 /* LocationAction.swift */; };
+		D5312602204B6F1F00D3A756 /* LocationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312600204B6F1F00D3A756 /* LocationAction.swift */; };
+		D5312604204B700100D3A756 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312603204B700100D3A756 /* Permission.swift */; };
+		D5312605204B700100D3A756 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312603204B700100D3A756 /* Permission.swift */; };
+		D5312607204B721300D3A756 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312606204B721300D3A756 /* LocationReducer.swift */; };
+		D5312608204B721300D3A756 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312606204B721300D3A756 /* LocationReducer.swift */; };
 		D5658E22204A468D008D45E7 /* PhotoServiceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */; };
 		D5658E24204A4899008D45E7 /* IntegrationFlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */; };
 		D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E28204A56E1008D45E7 /* Constants.secret.swift */; };
@@ -215,6 +229,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D53125F0204B658B00D3A756 /* Caminhante watchOS Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caminhante watchOS Extension.entitlements"; sourceTree = "<group>"; };
+		D53125F1204B658B00D3A756 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		D53125F3204B65AF00D3A756 /* Caminhante.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caminhante.entitlements; sourceTree = "<group>"; };
+		D53125F4204B65AF00D3A756 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		D53125F6204B684F00D3A756 /* CoreLocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationTracker.swift; sourceTree = "<group>"; };
+		D53125F9204B686200D3A756 /* LocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTracker.swift; sourceTree = "<group>"; };
+		D53125FC204B686F00D3A756 /* LocationTracker.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTracker.DI.swift; sourceTree = "<group>"; };
+		D5312600204B6F1F00D3A756 /* LocationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAction.swift; sourceTree = "<group>"; };
+		D5312603204B700100D3A756 /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
+		D5312606204B721300D3A756 /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 		D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceEndpointTests.swift; sourceTree = "<group>"; };
 		D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationFlickrTests.swift; sourceTree = "<group>"; };
 		D5658E25204A55C3008D45E7 /* Constants.example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.example.swift; sourceTree = "<group>"; };
@@ -314,6 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53125F5204B65AF00D3A756 /* HealthKit.framework in Frameworks */,
 				D5975D442049D8900004F371 /* CommonLibrary.framework in Frameworks */,
 				D5975D522049DA8A0004F371 /* KleinKit.framework in Frameworks */,
 			);
@@ -323,6 +348,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53125F2204B658B00D3A756 /* HealthKit.framework in Frameworks */,
 				D5975D492049D89F0004F371 /* CommonLibrary.framework in Frameworks */,
 				D5975D542049DA930004F371 /* KleinKit.framework in Frameworks */,
 			);
@@ -341,6 +367,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D53125FF204B6A6500D3A756 /* CoreLocationTracker */ = {
+			isa = PBXGroup;
+			children = (
+				D53125F6204B684F00D3A756 /* CoreLocationTracker.swift */,
+			);
+			path = CoreLocationTracker;
+			sourceTree = "<group>";
+		};
 		D5658E20204A4666008D45E7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +393,7 @@
 				D5658E43204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift */,
 				D5658E46204B0DF8008D45E7 /* DeviceState.swift */,
 				D5658E40204B0CF1008D45E7 /* SnapshotPoint.swift */,
+				D5312603204B700100D3A756 /* Permission.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -379,6 +414,7 @@
 			children = (
 				D5658E6B204B345A008D45E7 /* ActivityAction.swift */,
 				D5658E68204B2F83008D45E7 /* RouterAction.swift */,
+				D5312600204B6F1F00D3A756 /* LocationAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -396,6 +432,7 @@
 			children = (
 				D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */,
 				D5658E62204B2ECF008D45E7 /* EntryPointReducer.swift */,
+				D5312606204B721300D3A756 /* LocationReducer.swift */,
 				D5658E65204B2F41008D45E7 /* RouterReducer.swift */,
 			);
 			path = Reducer;
@@ -480,6 +517,7 @@
 		D5975D042049D6790004F371 /* Caminhante */ = {
 			isa = PBXGroup;
 			children = (
+				D53125F3204B65AF00D3A756 /* Caminhante.entitlements */,
 				D5975D052049D6790004F371 /* AppDelegate.swift */,
 				D5975D072049D6790004F371 /* ViewController.swift */,
 				D5975D092049D6790004F371 /* Main.storyboard */,
@@ -503,6 +541,7 @@
 		D5975D272049D69F0004F371 /* Caminhante watchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D53125F0204B658B00D3A756 /* Caminhante watchOS Extension.entitlements */,
 				D5658E7B204B3B1E008D45E7 /* ActivityControls */,
 				D5658E7A204B3AF3008D45E7 /* ActivitySnapshots */,
 				D5975D2A2049D69F0004F371 /* ExtensionDelegate.swift */,
@@ -518,6 +557,8 @@
 		D5975D3D2049D7820004F371 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D53125F4204B65AF00D3A756 /* HealthKit.framework */,
+				D53125F1204B658B00D3A756 /* HealthKit.framework */,
 				D5975D75204A0DB70004F371 /* Nimble.framework */,
 				D5975D402049D7930004F371 /* KleinKit.framework */,
 				D5975D3E2049D7820004F371 /* KleinKit.framework */,
@@ -592,11 +633,14 @@
 		D59AF547204A379B00BB8DA5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				D53125FF204B6A6500D3A756 /* CoreLocationTracker */,
 				D59AF559204A39CF00BB8DA5 /* FlickrAPI */,
 				D59AF548204A37E300BB8DA5 /* PhotoServiceEndpoint.swift */,
 				D59AF54A204A38E600BB8DA5 /* PhotoAPI.DI.swift */,
 				D59AF556204A391500BB8DA5 /* PhotoAPI.swift */,
 				D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */,
+				D53125FC204B686F00D3A756 /* LocationTracker.DI.swift */,
+				D53125F9204B686200D3A756 /* LocationTracker.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -787,6 +831,11 @@
 					D5975D022049D6780004F371 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					D5975D162049D69E0004F371 = {
 						CreatedOnToolsVersion = 9.2;
@@ -795,6 +844,11 @@
 					D5975D222049D69F0004F371 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
 					};
 					D5975D62204A05410004F371 = {
 						CreatedOnToolsVersion = 9.2;
@@ -1011,9 +1065,12 @@
 				D5658E5D204B2CEF008D45E7 /* StateProvider.swift in Sources */,
 				D5658E51204B2BBE008D45E7 /* Store.swift in Sources */,
 				D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */,
+				D5312604204B700100D3A756 /* Permission.swift in Sources */,
 				D5658E47204B0DF8008D45E7 /* DeviceState.swift in Sources */,
 				D5658E6F204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
+				D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */,
 				D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */,
+				D53125FD204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
 				D5658E66204B2F41008D45E7 /* RouterReducer.swift in Sources */,
 				D5658E5A204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */,
 				D59AF546204A335D00BB8DA5 /* PhotoResponseStatus.swift in Sources */,
@@ -1030,11 +1087,14 @@
 				D5658E8E204B478A008D45E7 /* NavigationState.swift in Sources */,
 				D59AF55B204A39DE00BB8DA5 /* FlickrAPI.swift in Sources */,
 				D59AF54E204A38EF00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */,
+				D5312607204B721300D3A756 /* LocationReducer.swift in Sources */,
 				D5658E60204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF54B204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
 				D5658E8B204B476E008D45E7 /* NavigationRoute.swift in Sources */,
 				D5658E91204B47A5008D45E7 /* NavigationTree.swift in Sources */,
+				D53125FA204B686200D3A756 /* LocationTracker.swift in Sources */,
 				D59AF561204A3CC800BB8DA5 /* URLRequest.swift in Sources */,
+				D5312601204B6F1F00D3A756 /* LocationAction.swift in Sources */,
 				D5658E54204B2C0D008D45E7 /* ActionRequest.swift in Sources */,
 				D5658E83204B44CE008D45E7 /* DefaultMapResolver.swift in Sources */,
 				D5975D5A2049F6DD0004F371 /* Photo.swift in Sources */,
@@ -1054,9 +1114,12 @@
 				D5658E5E204B2CEF008D45E7 /* StateProvider.swift in Sources */,
 				D5658E52204B2BBE008D45E7 /* Store.swift in Sources */,
 				D5658E2A204A56E1008D45E7 /* Constants.secret.swift in Sources */,
+				D5312605204B700100D3A756 /* Permission.swift in Sources */,
 				D5658E48204B0DF8008D45E7 /* DeviceState.swift in Sources */,
 				D5658E70204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
+				D53125F8204B684F00D3A756 /* CoreLocationTracker.swift in Sources */,
 				D59AF550204A38F600BB8DA5 /* Photo.swift in Sources */,
+				D53125FE204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
 				D5658E67204B2F41008D45E7 /* RouterReducer.swift in Sources */,
 				D5658E5B204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */,
 				D59AF554204A38FA00BB8DA5 /* PhotoResponseStatus.swift in Sources */,
@@ -1073,11 +1136,14 @@
 				D5658E8F204B478A008D45E7 /* NavigationState.swift in Sources */,
 				D59AF55C204A39DE00BB8DA5 /* FlickrAPI.swift in Sources */,
 				D59AF54C204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
+				D5312608204B721300D3A756 /* LocationReducer.swift in Sources */,
 				D5658E61204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF553204A38FA00BB8DA5 /* PhotoResponsePage.swift in Sources */,
 				D5658E8C204B476E008D45E7 /* NavigationRoute.swift in Sources */,
 				D5658E92204B47A5008D45E7 /* NavigationTree.swift in Sources */,
+				D53125FB204B686200D3A756 /* LocationTracker.swift in Sources */,
 				D59AF562204A3CC800BB8DA5 /* URLRequest.swift in Sources */,
+				D5312602204B6F1F00D3A756 /* LocationAction.swift in Sources */,
 				D5658E55204B2C0D008D45E7 /* ActionRequest.swift in Sources */,
 				D5658E82204B44CD008D45E7 /* DefaultMapResolver.swift in Sources */,
 				D59AF555204A390100BB8DA5 /* Codable.swift in Sources */,
@@ -1381,6 +1447,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Caminhante/Caminhante.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -1518,6 +1585,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Caminhante watchOS Extension/Caminhante watchOS Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1959,6 +2027,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Caminhante/Caminhante.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -2030,6 +2099,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Caminhante/Caminhante.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
@@ -2093,6 +2163,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Caminhante watchOS Extension/Caminhante watchOS Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2163,6 +2234,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "Caminhante watchOS Extension/Caminhante watchOS Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

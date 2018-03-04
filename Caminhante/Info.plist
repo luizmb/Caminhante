@@ -26,7 +26,7 @@
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
-		<string>armv7</string>
+		<string>healthkit</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -40,6 +40,24 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We will read your location to provide images near to you</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We will read your location to provide images near to you</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We will read your location to provide images near to you</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>You can track your activity as a workout</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>You can track your activity as a workout</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
+	<key>WKBackgroundModes</key>
+	<array>
+		<string>workout-processing</string>
 	</array>
 </dict>
 </plist>

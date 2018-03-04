@@ -17,11 +17,15 @@ class ActivityControlsInterfaceController: WKInterfaceController {
     @IBOutlet private var pauseButton: WKInterfaceButton!
     @IBOutlet private var finishButton: WKInterfaceButton!
     @IBOutlet private var resetButton: WKInterfaceButton!
+    var allButtons: [WKInterfaceButton] = []
+    @IBOutlet var locationPermissionLabel: WKInterfaceLabel!
+    @IBOutlet var healthPermissionLabel: WKInterfaceLabel!
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
         self.setTitle("Controls")
+        allButtons = [startButton, pauseButton, finishButton, resetButton]
 
         stateProvider.subscribe { [weak self] state in
             self?.update(state: state)
@@ -29,28 +33,30 @@ class ActivityControlsInterfaceController: WKInterfaceController {
     }
 
     private func update(state: AppState) {
-        switch state.currentActivity?.state {
-        case .paused?:
-            startButton.setEnabled(true)
-            pauseButton.setEnabled(false)
-            finishButton.setEnabled(true)
-            resetButton.setEnabled(false)
-        case .inProgress?:
-            startButton.setEnabled(false)
-            pauseButton.setEnabled(true)
-            finishButton.setEnabled(true)
-            resetButton.setEnabled(false)
-        case .finished?:
-            startButton.setEnabled(false)
-            pauseButton.setEnabled(false)
-            finishButton.setEnabled(false)
-            resetButton.setEnabled(true)
-        case nil:
-            startButton.setEnabled(true)
-            pauseButton.setEnabled(false)
-            finishButton.setEnabled(false)
-            resetButton.setEnabled(false)
+        switch (state.deviceState.locationPermission, state.currentActivity?.state) {
+        case (.denied, _):
+            locationPermissionLabel.setText("Denied")
+            enable(buttons: [])
+        case (.pending, _):
+            locationPermissionLabel.setText("Pending")
+            enable(buttons: [])
+        case (.authorized, .paused?):
+            locationPermissionLabel.setText("Authorized")
+            enable(buttons: [startButton, finishButton])
+        case (.authorized, .inProgress?):
+            locationPermissionLabel.setText("Authorized")
+            enable(buttons: [pauseButton, finishButton])
+        case (.authorized, .finished?):
+            locationPermissionLabel.setText("Authorized")
+            enable(buttons: [resetButton])
+        case (.authorized, nil):
+            locationPermissionLabel.setText("Authorized")
+            enable(buttons: [startButton])
         }
+    }
+
+    func enable(buttons: [WKInterfaceButton]) {
+        allButtons.forEach { $0.setEnabled(buttons.contains($0)) }
     }
 
     @IBAction func startButtonTap() {

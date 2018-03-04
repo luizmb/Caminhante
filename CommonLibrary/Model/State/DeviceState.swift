@@ -13,8 +13,8 @@ import UIKit
 public struct DeviceState {
     public var isInBackground: Bool
     public var isActive: Bool
-    public var hasLocationPermission: Bool
-    public var hasHealthPermission: Bool
+    public var locationPermission: Permission
+    public var healthPermission: Permission
 
     public var navigation = NavigationState.still(at: .root())
     #if os(iOS)
@@ -22,11 +22,11 @@ public struct DeviceState {
     public weak var navigationController: UINavigationController?
     #endif
 
-    public init(isInBackground: Bool, isActive: Bool, hasLocationPermission: Bool, hasHealthPermission: Bool) {
+    public init(isInBackground: Bool, isActive: Bool, locationPermission: Permission, healthPermission: Permission) {
         self.isInBackground = isInBackground
         self.isActive = isActive
-        self.hasLocationPermission = hasLocationPermission
-        self.hasHealthPermission = hasHealthPermission
+        self.locationPermission = locationPermission
+        self.healthPermission = healthPermission
     }
 }
 
@@ -35,8 +35,8 @@ extension DeviceState: Equatable {
         return
             lhs.isInBackground == rhs.isInBackground &&
             lhs.isActive == rhs.isActive &&
-            lhs.hasLocationPermission == rhs.hasLocationPermission &&
-            lhs.hasHealthPermission == rhs.hasHealthPermission &&
+            lhs.locationPermission == rhs.locationPermission &&
+            lhs.healthPermission == rhs.healthPermission &&
             lhs.navigation == rhs.navigation
     }
 }

@@ -13,7 +13,7 @@ public struct AppState {
 
     public init() {
         currentActivity = nil
-        deviceState = DeviceState(isInBackground: false, isActive: true, hasLocationPermission: false, hasHealthPermission: false)
+        deviceState = DeviceState(isInBackground: false, isActive: true, locationPermission: .pending, healthPermission: .pending)
     }
 
     public init(currentActivity: Activity?, deviceState: DeviceState) {

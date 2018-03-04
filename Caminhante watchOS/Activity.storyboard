@@ -14,38 +14,62 @@
             <objects>
                 <controller id="yMb-WB-JvG" customClass="ActivityControlsInterfaceController" customModule="Caminhante_watchOS_Extension">
                     <items>
-                        <group width="1" height="1" heightAdjustment="-2" alignment="left" layout="vertical" spacing="3" id="SNr-Lu-Pzr">
+                        <group width="1" height="1" alignment="left" layout="vertical" id="74b-Wm-ZAr">
                             <items>
-                                <group width="1" height="0.5" alignment="left" spacing="3" id="zjV-6O-LNf">
+                                <group width="1" height="1" heightAdjustment="-45" alignment="left" layout="vertical" spacing="3" id="SNr-Lu-Pzr">
                                     <items>
-                                        <button width="0.5" height="1" alignment="left" title="Start" id="lyl-Gg-ebK">
-                                            <color key="backgroundColor" red="0.053331163194444448" green="0.3830837673611111" blue="0.00033646567799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="startButtonTap" destination="yMb-WB-JvG" id="isQ-ve-hd0"/>
-                                            </connections>
-                                        </button>
-                                        <button width="0.5" height="1" alignment="left" title="Pause" id="egp-PK-eB1">
-                                            <color key="backgroundColor" red="0.76771375868055558" green="0.73790147569444442" blue="0.070237554609775543" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="pauseButtonTap" destination="yMb-WB-JvG" id="C30-KV-UWO"/>
-                                            </connections>
-                                        </button>
+                                        <group width="1" height="0.5" alignment="left" spacing="3" id="zjV-6O-LNf">
+                                            <items>
+                                                <button width="0.5" height="1" alignment="left" title="Start" id="lyl-Gg-ebK">
+                                                    <color key="backgroundColor" red="0.053331163194444448" green="0.3830837673611111" blue="0.00033646567799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="startButtonTap" destination="yMb-WB-JvG" id="isQ-ve-hd0"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="0.5" height="1" alignment="left" title="Pause" id="egp-PK-eB1">
+                                                    <color key="backgroundColor" red="0.76771375868055558" green="0.73790147569444442" blue="0.070237554609775543" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="pauseButtonTap" destination="yMb-WB-JvG" id="C30-KV-UWO"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="0.5" alignment="left" spacing="3" id="t4X-eh-dVh">
+                                            <items>
+                                                <button width="0.5" height="1" alignment="left" title="Finish" id="7tu-v3-wuE">
+                                                    <color key="backgroundColor" red="0.58338758680555558" green="0.0" blue="0.070237554609775543" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="finishButtonTap" destination="yMb-WB-JvG" id="j8Q-X9-qdI"/>
+                                                    </connections>
+                                                </button>
+                                                <button width="0.5" height="1" alignment="left" title="Reset" id="wK0-Yh-8et">
+                                                    <color key="backgroundColor" red="0.44672309027777779" green="0.46424696180555558" blue="0.63099500868055558" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="resetButtonTap" destination="yMb-WB-JvG" id="GIm-Xy-VbP"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
-                                <group width="1" height="0.5" alignment="left" spacing="3" id="t4X-eh-dVh">
+                                <group width="1" height="45" alignment="left" layout="vertical" id="QiA-v0-Dde">
                                     <items>
-                                        <button width="0.5" height="1" alignment="left" title="Finish" id="7tu-v3-wuE">
-                                            <color key="backgroundColor" red="0.58338758680555558" green="0.0" blue="0.070237554609775543" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="finishButtonTap" destination="yMb-WB-JvG" id="j8Q-X9-qdI"/>
-                                            </connections>
-                                        </button>
-                                        <button width="0.5" height="1" alignment="left" title="Reset" id="wK0-Yh-8et">
-                                            <color key="backgroundColor" red="0.44672309027777779" green="0.46424696180555558" blue="0.63099500868055558" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="resetButtonTap" destination="yMb-WB-JvG" id="GIm-Xy-VbP"/>
-                                            </connections>
-                                        </button>
+                                        <group width="1" alignment="left" id="IlV-c8-lJM">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="center" text="Location:" id="h9W-W6-dhp">
+                                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                </label>
+                                                <label alignment="right" verticalAlignment="center" text="Pending" id="Idy-8j-tYz"/>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" id="Ybe-Pe-TWt">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="center" text="Health:" id="QOn-vW-EBW">
+                                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                </label>
+                                                <label alignment="right" verticalAlignment="center" text="Pending" id="xBh-1E-yJf"/>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
                             </items>
@@ -53,6 +77,8 @@
                     </items>
                     <connections>
                         <outlet property="finishButton" destination="7tu-v3-wuE" id="tJ6-ne-YbW"/>
+                        <outlet property="healthPermissionLabel" destination="xBh-1E-yJf" id="Kkp-tm-cZa"/>
+                        <outlet property="locationPermissionLabel" destination="Idy-8j-tYz" id="m0o-5V-lD4"/>
                         <outlet property="pauseButton" destination="egp-PK-eB1" id="HVF-GX-b42"/>
                         <outlet property="resetButton" destination="wK0-Yh-8et" id="jrk-Z4-bnr"/>
                         <outlet property="startButton" destination="lyl-Gg-ebK" id="gtw-MT-eWM"/>
@@ -70,7 +96,11 @@
                         <table alignment="left" id="ikg-Gg-0LZ">
                             <items>
                                 <tableRow id="HLA-gn-Orh">
-                                    <group key="rootItem" width="1" alignment="left" id="ZJx-pq-ZdD"/>
+                                    <group key="rootItem" width="1" alignment="left" id="ZJx-pq-ZdD">
+                                        <items>
+                                            <imageView width="1" alignment="left" id="zGP-mA-2sS"/>
+                                        </items>
+                                    </group>
                                 </tableRow>
                             </items>
                         </table>

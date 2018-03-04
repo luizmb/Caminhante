@@ -15,6 +15,7 @@ public class DefaultMapResolver {
         injector.mapper.mapSingleton(ActionDispatcher.self) { return Store.shared }
         injector.mapper.mapSingleton(PhotoAPI.self) { return FlickrAPI.shared }
         injector.mapper.mapSingleton(StateProvider.self) { Store.shared }
+        injector.mapper.mapSingleton(LocationTracker.self) { CoreLocationTracker.shared }
     }
 }
 

@@ -15,6 +15,7 @@ public struct EntryPointReducer: Reducer {
     public typealias StateType = AppState
     private let reducers = [
         AnyReducer(RouterReducer()),
+        AnyReducer(LocationReducer()),
         AnyReducer(ActivityReducer())
     ]
 
