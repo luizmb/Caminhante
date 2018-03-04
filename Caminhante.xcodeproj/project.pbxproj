@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D50CBF04204BAC64003A337E /* ActivitySnapshotsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF03204BAC64003A337E /* ActivitySnapshotsRowController.swift */; };
+		D50CBF06204C3349003A337E /* ActivitySnapshotsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF05204C3348003A337E /* ActivitySnapshotsTableController.swift */; };
 		D53125F2204B658B00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F1204B658B00D3A756 /* HealthKit.framework */; };
 		D53125F5204B65AF00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F4204B65AF00D3A756 /* HealthKit.framework */; };
 		D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125F6204B684F00D3A756 /* CoreLocationTracker.swift */; };
@@ -241,6 +242,7 @@
 
 /* Begin PBXFileReference section */
 		D50CBF03204BAC64003A337E /* ActivitySnapshotsRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySnapshotsRowController.swift; sourceTree = "<group>"; };
+		D50CBF05204C3348003A337E /* ActivitySnapshotsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySnapshotsTableController.swift; sourceTree = "<group>"; };
 		D53125F0204B658B00D3A756 /* Caminhante watchOS Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caminhante watchOS Extension.entitlements"; sourceTree = "<group>"; };
 		D53125F1204B658B00D3A756 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		D53125F3204B65AF00D3A756 /* Caminhante.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caminhante.entitlements; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				D5658E7E204B3B70008D45E7 /* ActivitySnapshotsInterfaceController.swift */,
+				D50CBF05204C3348003A337E /* ActivitySnapshotsTableController.swift */,
 				D50CBF03204BAC64003A337E /* ActivitySnapshotsRowController.swift */,
 			);
 			path = ActivitySnapshots;
@@ -1213,6 +1216,7 @@
 				D5658E85204B454A008D45E7 /* BootstrapActionRequest.swift in Sources */,
 				D50CBF04204BAC64003A337E /* ActivitySnapshotsRowController.swift in Sources */,
 				D5658E7F204B3B70008D45E7 /* ActivitySnapshotsInterfaceController.swift in Sources */,
+				D50CBF06204C3349003A337E /* ActivitySnapshotsTableController.swift in Sources */,
 				D5975D2D2049D69F0004F371 /* NotificationController.swift in Sources */,
 				D5975D2B2049D69F0004F371 /* ExtensionDelegate.swift in Sources */,
 				D5658E7D204B3B59008D45E7 /* ActivityControlsInterfaceController.swift in Sources */,
