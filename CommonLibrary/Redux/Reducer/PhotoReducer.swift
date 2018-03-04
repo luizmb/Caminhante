@@ -16,9 +16,9 @@ public struct PhotoReducer: Reducer {
         var stateCopy = currentState
 
         switch photoAction {
-        case .gotPhotoInformation(let photoInformation, let location):
+        case .gotPhotoInformation(let photoInformation, let id):
             guard var activity = stateCopy.currentActivity,
-                let index = activity.snapshotPoints.index(where: { $0.location === location }),
+                let index = activity.snapshotPoints.index(where: { $0.identifier == id }),
                 var snapshot = activity.snapshotPoints[safe: index] else { return currentState }
             snapshot.photo = .loaded(photoInformation)
             activity.snapshotPoints[index] = snapshot

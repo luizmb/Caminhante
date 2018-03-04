@@ -10,5 +10,5 @@ import KleinKit
 
 public enum LocationAction: Action {
     case permissionChanged(newPermission: Permission)
-    case receivedNewSignificantLocation(location: CLLocation, photoTask: CancelableTask)
+    case receivedNewSignificantLocation(location: CLLocation, id: UUID, photoTask: CancelableTask)
 }

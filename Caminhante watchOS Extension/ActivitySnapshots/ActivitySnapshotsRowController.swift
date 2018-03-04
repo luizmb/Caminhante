@@ -13,31 +13,48 @@ final class ActivitySnapshotsRowController: NSObject {
 
     @IBOutlet var photoImageView: WKInterfaceImage!
     @IBOutlet var placeholderImageView: WKInterfaceImage!
+    @IBOutlet var photoTitleLabel: WKInterfaceLabel!
+    @IBOutlet var photoTitleLabelBackground: WKInterfaceGroup!
 
-    func update(state: SnapshotPoint?) {
-        guard let snapshot = state,
-              case let .loaded(.success(photo)) = snapshot.photo,
-              let photoData = photo.image.possibleValue()
-            else {
-            setPlaceholder()
-            return
+    private var currentState: SnapshotPoint? {
+        didSet {
+            guard currentState != oldValue else { return }
+
+            guard let snapshot = currentState,
+                case let .loaded(.success(photo)) = snapshot.photo else {
+                setPlaceholder(title: "")
+                return
+            }
+
+            guard let photoInformation = photo.image.possibleValue() else {
+                setPlaceholder(title: photo.title)
+                return
+            }
+
+            setPhoto(data: photoInformation, title: photo.title)
         }
-
-        setPhoto(data: photoData)
     }
 
-    private func setPlaceholder() {
+    func update(state: SnapshotPoint?) {
+        currentState = state
+    }
+
+    private func setPlaceholder(title: String) {
         placeholderImageView.setHidden(false)
         placeholderImageView.setAlpha(1.0)
         photoImageView.setHidden(true)
         photoImageView.setAlpha(0.0)
+        photoTitleLabel.setText(title)
+        photoTitleLabelBackground.setHidden(title == "")
     }
 
-    private func setPhoto(data: Data) {
+    private func setPhoto(data: Data, title: String) {
         photoImageView.setImageData(data)
         placeholderImageView.setHidden(true)
         placeholderImageView.setAlpha(0.0)
         photoImageView.setHidden(false)
         photoImageView.setAlpha(1.0)
+        photoTitleLabel.setText(title)
+        photoTitleLabelBackground.setHidden(title == "")
     }
 }

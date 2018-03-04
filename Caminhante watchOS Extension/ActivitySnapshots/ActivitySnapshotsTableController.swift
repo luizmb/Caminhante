@@ -19,13 +19,20 @@ final class ActivitySnapshotsTableController: NSObject {
     func update(state: [SnapshotPoint]) {
         guard let table = table else { return }
 
-        table.setNumberOfRows(max(state.count, 1),
+        let withPhotos = state.filter {
+            $0.photo.possibleValue()?.image.possibleValue() != nil
+        }
+
+        table.setNumberOfRows(max(withPhotos.count, 1),
                               withRowType: ActivitySnapshotsRowController.reuseIdentifier)
 
         guard let firstRow = table.rowController(at: 0) as? ActivitySnapshotsRowController else { return }
-        firstRow.update(state: nil)
+        guard !withPhotos.isEmpty else {
+            firstRow.update(state: nil)
+            return
+        }
 
-        state.enumerated().forEach { idx, snapshot in
+        withPhotos.enumerated().forEach { idx, snapshot in
             guard let row = table.rowController(at: idx)
                 as? ActivitySnapshotsRowController else { return }
             row.update(state: snapshot)

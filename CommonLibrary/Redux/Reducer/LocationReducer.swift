@@ -18,13 +18,14 @@ public struct LocationReducer: Reducer {
         switch locationAction {
         case .permissionChanged(let newPermission):
             stateCopy.deviceState.locationPermission = newPermission
-        case .receivedNewSignificantLocation(let location, let photoTask):
+        case .receivedNewSignificantLocation(let location, let id, let photoTask):
             guard var activity = stateCopy.currentActivity,
                 activity.state == .inProgress else { return currentState }
-            let point = SnapshotPoint(location: location,
+            let point = SnapshotPoint(identifier: id,
+                                      location: location,
                                       photo: .syncing(task: photoTask, oldValue: nil),
                                       time: Date())
-            activity.snapshotPoints.append(point)
+            activity.snapshotPoints.insert(point, at: 0)
             stateCopy.currentActivity = activity
         }
         return stateCopy

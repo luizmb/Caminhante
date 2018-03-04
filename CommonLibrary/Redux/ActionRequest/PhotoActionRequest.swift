@@ -23,21 +23,23 @@ extension PhotoActionRequest: ActionRequest {
                         dispatchAsync: @escaping (AnyActionAsync<AppState>) -> Void) {
         switch self {
         case .startSnapshotProcess(let newLocation):
+            let id = UUID()
             let store = StoreAccessors(getState: getState, dispatch: dispatch, dispatchAsync: dispatchAsync)
-            let photoTask = PhotoActionRequest.fetchPhotoInformation(from: newLocation, with: store)
+            let photoTask = PhotoActionRequest.fetchPhotoInformation(from: newLocation, id: id, with: store)
             dispatch(LocationAction.receivedNewSignificantLocation(location: newLocation,
+                                                                   id: id,
                                                                    photoTask: photoTask))
         }
     }
 
-    private static func fetchPhotoInformation(from location: CLLocation, with store: StoreAccessors) -> CancelableTask {
+    private static func fetchPhotoInformation(from location: CLLocation, id: UUID, with store: StoreAccessors) -> CancelableTask {
         return photoAPI.request(.publicPhotosNearby(location: location.coordinate,
                                                     page: 1,
                                                     pageSize: 1),
-                                completion: photoInformationReceived(from: location, with: store))
+                                completion: photoInformationReceived(id: id, with: store))
     }
 
-    private static func photoInformationReceived(from location: CLLocation, with store: StoreAccessors) -> (Result<Data>) -> Void {
+    private static func photoInformationReceived(id: UUID, with store: StoreAccessors) -> (Result<Data>) -> Void {
         return { result in
             let photoResponseResult: Result<PhotoResponse> = result.flatMap(JsonParser.decode)
             let photoInformationResult: Result<PhotoInformation> = photoResponseResult.flatMap { response in
@@ -53,7 +55,7 @@ extension PhotoActionRequest: ActionRequest {
                 return .failure(PhotoError.noPhotosForThisLocation)
             }
 
-            store.dispatch(PhotoAction.gotPhotoInformation(photoInformationResult, at: location))
+            store.dispatch(PhotoAction.gotPhotoInformation(photoInformationResult, id: id))
         }
     }
 
