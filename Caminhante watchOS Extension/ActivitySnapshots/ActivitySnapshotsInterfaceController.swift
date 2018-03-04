@@ -34,6 +34,7 @@ class ActivitySnapshotsInterfaceController: WKInterfaceController {
         guard let activity = state.currentActivity else {
             photoTable.setHidden(true)
             noActivityLabel.setHidden(false)
+            tableController.update(state: [])
             return
         }
 

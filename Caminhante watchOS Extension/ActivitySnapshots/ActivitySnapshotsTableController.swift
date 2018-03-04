@@ -11,6 +11,7 @@ import WatchKit
 final class ActivitySnapshotsTableController: NSObject {
 
     weak var table: WKInterfaceTable?
+    var displayedIds: [UUID] = []
 
     init(table: WKInterfaceTable) {
         self.table = table
@@ -19,23 +20,28 @@ final class ActivitySnapshotsTableController: NSObject {
     func update(state: [SnapshotPoint]) {
         guard let table = table else { return }
 
-        let withPhotos = state.filter {
-            $0.photo.possibleValue()?.image.possibleValue() != nil
-        }
-
-        table.setNumberOfRows(max(withPhotos.count, 1),
-                              withRowType: ActivitySnapshotsRowController.reuseIdentifier)
-
-        guard let firstRow = table.rowController(at: 0) as? ActivitySnapshotsRowController else { return }
-        guard !withPhotos.isEmpty else {
-            firstRow.update(state: nil)
+        guard !state.isEmpty else {
+            table.setNumberOfRows(1, withRowType: ActivitySnapshotsRowController.reuseIdentifier)
+            displayedIds = []
+            (table.rowController(at: 0) as? ActivitySnapshotsRowController)?.update(state: nil)
             return
         }
 
-        withPhotos.enumerated().forEach { idx, snapshot in
-            guard let row = table.rowController(at: idx)
-                as? ActivitySnapshotsRowController else { return }
-            row.update(state: snapshot)
+        let newPoints = state.filter {
+            !displayedIds.contains($0.identifier) &&
+            $0.photo.possibleValue()?.image.possibleValue() != nil
+        }
+
+        if table.numberOfRows == 1, displayedIds.isEmpty, !newPoints.isEmpty {
+            // Remove placeholder
+            table.removeRows(at: IndexSet(integer: 0))
+        }
+
+        displayedIds += newPoints.map { $0.identifier }
+
+        newPoints.reversed().forEach { newPoint in
+            table.insertRows(at: IndexSet(integer: 0), withRowType: ActivitySnapshotsRowController.reuseIdentifier)
+            (table.rowController(at: 0) as? ActivitySnapshotsRowController)?.update(state: newPoint)
         }
     }
 }
