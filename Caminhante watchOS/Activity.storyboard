@@ -101,8 +101,8 @@
                                 <tableRow identifier="ActivitySnapshotsRow" id="HLA-gn-Orh" customClass="ActivitySnapshotsRowController" customModule="Caminhante_watchOS_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="overlap" radius="18" id="ZJx-pq-ZdD">
                                         <items>
-                                            <imageView width="1" alignment="center" verticalAlignment="center" image="placeholder_thumbnail" id="zGP-mA-2sS"/>
-                                            <imageView width="1" alignment="center" verticalAlignment="center" hidden="YES" alpha="0.0" id="3ss-C8-Uqu"/>
+                                            <imageView width="1" alignment="center" verticalAlignment="center" hidden="YES" alpha="0.0" id="zGP-mA-2sS"/>
+                                            <imageView width="1" alignment="center" verticalAlignment="center" image="placeholder_thumbnail" id="3ss-C8-Uqu"/>
                                         </items>
                                         <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                     </group>

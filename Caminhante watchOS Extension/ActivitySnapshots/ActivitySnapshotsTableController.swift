@@ -18,11 +18,11 @@ final class ActivitySnapshotsTableController: NSObject {
 
     func update(state: [SnapshotPoint]) {
         guard let table = table else { return }
-        table.setNumberOfRows(min(state.count, 1),
+
+        table.setNumberOfRows(max(state.count, 1),
                               withRowType: ActivitySnapshotsRowController.reuseIdentifier)
 
-        guard let firstRow = table.rowController(at: 0)
-            as? ActivitySnapshotsRowController else { return }
+        guard let firstRow = table.rowController(at: 0) as? ActivitySnapshotsRowController else { return }
         firstRow.update(state: nil)
 
         state.enumerated().forEach { idx, snapshot in
