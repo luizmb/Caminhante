@@ -21,25 +21,11 @@ enum BootstrapActionRequest: ActionRequest {
         case .boot:
             dispatch(RouterAction.didStart)
 
-            requestAccessToHealthKit()
             locationTracker.requestAuthorization()
-        }
-    }
-
-    private func requestAccessToHealthKit() {
-        let healthStore = HKHealthStore()
-
-        let allTypes = Set([HKObjectType.workoutType(),
-                            HKSeriesType.workoutRoute(),
-                            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-                            HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!])
-
-        healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { success, error in
-            if !success {
-                print(error?.localizedDescription ?? "")
-            }
+            workoutTracker.requestAuthorization()
         }
     }
 }
 
 extension BootstrapActionRequest: HasLocationTracker { }
+extension BootstrapActionRequest: HasWorkoutTracker { }

@@ -12,3 +12,21 @@ public enum Permission: Equatable {
     case denied
     case pending
 }
+
+extension Permission {
+    public var englishDescription: String {
+        switch self {
+        case .authorized: return "Authorized"
+        case .denied: return "Denied"
+        case .pending: return "Pending"
+        }
+    }
+
+    public var localizableString: String {
+        switch self {
+        case .authorized: return "PERMISSION_Authorized"
+        case .denied: return "PERMISSION_Denied"
+        case .pending: return "PERMISSION_Pending"
+        }
+    }
+}

@@ -10,12 +10,12 @@ import Foundation
 import KleinKit
 
 public struct SnapshotPoint {
-    var identifier: UUID
-    var coordinate: SyncableResult<CLLocationCoordinate2D>
-    var photo: SyncableResult<Photo>
-    var time: Date
+    public var identifier: UUID
+    public var coordinate: CLLocationCoordinate2D
+    public var photo: SyncableResult<Photo>
+    public var time: Date
 
-    public init(identifier: UUID = UUID(), coordinate: SyncableResult<CLLocationCoordinate2D>, photo: SyncableResult<Photo>, time: Date) {
+    public init(identifier: UUID = UUID(), coordinate: CLLocationCoordinate2D, photo: SyncableResult<Photo>, time: Date) {
         self.identifier = identifier
         self.coordinate = coordinate
         self.photo = photo

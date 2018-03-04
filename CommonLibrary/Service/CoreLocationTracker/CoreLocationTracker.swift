@@ -23,10 +23,10 @@ public class CoreLocationTracker: NSObject, LocationTracker {
     }
 
     public func requestAuthorization() {
-        if CLLocationManager.authorizationStatus() == .notDetermined {
-            actionDispatcher.dispatch(LocationAction.permissionChanged(newPermission: .pending))
-            manager.requestAlwaysAuthorization()
-        }
+        guard CLLocationManager.authorizationStatus() == .notDetermined else { return }
+
+        actionDispatcher.dispatch(LocationAction.permissionChanged(newPermission: .pending))
+        manager.requestAlwaysAuthorization()
     }
 
     public func start() {

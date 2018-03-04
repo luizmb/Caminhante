@@ -28,31 +28,24 @@ class ActivityControlsInterfaceController: WKInterfaceController {
         allButtons = [startButton, pauseButton, finishButton, resetButton]
 
         stateProvider.subscribe { [weak self] state in
-            self?.update(state: state)
+            DispatchQueue.main.async {
+                self?.update(state: state)
+            }
         }.bind(to: self)
     }
 
     private func update(state: AppState) {
         switch (state.deviceState.locationPermission, state.currentActivity?.state) {
-        case (.denied, _):
-            locationPermissionLabel.setText("Denied")
-            enable(buttons: [])
-        case (.pending, _):
-            locationPermissionLabel.setText("Pending")
-            enable(buttons: [])
-        case (.authorized, .paused?):
-            locationPermissionLabel.setText("Authorized")
-            enable(buttons: [startButton, finishButton])
-        case (.authorized, .inProgress?):
-            locationPermissionLabel.setText("Authorized")
-            enable(buttons: [pauseButton, finishButton])
-        case (.authorized, .finished?):
-            locationPermissionLabel.setText("Authorized")
-            enable(buttons: [resetButton])
-        case (.authorized, nil):
-            locationPermissionLabel.setText("Authorized")
-            enable(buttons: [startButton])
+        case (.denied, _):                  enable(buttons: [])
+        case (.pending, _):                 enable(buttons: [])
+        case (.authorized, .paused?):       enable(buttons: [startButton, finishButton])
+        case (.authorized, .inProgress?):   enable(buttons: [pauseButton, finishButton])
+        case (.authorized, .finished?):     enable(buttons: [resetButton])
+        case (.authorized, nil):            enable(buttons: [startButton])
         }
+
+        locationPermissionLabel.setText(state.deviceState.locationPermission.englishDescription)
+        healthPermissionLabel.setText(state.deviceState.healthPermission.englishDescription)
     }
 
     func enable(buttons: [WKInterfaceButton]) {

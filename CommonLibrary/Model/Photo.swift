@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KleinKit
 
 /// Flickr Photo entity
 public struct Photo: Codable {
@@ -36,6 +37,9 @@ public struct Photo: Codable {
 
     /// Photo owner is within the same family as authenticated user
     public let isFamily: Bool
+
+    /// Image or network task to download it
+    public let image: SyncableResult<Data> = .neverLoaded
 
     /// Default initializer with all properties
     ///
