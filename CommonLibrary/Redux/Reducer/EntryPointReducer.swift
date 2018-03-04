@@ -17,6 +17,7 @@ public struct EntryPointReducer: Reducer {
         AnyReducer(RouterReducer()),
         AnyReducer(LocationReducer()),
         AnyReducer(WorkoutReducer()),
+        AnyReducer(PhotoReducer()),
         AnyReducer(ActivityReducer())
     ]
 

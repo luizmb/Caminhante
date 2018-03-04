@@ -11,7 +11,7 @@ import Nimble
 import XCTest
 
 class PhotoTests: BaseTests {
-    let photo = Photo(id: "1", owner: "my-owner", secret: "my-secret",
+    let photo = PhotoInformation(id: "1", owner: "my-owner", secret: "my-secret",
                       server: "my-server", farm: 9, title: "my-title",
                       isPublic: true, isFriend: false, isFamily: false)
 
@@ -46,54 +46,54 @@ class PhotoTests: BaseTests {
         expect(photo2) == photo
 
         photo2 = photo
-        photo2 = Photo(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
+        photo2 = PhotoInformation(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
                        title: photo.title, isPublic: photo.isPublic, isFriend: photo.isFriend, isFamily: photo.isFamily)
         expect(photo2) == photo
     }
 
     func testEquatableFalse() {
         var photo2 = photo
-        photo2 = Photo(id: "2", owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
+        photo2 = PhotoInformation(id: "2", owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
                        title: photo.title, isPublic: photo.isPublic, isFriend: photo.isFriend, isFamily: photo.isFamily)
         expect(photo2) != photo
 
         photo2 = photo
-        photo2 = Photo(id: photo.id, owner: "", secret: photo.secret, server: photo.server, farm: photo.farm,
+        photo2 = PhotoInformation(id: photo.id, owner: "", secret: photo.secret, server: photo.server, farm: photo.farm,
                        title: photo.title, isPublic: photo.isPublic, isFriend: photo.isFriend, isFamily: photo.isFamily)
         expect(photo2) != photo
 
         photo2 = photo
-        photo2 = Photo(id: photo.id, owner: photo.owner, secret: "", server: photo.server, farm: photo.farm,
+        photo2 = PhotoInformation(id: photo.id, owner: photo.owner, secret: "", server: photo.server, farm: photo.farm,
                        title: photo.title, isPublic: photo.isPublic, isFriend: photo.isFriend, isFamily: photo.isFamily)
         expect(photo2) != photo
 
         photo2 = photo
-        photo2 = Photo(id: photo.id, owner: photo.owner, secret: photo.secret, server: "", farm: photo.farm,
+        photo2 = PhotoInformation(id: photo.id, owner: photo.owner, secret: photo.secret, server: "", farm: photo.farm,
                        title: photo.title, isPublic: photo.isPublic, isFriend: photo.isFriend, isFamily: photo.isFamily)
         expect(photo2) != photo
 
         photo2 = photo
-        photo2 = Photo(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: 42,
+        photo2 = PhotoInformation(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: 42,
                        title: photo.title, isPublic: photo.isPublic, isFriend: photo.isFriend, isFamily: photo.isFamily)
         expect(photo2) != photo
 
         photo2 = photo
-        photo2 = Photo(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
+        photo2 = PhotoInformation(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
                        title: "", isPublic: photo.isPublic, isFriend: photo.isFriend, isFamily: photo.isFamily)
         expect(photo2) != photo
 
         photo2 = photo
-        photo2 = Photo(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
+        photo2 = PhotoInformation(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
                        title: photo.title, isPublic: !photo.isPublic, isFriend: photo.isFriend, isFamily: photo.isFamily)
         expect(photo2) != photo
 
         photo2 = photo
-        photo2 = Photo(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
+        photo2 = PhotoInformation(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
                        title: photo.title, isPublic: photo.isPublic, isFriend: !photo.isFriend, isFamily: photo.isFamily)
         expect(photo2) != photo
 
         photo2 = photo
-        photo2 = Photo(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
+        photo2 = PhotoInformation(id: photo.id, owner: photo.owner, secret: photo.secret, server: photo.server, farm: photo.farm,
                        title: photo.title, isPublic: photo.isPublic, isFriend: photo.isFriend, isFamily: !photo.isFamily)
         expect(photo2) != photo
     }

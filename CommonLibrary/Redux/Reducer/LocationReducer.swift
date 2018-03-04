@@ -5,6 +5,7 @@
 //  Created by Luiz Rodrigo Martins Barbosa on 04.03.18.
 //
 
+import CoreLocation
 import Foundation
 import KleinKit
 
@@ -17,9 +18,14 @@ public struct LocationReducer: Reducer {
         switch locationAction {
         case .permissionChanged(let newPermission):
             stateCopy.deviceState.locationPermission = newPermission
-        case .receivedNewLocation(let latitude, let longitude):
-            // TODO: Implement
-            break
+        case .receivedNewSignificantLocation(let location, let photoTask):
+            guard var activity = stateCopy.currentActivity,
+                activity.state == .inProgress else { return currentState }
+            let point = SnapshotPoint(location: location,
+                                      photo: .syncing(task: photoTask, oldValue: nil),
+                                      time: Date())
+            activity.snapshotPoints.append(point)
+            stateCopy.currentActivity = activity
         }
         return stateCopy
     }

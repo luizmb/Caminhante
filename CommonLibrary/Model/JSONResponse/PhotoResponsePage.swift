@@ -24,7 +24,7 @@ public struct PhotoResponsePage: Codable {
     public let filterCount: Int
 
     /// Photos retrieved for the current page
-    public let photos: [Photo]
+    public let photos: [PhotoInformation]
 }
 
 extension PhotoResponsePage {
@@ -42,6 +42,6 @@ extension PhotoResponsePage {
         self.pageCount = try container.decodeIntOrString(forKey: .pageCount)
         self.pageSize = try container.decodeIntOrString(forKey: .pageSize)
         self.filterCount = try container.decodeIntOrString(forKey: .filterCount)
-        self.photos = try container.decode([Photo].self, forKey: .photos)
+        self.photos = try container.decode([PhotoInformation].self, forKey: .photos)
     }
 }

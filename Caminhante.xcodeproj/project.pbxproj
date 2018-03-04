@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		D50CBF04204BAC64003A337E /* ActivitySnapshotsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF03204BAC64003A337E /* ActivitySnapshotsRowController.swift */; };
 		D50CBF06204C3349003A337E /* ActivitySnapshotsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF05204C3348003A337E /* ActivitySnapshotsTableController.swift */; };
+		D50CBF09204C3901003A337E /* WorkoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF07204C3851003A337E /* WorkoutCoordinator.swift */; };
+		D50CBF0A204C3902003A337E /* WorkoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF07204C3851003A337E /* WorkoutCoordinator.swift */; };
+		D50CBF0C204C44E3003A337E /* PhotoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF0B204C44E3003A337E /* PhotoAction.swift */; };
+		D50CBF0D204C44E3003A337E /* PhotoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF0B204C44E3003A337E /* PhotoAction.swift */; };
+		D50CBF0F204C45BB003A337E /* PhotoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF0E204C45BB003A337E /* PhotoReducer.swift */; };
+		D50CBF10204C45BB003A337E /* PhotoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF0E204C45BB003A337E /* PhotoReducer.swift */; };
 		D53125F2204B658B00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F1204B658B00D3A756 /* HealthKit.framework */; };
 		D53125F5204B65AF00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F4204B65AF00D3A756 /* HealthKit.framework */; };
 		D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125F6204B684F00D3A756 /* CoreLocationTracker.swift */; };
@@ -110,7 +116,7 @@
 		D5975D532049DA8A0004F371 /* KleinKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D3E2049D7820004F371 /* KleinKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5975D542049DA930004F371 /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D402049D7930004F371 /* KleinKit.framework */; };
 		D5975D552049DA930004F371 /* KleinKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D402049D7930004F371 /* KleinKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D5975D5A2049F6DD0004F371 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D592049F6DD0004F371 /* Photo.swift */; };
+		D5975D5A2049F6DD0004F371 /* PhotoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D592049F6DD0004F371 /* PhotoInformation.swift */; };
 		D5975D5C204A02E50004F371 /* PhotoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D5B204A02E50004F371 /* PhotoSize.swift */; };
 		D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D5D204A04750004F371 /* PhotoResponsePage.swift */; };
 		D5975D66204A05410004F371 /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D65204A05410004F371 /* BaseTests.swift */; };
@@ -126,7 +132,7 @@
 		D59AF54D204A38EE00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF548204A37E300BB8DA5 /* PhotoServiceEndpoint.swift */; };
 		D59AF54E204A38EF00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF548204A37E300BB8DA5 /* PhotoServiceEndpoint.swift */; };
 		D59AF54F204A38F300BB8DA5 /* PhotoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D5B204A02E50004F371 /* PhotoSize.swift */; };
-		D59AF550204A38F600BB8DA5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D592049F6DD0004F371 /* Photo.swift */; };
+		D59AF550204A38F600BB8DA5 /* PhotoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D592049F6DD0004F371 /* PhotoInformation.swift */; };
 		D59AF551204A38FA00BB8DA5 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E72099204A16B4005E4E3B /* PhotoResponse.swift */; };
 		D59AF552204A38FA00BB8DA5 /* PhotoResponseErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF541204A320000BB8DA5 /* PhotoResponseErrorCode.swift */; };
 		D59AF553204A38FA00BB8DA5 /* PhotoResponsePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D5D204A04750004F371 /* PhotoResponsePage.swift */; };
@@ -243,6 +249,9 @@
 /* Begin PBXFileReference section */
 		D50CBF03204BAC64003A337E /* ActivitySnapshotsRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySnapshotsRowController.swift; sourceTree = "<group>"; };
 		D50CBF05204C3348003A337E /* ActivitySnapshotsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySnapshotsTableController.swift; sourceTree = "<group>"; };
+		D50CBF07204C3851003A337E /* WorkoutCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCoordinator.swift; sourceTree = "<group>"; };
+		D50CBF0B204C44E3003A337E /* PhotoAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAction.swift; sourceTree = "<group>"; };
+		D50CBF0E204C45BB003A337E /* PhotoReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReducer.swift; sourceTree = "<group>"; };
 		D53125F0204B658B00D3A756 /* Caminhante watchOS Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caminhante watchOS Extension.entitlements"; sourceTree = "<group>"; };
 		D53125F1204B658B00D3A756 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		D53125F3204B65AF00D3A756 /* Caminhante.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caminhante.entitlements; sourceTree = "<group>"; };
@@ -313,7 +322,7 @@
 		D5975D312049D69F0004F371 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		D5975D3E2049D7820004F371 /* KleinKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KleinKit.framework; path = Carthage/Build/iOS/KleinKit.framework; sourceTree = "<group>"; };
 		D5975D402049D7930004F371 /* KleinKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KleinKit.framework; path = Carthage/Build/watchOS/KleinKit.framework; sourceTree = "<group>"; };
-		D5975D592049F6DD0004F371 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		D5975D592049F6DD0004F371 /* PhotoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInformation.swift; sourceTree = "<group>"; };
 		D5975D5B204A02E50004F371 /* PhotoSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSize.swift; sourceTree = "<group>"; };
 		D5975D5D204A04750004F371 /* PhotoResponsePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponsePage.swift; sourceTree = "<group>"; };
 		D5975D63204A05410004F371 /* CommonLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -440,8 +449,9 @@
 			isa = PBXGroup;
 			children = (
 				D5658E6B204B345A008D45E7 /* ActivityAction.swift */,
-				D5658E68204B2F83008D45E7 /* RouterAction.swift */,
 				D5312600204B6F1F00D3A756 /* LocationAction.swift */,
+				D50CBF0B204C44E3003A337E /* PhotoAction.swift */,
+				D5658E68204B2F83008D45E7 /* RouterAction.swift */,
 				D5312613204B84DB00D3A756 /* WorkoutAction.swift */,
 			);
 			path = Action;
@@ -451,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				D5658E53204B2C0D008D45E7 /* ActionRequest.swift */,
+				D50CBF07204C3851003A337E /* WorkoutCoordinator.swift */,
 			);
 			path = ActionRequest;
 			sourceTree = "<group>";
@@ -461,6 +472,7 @@
 				D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */,
 				D5658E62204B2ECF008D45E7 /* EntryPointReducer.swift */,
 				D5312606204B721300D3A756 /* LocationReducer.swift */,
+				D50CBF0E204C45BB003A337E /* PhotoReducer.swift */,
 				D5658E65204B2F41008D45E7 /* RouterReducer.swift */,
 				D5312616204B84FA00D3A756 /* WorkoutReducer.swift */,
 			);
@@ -603,7 +615,7 @@
 				D5658E86204B4739008D45E7 /* Navigation */,
 				D59AF540204A2A8500BB8DA5 /* JSONResponse */,
 				D5658E36204B063B008D45E7 /* State */,
-				D5975D592049F6DD0004F371 /* Photo.swift */,
+				D5975D592049F6DD0004F371 /* PhotoInformation.swift */,
 				D5975D5B204A02E50004F371 /* PhotoSize.swift */,
 			);
 			path = Model;
@@ -1103,6 +1115,7 @@
 				D5658E47204B0DF8008D45E7 /* DeviceState.swift in Sources */,
 				D5658E6F204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
 				D531260E204B7E9200D3A756 /* WorkoutTracker.swift in Sources */,
+				D50CBF0F204C45BB003A337E /* PhotoReducer.swift in Sources */,
 				D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */,
 				D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */,
 				D53125FD204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
@@ -1114,6 +1127,7 @@
 				D5658E6C204B345A008D45E7 /* ActivityAction.swift in Sources */,
 				D5658E69204B2F83008D45E7 /* RouterAction.swift in Sources */,
 				D5658E3B204B0C22008D45E7 /* Activity.swift in Sources */,
+				D50CBF09204C3901003A337E /* WorkoutCoordinator.swift in Sources */,
 				D5658E41204B0CF1008D45E7 /* SnapshotPoint.swift in Sources */,
 				D5E7209A204A16B4005E4E3B /* PhotoResponse.swift in Sources */,
 				D5658E57204B2C46008D45E7 /* ActionDispatcher.swift in Sources */,
@@ -1128,6 +1142,7 @@
 				D5658E60204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF54B204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
 				D5658E8B204B476E008D45E7 /* NavigationRoute.swift in Sources */,
+				D50CBF0C204C44E3003A337E /* PhotoAction.swift in Sources */,
 				D5658E91204B47A5008D45E7 /* NavigationTree.swift in Sources */,
 				D53125FA204B686200D3A756 /* LocationTracker.swift in Sources */,
 				D59AF561204A3CC800BB8DA5 /* URLRequest.swift in Sources */,
@@ -1135,7 +1150,7 @@
 				D5658E54204B2C0D008D45E7 /* ActionRequest.swift in Sources */,
 				D531260B204B7E7200D3A756 /* HealthStore.swift in Sources */,
 				D5658E83204B44CE008D45E7 /* DefaultMapResolver.swift in Sources */,
-				D5975D5A2049F6DD0004F371 /* Photo.swift in Sources */,
+				D5975D5A2049F6DD0004F371 /* PhotoInformation.swift in Sources */,
 				D59AF545204A335700BB8DA5 /* PhotoResponseErrorCode.swift in Sources */,
 				D59AF53C204A1CAA00BB8DA5 /* Codable.swift in Sources */,
 				D5975D5C204A02E50004F371 /* PhotoSize.swift in Sources */,
@@ -1157,8 +1172,9 @@
 				D5658E48204B0DF8008D45E7 /* DeviceState.swift in Sources */,
 				D5658E70204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
 				D531260F204B7E9200D3A756 /* WorkoutTracker.swift in Sources */,
+				D50CBF10204C45BB003A337E /* PhotoReducer.swift in Sources */,
 				D53125F8204B684F00D3A756 /* CoreLocationTracker.swift in Sources */,
-				D59AF550204A38F600BB8DA5 /* Photo.swift in Sources */,
+				D59AF550204A38F600BB8DA5 /* PhotoInformation.swift in Sources */,
 				D53125FE204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
 				D5658E67204B2F41008D45E7 /* RouterReducer.swift in Sources */,
 				D5312615204B84DB00D3A756 /* WorkoutAction.swift in Sources */,
@@ -1168,6 +1184,7 @@
 				D5658E6D204B345A008D45E7 /* ActivityAction.swift in Sources */,
 				D5658E6A204B2F83008D45E7 /* RouterAction.swift in Sources */,
 				D5658E3C204B0C22008D45E7 /* Activity.swift in Sources */,
+				D50CBF0A204C3902003A337E /* WorkoutCoordinator.swift in Sources */,
 				D5658E42204B0CF1008D45E7 /* SnapshotPoint.swift in Sources */,
 				D59AF54F204A38F300BB8DA5 /* PhotoSize.swift in Sources */,
 				D5658E58204B2C46008D45E7 /* ActionDispatcher.swift in Sources */,
@@ -1182,6 +1199,7 @@
 				D5658E61204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF553204A38FA00BB8DA5 /* PhotoResponsePage.swift in Sources */,
 				D5658E8C204B476E008D45E7 /* NavigationRoute.swift in Sources */,
+				D50CBF0D204C44E3003A337E /* PhotoAction.swift in Sources */,
 				D5658E92204B47A5008D45E7 /* NavigationTree.swift in Sources */,
 				D53125FB204B686200D3A756 /* LocationTracker.swift in Sources */,
 				D59AF562204A3CC800BB8DA5 /* URLRequest.swift in Sources */,

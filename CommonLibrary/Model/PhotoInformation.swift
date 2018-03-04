@@ -8,8 +8,8 @@
 import Foundation
 import KleinKit
 
-/// Flickr Photo entity
-public struct Photo: Codable {
+/// Information about Flickr Photo
+public struct PhotoInformation: Codable {
 
     /// Photo ID on Flickr
     public let id: String
@@ -68,7 +68,7 @@ public struct Photo: Codable {
     }
 }
 
-extension Photo {
+extension PhotoInformation {
 
     /// Get the Flickr URL for this photo, given a size
     ///
@@ -89,7 +89,7 @@ extension Photo {
     }
 }
 
-extension Photo {
+extension PhotoInformation {
     enum CodingKeys: String, CodingKey {
         case id, owner, secret, server, farm, title
         case isPublic = "ispublic"
@@ -111,8 +111,8 @@ extension Photo {
     }
 }
 
-extension Photo: Equatable {
-    public static func == (lhs: Photo, rhs: Photo) -> Bool {
+extension PhotoInformation: Equatable {
+    public static func == (lhs: PhotoInformation, rhs: PhotoInformation) -> Bool {
         return
             lhs.id == rhs.id &&
             lhs.owner == rhs.owner &&

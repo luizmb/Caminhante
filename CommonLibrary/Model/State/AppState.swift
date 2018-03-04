@@ -10,6 +10,7 @@ import Foundation
 public struct AppState {
     public var currentActivity: Activity?
     public var deviceState: DeviceState
+    public let significantDistance = Measurement(value: 100, unit: UnitLength.meters)
 
     public init() {
         currentActivity = nil
