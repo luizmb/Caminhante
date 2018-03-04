@@ -10,4 +10,5 @@ import KleinKit
 
 public enum PhotoAction: Action {
     case gotPhotoInformation(Result<PhotoInformation>, at: CLLocation)
+    case gotPhotoData(Result<Data>, photoId: String)
 }

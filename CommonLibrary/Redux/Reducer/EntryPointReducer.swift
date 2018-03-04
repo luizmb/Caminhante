@@ -16,7 +16,7 @@ public struct EntryPointReducer: Reducer {
     private let reducers = [
         AnyReducer(RouterReducer()),
         AnyReducer(LocationReducer()),
-        AnyReducer(WorkoutReducer()),
+        AnyReducer(HealthKitReducer()),
         AnyReducer(PhotoReducer()),
         AnyReducer(ActivityReducer())
     ]

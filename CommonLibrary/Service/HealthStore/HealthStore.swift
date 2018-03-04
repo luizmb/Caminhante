@@ -9,14 +9,14 @@ import Foundation
 import HealthKit
 import KleinKit
 
-public class HealthStore: NSObject, WorkoutTracker {
+public class HealthStore: NSObject, HealthKitTracker {
     let healthStore = HKHealthStore()
     let monitoredTypes = Set([HKObjectType.workoutType(),
                               HKSeriesType.workoutRoute(),
                               HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
                               HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!])
 
-    public static let shared: WorkoutTracker = {
+    public static let shared: HealthKitTracker = {
         let global = HealthStore()
         return global
     }()
@@ -28,7 +28,7 @@ public class HealthStore: NSObject, WorkoutTracker {
     public func requestAuthorization() {
         let currentPermission = getCurrentPermission(for: monitoredTypes)
 
-        actionDispatcher.dispatch(WorkoutAction.permissionChanged(newPermission: currentPermission))
+        actionDispatcher.dispatch(HealthKitAction.permissionChanged(newPermission: currentPermission))
 
         guard currentPermission == .pending else { return }
 
@@ -36,9 +36,9 @@ public class HealthStore: NSObject, WorkoutTracker {
             guard let sself = self else { return }
             switch (success, error) {
             case (false, _), (_, .some):
-                sself.actionDispatcher.dispatch(WorkoutAction.permissionChanged(newPermission: .denied))
+                sself.actionDispatcher.dispatch(HealthKitAction.permissionChanged(newPermission: .denied))
             case (true, nil):
-                sself.actionDispatcher.dispatch(WorkoutAction.permissionChanged(newPermission: .authorized))
+                sself.actionDispatcher.dispatch(HealthKitAction.permissionChanged(newPermission: .authorized))
             }
         }
     }

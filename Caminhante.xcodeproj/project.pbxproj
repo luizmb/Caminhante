@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		D50CBF04204BAC64003A337E /* ActivitySnapshotsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF03204BAC64003A337E /* ActivitySnapshotsRowController.swift */; };
 		D50CBF06204C3349003A337E /* ActivitySnapshotsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF05204C3348003A337E /* ActivitySnapshotsTableController.swift */; };
-		D50CBF09204C3901003A337E /* WorkoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF07204C3851003A337E /* WorkoutCoordinator.swift */; };
-		D50CBF0A204C3902003A337E /* WorkoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF07204C3851003A337E /* WorkoutCoordinator.swift */; };
+		D50CBF09204C3901003A337E /* PhotoActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF07204C3851003A337E /* PhotoActionRequest.swift */; };
+		D50CBF0A204C3902003A337E /* PhotoActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF07204C3851003A337E /* PhotoActionRequest.swift */; };
 		D50CBF0C204C44E3003A337E /* PhotoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF0B204C44E3003A337E /* PhotoAction.swift */; };
 		D50CBF0D204C44E3003A337E /* PhotoAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF0B204C44E3003A337E /* PhotoAction.swift */; };
 		D50CBF0F204C45BB003A337E /* PhotoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF0E204C45BB003A337E /* PhotoReducer.swift */; };
 		D50CBF10204C45BB003A337E /* PhotoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF0E204C45BB003A337E /* PhotoReducer.swift */; };
+		D50CBF12204C492E003A337E /* LocationActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF11204C492E003A337E /* LocationActionRequest.swift */; };
+		D50CBF13204C492E003A337E /* LocationActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF11204C492E003A337E /* LocationActionRequest.swift */; };
+		D50CBF15204C6107003A337E /* BootstrapActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CBF14204C6107003A337E /* BootstrapActionRequest.swift */; };
 		D53125F2204B658B00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F1204B658B00D3A756 /* HealthKit.framework */; };
 		D53125F5204B65AF00D3A756 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53125F4204B65AF00D3A756 /* HealthKit.framework */; };
 		D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53125F6204B684F00D3A756 /* CoreLocationTracker.swift */; };
@@ -31,14 +34,14 @@
 		D5312608204B721300D3A756 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312606204B721300D3A756 /* LocationReducer.swift */; };
 		D531260B204B7E7200D3A756 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260A204B7E7200D3A756 /* HealthStore.swift */; };
 		D531260C204B7E7200D3A756 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260A204B7E7200D3A756 /* HealthStore.swift */; };
-		D531260E204B7E9200D3A756 /* WorkoutTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260D204B7E9200D3A756 /* WorkoutTracker.swift */; };
-		D531260F204B7E9200D3A756 /* WorkoutTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260D204B7E9200D3A756 /* WorkoutTracker.swift */; };
-		D5312611204B7E9B00D3A756 /* WorkoutTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312610204B7E9B00D3A756 /* WorkoutTracker.DI.swift */; };
-		D5312612204B7E9B00D3A756 /* WorkoutTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312610204B7E9B00D3A756 /* WorkoutTracker.DI.swift */; };
-		D5312614204B84DB00D3A756 /* WorkoutAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312613204B84DB00D3A756 /* WorkoutAction.swift */; };
-		D5312615204B84DB00D3A756 /* WorkoutAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312613204B84DB00D3A756 /* WorkoutAction.swift */; };
-		D5312617204B84FA00D3A756 /* WorkoutReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312616204B84FA00D3A756 /* WorkoutReducer.swift */; };
-		D5312618204B84FA00D3A756 /* WorkoutReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312616204B84FA00D3A756 /* WorkoutReducer.swift */; };
+		D531260E204B7E9200D3A756 /* HealthKitTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260D204B7E9200D3A756 /* HealthKitTracker.swift */; };
+		D531260F204B7E9200D3A756 /* HealthKitTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260D204B7E9200D3A756 /* HealthKitTracker.swift */; };
+		D5312611204B7E9B00D3A756 /* HealthKitTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312610204B7E9B00D3A756 /* HealthKitTracker.DI.swift */; };
+		D5312612204B7E9B00D3A756 /* HealthKitTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312610204B7E9B00D3A756 /* HealthKitTracker.DI.swift */; };
+		D5312614204B84DB00D3A756 /* HealthKitAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312613204B84DB00D3A756 /* HealthKitAction.swift */; };
+		D5312615204B84DB00D3A756 /* HealthKitAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312613204B84DB00D3A756 /* HealthKitAction.swift */; };
+		D5312617204B84FA00D3A756 /* HealthKitReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312616204B84FA00D3A756 /* HealthKitReducer.swift */; };
+		D5312618204B84FA00D3A756 /* HealthKitReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312616204B84FA00D3A756 /* HealthKitReducer.swift */; };
 		D5658E22204A468D008D45E7 /* PhotoServiceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */; };
 		D5658E24204A4899008D45E7 /* IntegrationFlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */; };
 		D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E28204A56E1008D45E7 /* Constants.secret.swift */; };
@@ -249,9 +252,11 @@
 /* Begin PBXFileReference section */
 		D50CBF03204BAC64003A337E /* ActivitySnapshotsRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySnapshotsRowController.swift; sourceTree = "<group>"; };
 		D50CBF05204C3348003A337E /* ActivitySnapshotsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySnapshotsTableController.swift; sourceTree = "<group>"; };
-		D50CBF07204C3851003A337E /* WorkoutCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCoordinator.swift; sourceTree = "<group>"; };
+		D50CBF07204C3851003A337E /* PhotoActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoActionRequest.swift; sourceTree = "<group>"; };
 		D50CBF0B204C44E3003A337E /* PhotoAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAction.swift; sourceTree = "<group>"; };
 		D50CBF0E204C45BB003A337E /* PhotoReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoReducer.swift; sourceTree = "<group>"; };
+		D50CBF11204C492E003A337E /* LocationActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationActionRequest.swift; sourceTree = "<group>"; };
+		D50CBF14204C6107003A337E /* BootstrapActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapActionRequest.swift; sourceTree = "<group>"; };
 		D53125F0204B658B00D3A756 /* Caminhante watchOS Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Caminhante watchOS Extension.entitlements"; sourceTree = "<group>"; };
 		D53125F1204B658B00D3A756 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		D53125F3204B65AF00D3A756 /* Caminhante.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Caminhante.entitlements; sourceTree = "<group>"; };
@@ -263,10 +268,10 @@
 		D5312603204B700100D3A756 /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		D5312606204B721300D3A756 /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
 		D531260A204B7E7200D3A756 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
-		D531260D204B7E9200D3A756 /* WorkoutTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTracker.swift; sourceTree = "<group>"; };
-		D5312610204B7E9B00D3A756 /* WorkoutTracker.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTracker.DI.swift; sourceTree = "<group>"; };
-		D5312613204B84DB00D3A756 /* WorkoutAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutAction.swift; sourceTree = "<group>"; };
-		D5312616204B84FA00D3A756 /* WorkoutReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutReducer.swift; sourceTree = "<group>"; };
+		D531260D204B7E9200D3A756 /* HealthKitTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitTracker.swift; sourceTree = "<group>"; };
+		D5312610204B7E9B00D3A756 /* HealthKitTracker.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitTracker.DI.swift; sourceTree = "<group>"; };
+		D5312613204B84DB00D3A756 /* HealthKitAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAction.swift; sourceTree = "<group>"; };
+		D5312616204B84FA00D3A756 /* HealthKitReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitReducer.swift; sourceTree = "<group>"; };
 		D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceEndpointTests.swift; sourceTree = "<group>"; };
 		D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationFlickrTests.swift; sourceTree = "<group>"; };
 		D5658E25204A55C3008D45E7 /* Constants.example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.example.swift; sourceTree = "<group>"; };
@@ -449,10 +454,10 @@
 			isa = PBXGroup;
 			children = (
 				D5658E6B204B345A008D45E7 /* ActivityAction.swift */,
+				D5312613204B84DB00D3A756 /* HealthKitAction.swift */,
 				D5312600204B6F1F00D3A756 /* LocationAction.swift */,
 				D50CBF0B204C44E3003A337E /* PhotoAction.swift */,
 				D5658E68204B2F83008D45E7 /* RouterAction.swift */,
-				D5312613204B84DB00D3A756 /* WorkoutAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -461,7 +466,8 @@
 			isa = PBXGroup;
 			children = (
 				D5658E53204B2C0D008D45E7 /* ActionRequest.swift */,
-				D50CBF07204C3851003A337E /* WorkoutCoordinator.swift */,
+				D50CBF11204C492E003A337E /* LocationActionRequest.swift */,
+				D50CBF07204C3851003A337E /* PhotoActionRequest.swift */,
 			);
 			path = ActionRequest;
 			sourceTree = "<group>";
@@ -471,10 +477,10 @@
 			children = (
 				D5658E6E204B34AC008D45E7 /* ActivityReducer.swift */,
 				D5658E62204B2ECF008D45E7 /* EntryPointReducer.swift */,
+				D5312616204B84FA00D3A756 /* HealthKitReducer.swift */,
 				D5312606204B721300D3A756 /* LocationReducer.swift */,
 				D50CBF0E204C45BB003A337E /* PhotoReducer.swift */,
 				D5658E65204B2F41008D45E7 /* RouterReducer.swift */,
-				D5312616204B84FA00D3A756 /* WorkoutReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -567,6 +573,7 @@
 				D5975D0C2049D6790004F371 /* Assets.xcassets */,
 				D5975D0E2049D6790004F371 /* LaunchScreen.storyboard */,
 				D5975D112049D6790004F371 /* Info.plist */,
+				D50CBF14204C6107003A337E /* BootstrapActionRequest.swift */,
 			);
 			path = Caminhante;
 			sourceTree = "<group>";
@@ -676,17 +683,17 @@
 		D59AF547204A379B00BB8DA5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				D53125FF204B6A6500D3A756 /* CoreLocationTracker */,
-				D5312609204B7E1700D3A756 /* HealthStore */,
-				D59AF559204A39CF00BB8DA5 /* FlickrAPI */,
-				D59AF548204A37E300BB8DA5 /* PhotoServiceEndpoint.swift */,
-				D59AF54A204A38E600BB8DA5 /* PhotoAPI.DI.swift */,
-				D59AF556204A391500BB8DA5 /* PhotoAPI.swift */,
 				D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */,
+				D5312610204B7E9B00D3A756 /* HealthKitTracker.DI.swift */,
+				D531260D204B7E9200D3A756 /* HealthKitTracker.swift */,
 				D53125FC204B686F00D3A756 /* LocationTracker.DI.swift */,
 				D53125F9204B686200D3A756 /* LocationTracker.swift */,
-				D5312610204B7E9B00D3A756 /* WorkoutTracker.DI.swift */,
-				D531260D204B7E9200D3A756 /* WorkoutTracker.swift */,
+				D59AF54A204A38E600BB8DA5 /* PhotoAPI.DI.swift */,
+				D59AF556204A391500BB8DA5 /* PhotoAPI.swift */,
+				D59AF548204A37E300BB8DA5 /* PhotoServiceEndpoint.swift */,
+				D53125FF204B6A6500D3A756 /* CoreLocationTracker */,
+				D59AF559204A39CF00BB8DA5 /* FlickrAPI */,
+				D5312609204B7E1700D3A756 /* HealthStore */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1114,20 +1121,20 @@
 				D5312604204B700100D3A756 /* Permission.swift in Sources */,
 				D5658E47204B0DF8008D45E7 /* DeviceState.swift in Sources */,
 				D5658E6F204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
-				D531260E204B7E9200D3A756 /* WorkoutTracker.swift in Sources */,
+				D531260E204B7E9200D3A756 /* HealthKitTracker.swift in Sources */,
 				D50CBF0F204C45BB003A337E /* PhotoReducer.swift in Sources */,
 				D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */,
 				D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */,
 				D53125FD204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
 				D5658E66204B2F41008D45E7 /* RouterReducer.swift in Sources */,
-				D5312614204B84DB00D3A756 /* WorkoutAction.swift in Sources */,
-				D5312611204B7E9B00D3A756 /* WorkoutTracker.DI.swift in Sources */,
+				D5312614204B84DB00D3A756 /* HealthKitAction.swift in Sources */,
+				D5312611204B7E9B00D3A756 /* HealthKitTracker.DI.swift in Sources */,
 				D5658E5A204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */,
 				D59AF546204A335D00BB8DA5 /* PhotoResponseStatus.swift in Sources */,
 				D5658E6C204B345A008D45E7 /* ActivityAction.swift in Sources */,
 				D5658E69204B2F83008D45E7 /* RouterAction.swift in Sources */,
 				D5658E3B204B0C22008D45E7 /* Activity.swift in Sources */,
-				D50CBF09204C3901003A337E /* WorkoutCoordinator.swift in Sources */,
+				D50CBF09204C3901003A337E /* PhotoActionRequest.swift in Sources */,
 				D5658E41204B0CF1008D45E7 /* SnapshotPoint.swift in Sources */,
 				D5E7209A204A16B4005E4E3B /* PhotoResponse.swift in Sources */,
 				D5658E57204B2C46008D45E7 /* ActionDispatcher.swift in Sources */,
@@ -1152,9 +1159,10 @@
 				D5658E83204B44CE008D45E7 /* DefaultMapResolver.swift in Sources */,
 				D5975D5A2049F6DD0004F371 /* PhotoInformation.swift in Sources */,
 				D59AF545204A335700BB8DA5 /* PhotoResponseErrorCode.swift in Sources */,
+				D50CBF12204C492E003A337E /* LocationActionRequest.swift in Sources */,
 				D59AF53C204A1CAA00BB8DA5 /* Codable.swift in Sources */,
 				D5975D5C204A02E50004F371 /* PhotoSize.swift in Sources */,
-				D5312617204B84FA00D3A756 /* WorkoutReducer.swift in Sources */,
+				D5312617204B84FA00D3A756 /* HealthKitReducer.swift in Sources */,
 				D5658E63204B2ECF008D45E7 /* EntryPointReducer.swift in Sources */,
 				D5658E44204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				D5658E3E204B0C3A008D45E7 /* ActivityState.swift in Sources */,
@@ -1171,20 +1179,20 @@
 				D5312605204B700100D3A756 /* Permission.swift in Sources */,
 				D5658E48204B0DF8008D45E7 /* DeviceState.swift in Sources */,
 				D5658E70204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
-				D531260F204B7E9200D3A756 /* WorkoutTracker.swift in Sources */,
+				D531260F204B7E9200D3A756 /* HealthKitTracker.swift in Sources */,
 				D50CBF10204C45BB003A337E /* PhotoReducer.swift in Sources */,
 				D53125F8204B684F00D3A756 /* CoreLocationTracker.swift in Sources */,
 				D59AF550204A38F600BB8DA5 /* PhotoInformation.swift in Sources */,
 				D53125FE204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
 				D5658E67204B2F41008D45E7 /* RouterReducer.swift in Sources */,
-				D5312615204B84DB00D3A756 /* WorkoutAction.swift in Sources */,
-				D5312612204B7E9B00D3A756 /* WorkoutTracker.DI.swift in Sources */,
+				D5312615204B84DB00D3A756 /* HealthKitAction.swift in Sources */,
+				D5312612204B7E9B00D3A756 /* HealthKitTracker.DI.swift in Sources */,
 				D5658E5B204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */,
 				D59AF554204A38FA00BB8DA5 /* PhotoResponseStatus.swift in Sources */,
 				D5658E6D204B345A008D45E7 /* ActivityAction.swift in Sources */,
 				D5658E6A204B2F83008D45E7 /* RouterAction.swift in Sources */,
 				D5658E3C204B0C22008D45E7 /* Activity.swift in Sources */,
-				D50CBF0A204C3902003A337E /* WorkoutCoordinator.swift in Sources */,
+				D50CBF0A204C3902003A337E /* PhotoActionRequest.swift in Sources */,
 				D5658E42204B0CF1008D45E7 /* SnapshotPoint.swift in Sources */,
 				D59AF54F204A38F300BB8DA5 /* PhotoSize.swift in Sources */,
 				D5658E58204B2C46008D45E7 /* ActionDispatcher.swift in Sources */,
@@ -1209,9 +1217,10 @@
 				D5658E82204B44CD008D45E7 /* DefaultMapResolver.swift in Sources */,
 				D59AF555204A390100BB8DA5 /* Codable.swift in Sources */,
 				D59AF552204A38FA00BB8DA5 /* PhotoResponseErrorCode.swift in Sources */,
+				D50CBF13204C492E003A337E /* LocationActionRequest.swift in Sources */,
 				D59AF551204A38FA00BB8DA5 /* PhotoResponse.swift in Sources */,
 				D59AF54D204A38EE00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */,
-				D5312618204B84FA00D3A756 /* WorkoutReducer.swift in Sources */,
+				D5312618204B84FA00D3A756 /* HealthKitReducer.swift in Sources */,
 				D5658E64204B2ECF008D45E7 /* EntryPointReducer.swift in Sources */,
 				D5658E45204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				D5658E3F204B0C3A008D45E7 /* ActivityState.swift in Sources */,
@@ -1222,6 +1231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50CBF15204C6107003A337E /* BootstrapActionRequest.swift in Sources */,
 				D5975D082049D6790004F371 /* ViewController.swift in Sources */,
 				D5975D062049D6790004F371 /* AppDelegate.swift in Sources */,
 			);

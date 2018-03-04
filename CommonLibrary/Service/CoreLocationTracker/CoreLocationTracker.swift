@@ -43,7 +43,7 @@ public class CoreLocationTracker: NSObject, LocationTracker {
 extension CoreLocationTracker: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        actionDispatcher.async(WorkoutCoordinator.gotNewLocation(location: location))
+        actionDispatcher.async(LocationActionRequest.evaluateNewLocation(location: location))
     }
 
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

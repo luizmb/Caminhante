@@ -12,6 +12,7 @@ extension PhotoServiceEndpoint {
     private var httpMethod: String {
         switch self {
         case .publicPhotosNearby: return "GET"
+        case .publicPhoto: return "GET"
         }
     }
 }
@@ -34,6 +35,8 @@ extension PhotoServiceEndpoint: URLEndpoint {
                                                 "nojsoncallback": "1",
                                                 "format": "json"
                 ])
+        case .publicPhoto(let url):
+            return URLRequest.createRequest(url: url.absoluteString, httpMethod: httpMethod)
         }
     }
 }

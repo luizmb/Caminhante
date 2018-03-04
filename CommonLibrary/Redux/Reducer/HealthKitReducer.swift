@@ -1,5 +1,5 @@
 //
-//  WorkoutReducer.swift
+//  HealthKitReducer.swift
 //  Caminhante
 //
 //  Created by Luiz Rodrigo Martins Barbosa on 04.03.18.
@@ -8,13 +8,13 @@
 import Foundation
 import KleinKit
 
-public struct WorkoutReducer: Reducer {
+public struct HealthKitReducer: Reducer {
     public func reduce(_ currentState: AppState, action: Action) -> AppState {
-        guard let workoutAction = action as? WorkoutAction else { return currentState }
+        guard let healthKitAction = action as? HealthKitAction else { return currentState }
 
         var stateCopy = currentState
 
-        switch workoutAction {
+        switch healthKitAction {
         case .permissionChanged(let newPermission):
             stateCopy.deviceState.healthPermission = newPermission
         }
