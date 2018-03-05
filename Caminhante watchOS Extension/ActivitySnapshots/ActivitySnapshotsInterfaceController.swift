@@ -16,6 +16,7 @@ class ActivitySnapshotsInterfaceController: WKInterfaceController {
     @IBOutlet var photoTable: WKInterfaceTable!
     @IBOutlet var noActivityLabel: WKInterfaceLabel!
     var tableController: ActivitySnapshotsTableController!
+    var lastKnownActivityState = ActivityState.finished
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -36,6 +37,11 @@ class ActivitySnapshotsInterfaceController: WKInterfaceController {
             noActivityLabel.setHidden(false)
             tableController.update(state: [])
             return
+        }
+
+        // TODO: Navigation should be done via proper routing state
+        if lastKnownActivityState != .inProgress && activity.state == .inProgress {
+            self.becomeCurrentPage()
         }
 
         photoTable.setHidden(false)
