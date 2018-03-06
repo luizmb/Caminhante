@@ -29,9 +29,11 @@ enum BootstrapActionRequest: ActionRequest {
 
             locationTracker.requestAuthorization()
             healthKitTracker.requestAuthorization()
+            remoteDevice.activateSession()
         }
     }
 }
 
 extension BootstrapActionRequest: HasLocationTracker { }
 extension BootstrapActionRequest: HasHealthKitTracker { }
+extension BootstrapActionRequest: HasRemoteDevice { }

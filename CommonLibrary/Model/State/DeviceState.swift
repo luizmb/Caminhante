@@ -20,6 +20,8 @@ public struct DeviceState {
     public var isActive: Bool
     public var locationPermission: Permission
     public var healthPermission: Permission
+    public var counterPartConnection: Bool
+    public var counterPartReachable: Bool
 
     public var navigation = NavigationTree.root()
     #if os(iOS)
@@ -36,6 +38,8 @@ public struct DeviceState {
         self.isActive = isActive
         self.locationPermission = locationPermission
         self.healthPermission = healthPermission
+        self.counterPartConnection = false
+        self.counterPartReachable = false
     }
 }
 
@@ -46,6 +50,8 @@ extension DeviceState: Equatable {
             lhs.isActive == rhs.isActive &&
             lhs.locationPermission == rhs.locationPermission &&
             lhs.healthPermission == rhs.healthPermission &&
-            lhs.navigation == rhs.navigation
+            lhs.navigation == rhs.navigation &&
+            lhs.counterPartConnection == rhs.counterPartConnection &&
+            lhs.counterPartReachable == rhs.counterPartReachable
     }
 }

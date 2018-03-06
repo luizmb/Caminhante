@@ -7,7 +7,9 @@
 
 import Foundation
 
-public enum ActivityState {
+public enum ActivityState: Int, Codable {
+    public static let className = String(describing: ActivityState.self)
+
     case paused
     case inProgress
     case finished

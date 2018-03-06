@@ -58,7 +58,6 @@ class ActivityControlsInterfaceController: WKInterfaceController {
 
     @IBAction func startButtonTap() {
         actionDispatcher.async(ActivityActionRequest.startActivity)
-        actionDispatcher.dispatch(RouterAction.didNavigate(.activityPhotoStream))
     }
 
     @IBAction func pauseButtonTap() {

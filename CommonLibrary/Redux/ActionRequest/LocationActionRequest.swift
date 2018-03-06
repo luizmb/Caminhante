@@ -8,9 +8,13 @@
 import CoreLocation
 import Foundation
 import KleinKit
+#if os(iOS)
+import UIKit
+#endif
 
 public enum LocationActionRequest {
     case evaluateNewLocation(location: CLLocation)
+    case reviewPermissions
 }
 
 extension LocationActionRequest: ActionRequest {
@@ -32,6 +36,15 @@ extension LocationActionRequest: ActionRequest {
 
             // Either it's the first point or distance from last point is significant
             dispatchAsync(AnyActionAsync(PhotoActionRequest.startSnapshotProcess(newLocation: location)))
+        case .reviewPermissions:
+            #if os(iOS)
+            guard let app = getState().deviceState.application else { return }
+            guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else { return }
+
+            if app.canOpenURL(settingsUrl) {
+                app.open(settingsUrl, options: [:], completionHandler: nil)
+            }
+            #endif
         }
     }
 }

@@ -41,7 +41,7 @@ class ActivityControlsViewController: UIViewController {
     }
 
     @IBAction func settingsAppTap(_ sender: Any) {
-//        actionDispatcher.async(ActivityActionRequest.startActivity)
+        actionDispatcher.async(LocationActionRequest.reviewPermissions)
     }
 
     @IBAction func startButtonTap(_ sender: Any) {
@@ -72,6 +72,7 @@ extension ActivityControlsViewController {
         case (.authorized, nil):            enable(buttons: [startButton])
         }
 
+        allButtons.forEach { $0.isEnabled = state.deviceState.counterPartReachable }
         locationPermissionLabel.text = state.deviceState.locationPermission.englishDescription
         healthKitPermissionLabel.text = state.deviceState.healthPermission.englishDescription
     }

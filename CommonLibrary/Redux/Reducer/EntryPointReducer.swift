@@ -18,7 +18,8 @@ public struct EntryPointReducer: Reducer {
         AnyReducer(LocationReducer()),
         AnyReducer(HealthKitReducer()),
         AnyReducer(PhotoReducer()),
-        AnyReducer(ActivityReducer())
+        AnyReducer(ActivityReducer()),
+        AnyReducer(RemoteDeviceReducer())
     ]
 
     public func reduce(_ currentState: AppState, action: Action) -> AppState {

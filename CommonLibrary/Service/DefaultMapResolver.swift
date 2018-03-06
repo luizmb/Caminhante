@@ -17,6 +17,7 @@ public class DefaultMapResolver {
         injector.mapper.mapSingleton(StateProvider.self) { Store.shared }
         injector.mapper.mapSingleton(LocationTracker.self) { CoreLocationTracker.shared }
         injector.mapper.mapSingleton(HealthKitTracker.self) { HealthStore.shared }
+        injector.mapper.mapSingleton(RemoteDevice.self) { WatchConnectivityControl.shared }
     }
 }
 
