@@ -95,8 +95,8 @@
 		D5975CD52049D1830004F371 /* CommonLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D5975CD32049D1830004F371 /* CommonLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5975CE72049D2D40004F371 /* CommonLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D5975CD32049D1830004F371 /* CommonLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5975D062049D6790004F371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D052049D6790004F371 /* AppDelegate.swift */; };
-		D5975D082049D6790004F371 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D072049D6790004F371 /* ViewController.swift */; };
-		D5975D0B2049D6790004F371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5975D092049D6790004F371 /* Main.storyboard */; };
+		D5975D082049D6790004F371 /* ActivityControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D072049D6790004F371 /* ActivityControlsViewController.swift */; };
+		D5975D0B2049D6790004F371 /* ActivityControls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5975D092049D6790004F371 /* ActivityControls.storyboard */; };
 		D5975D0D2049D6790004F371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5975D0C2049D6790004F371 /* Assets.xcassets */; };
 		D5975D102049D6790004F371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5975D0E2049D6790004F371 /* LaunchScreen.storyboard */; };
 		D5975D1D2049D69E0004F371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5975D1C2049D69E0004F371 /* Assets.xcassets */; };
@@ -306,8 +306,8 @@
 		D5975CE12049D1AE0004F371 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
 		D5975D032049D6780004F371 /* Caminhante.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caminhante.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5975D052049D6790004F371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D5975D072049D6790004F371 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D5975D0A2049D6790004F371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D5975D072049D6790004F371 /* ActivityControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityControlsViewController.swift; sourceTree = "<group>"; };
+		D5975D0A2049D6790004F371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ActivityControls.storyboard; sourceTree = "<group>"; };
 		D5975D0C2049D6790004F371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5975D0F2049D6790004F371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5975D112049D6790004F371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -562,7 +562,7 @@
 			children = (
 				D53125F3204B65AF00D3A756 /* Caminhante.entitlements */,
 				D5DDDD07204EEE8C008FC152 /* Bootstrap */,
-				D5DDDD08204EEF09008FC152 /* View */,
+				D5DDDD08204EEF09008FC152 /* ActivityControls */,
 			);
 			path = Caminhante;
 			sourceTree = "<group>";
@@ -710,7 +710,6 @@
 			children = (
 				D5975D0E2049D6790004F371 /* LaunchScreen.storyboard */,
 				D5975D052049D6790004F371 /* AppDelegate.swift */,
-				D5975D072049D6790004F371 /* ViewController.swift */,
 				D5975D0C2049D6790004F371 /* Assets.xcassets */,
 				D5975D112049D6790004F371 /* Info.plist */,
 				D50CBF14204C6107003A337E /* BootstrapActionRequest.swift */,
@@ -718,12 +717,13 @@
 			path = Bootstrap;
 			sourceTree = "<group>";
 		};
-		D5DDDD08204EEF09008FC152 /* View */ = {
+		D5DDDD08204EEF09008FC152 /* ActivityControls */ = {
 			isa = PBXGroup;
 			children = (
-				D5975D092049D6790004F371 /* Main.storyboard */,
+				D5975D092049D6790004F371 /* ActivityControls.storyboard */,
+				D5975D072049D6790004F371 /* ActivityControlsViewController.swift */,
 			);
-			path = View;
+			path = ActivityControls;
 			sourceTree = "<group>";
 		};
 		D5EEB97D2049D0BA00F37A36 = {
@@ -972,7 +972,7 @@
 			files = (
 				D5975D102049D6790004F371 /* LaunchScreen.storyboard in Resources */,
 				D5975D0D2049D6790004F371 /* Assets.xcassets in Resources */,
-				D5975D0B2049D6790004F371 /* Main.storyboard in Resources */,
+				D5975D0B2049D6790004F371 /* ActivityControls.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1247,7 +1247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D50CBF15204C6107003A337E /* BootstrapActionRequest.swift in Sources */,
-				D5975D082049D6790004F371 /* ViewController.swift in Sources */,
+				D5975D082049D6790004F371 /* ActivityControlsViewController.swift in Sources */,
 				D5975D062049D6790004F371 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1319,12 +1319,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D5975D092049D6790004F371 /* Main.storyboard */ = {
+		D5975D092049D6790004F371 /* ActivityControls.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D5975D0A2049D6790004F371 /* Base */,
 			);
-			name = Main.storyboard;
+			name = ActivityControls.storyboard;
 			sourceTree = "<group>";
 		};
 		D5975D0E2049D6790004F371 /* LaunchScreen.storyboard */ = {

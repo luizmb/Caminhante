@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 #endif
 
+public enum DeviceType {
+    case appleWatch
+    case iPhone
+}
+
 public struct DeviceState {
     public var isInBackground: Bool
     public var isActive: Bool
@@ -19,6 +24,11 @@ public struct DeviceState {
     public var navigation = NavigationTree.root()
     #if os(iOS)
     public weak var application: UIApplication?
+    public let deviceType: DeviceType = .iPhone
+    #endif
+
+    #if os(watchOS)
+    public let deviceType: DeviceType = .appleWatch
     #endif
 
     public init(isInBackground: Bool, isActive: Bool, locationPermission: Permission, healthPermission: Permission) {

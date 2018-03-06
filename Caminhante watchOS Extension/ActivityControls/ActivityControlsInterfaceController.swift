@@ -52,7 +52,7 @@ class ActivityControlsInterfaceController: WKInterfaceController {
         actionDispatcher.dispatch(RouterAction.didNavigate(.activityControls))
     }
 
-    func enable(buttons: [WKInterfaceButton]) {
+    private func enable(buttons: [WKInterfaceButton]) {
         allButtons.forEach { $0.setEnabled(buttons.contains($0)) }
     }
 
