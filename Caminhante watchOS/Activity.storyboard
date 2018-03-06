@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yMb-WB-JvG">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NiU-Bm-KgI">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -82,11 +82,23 @@
                         <outlet property="pauseButton" destination="egp-PK-eB1" id="HVF-GX-b42"/>
                         <outlet property="resetButton" destination="wK0-Yh-8et" id="jrk-Z4-bnr"/>
                         <outlet property="startButton" destination="lyl-Gg-ebK" id="gtw-MT-eWM"/>
-                        <segue destination="ROW-xX-BkU" kind="relationship" relationship="nextPage" id="h5S-bg-Z0n"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-59" y="83"/>
+        </scene>
+        <!--SplashInterfaceController-->
+        <scene sceneID="RJq-YY-LtA">
+            <objects>
+                <controller identifier="SplashInterfaceController" fullScreen="YES" id="NiU-Bm-KgI" customClass="SplashInterfaceController" customModule="Caminhante_watchOS_Extension">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Caminhante" textAlignment="center" id="8tu-NK-YBe">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-341" y="81"/>
         </scene>
         <!--Photos-->
         <scene sceneID="aZu-o3-RGA">

@@ -16,23 +16,18 @@ public struct RouterReducer: Reducer {
 
         #if os(iOS)
             switch routerAction {
-            case .didStart(let application, let navigationController):
+            case .didStart(let application):
                 stateCopy.deviceState.application = application
-                stateCopy.deviceState.navigation = .still(at: .root())
-                stateCopy.deviceState.navigationController = navigationController
-//            case .willNavigate(let route):
-//                stateCopy.navigation = .navigating(route)
-//            case .didNavigate(let destination):
-//                stateCopy.navigation = .still(at: destination)
+                stateCopy.deviceState.navigation = .root()
+            case .didNavigate(let destination):
+                stateCopy.deviceState.navigation = destination
             }
         #else
             switch routerAction {
             case .didStart:
-                stateCopy.deviceState.navigation = .still(at: .root())
-//            case .willNavigate(let route):
-//                stateCopy.navigation = .navigating(route)
-//            case .didNavigate(let destination):
-//                stateCopy.navigation = .still(at: destination)
+                stateCopy.deviceState.navigation = .root()
+            case .didNavigate(let destination):
+                stateCopy.deviceState.navigation = destination
             }
         #endif
 

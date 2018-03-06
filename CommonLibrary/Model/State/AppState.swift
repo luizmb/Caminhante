@@ -27,6 +27,7 @@ extension AppState: Equatable {
     public static func == (lhs: AppState, rhs: AppState) -> Bool {
         return
             lhs.currentActivity == rhs.currentActivity &&
-            lhs.deviceState == rhs.deviceState
+            lhs.deviceState == rhs.deviceState &&
+            lhs.significantDistance == rhs.significantDistance
     }
 }

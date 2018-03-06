@@ -16,10 +16,9 @@ public struct DeviceState {
     public var locationPermission: Permission
     public var healthPermission: Permission
 
-    public var navigation = NavigationState.still(at: .root())
+    public var navigation = NavigationTree.root()
     #if os(iOS)
     public weak var application: UIApplication?
-    public weak var navigationController: UINavigationController?
     #endif
 
     public init(isInBackground: Bool, isActive: Bool, locationPermission: Permission, healthPermission: Permission) {

@@ -16,7 +16,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
 
     func applicationDidFinishLaunching() {
-         actionDispatcher.async(BootstrapActionRequest.boot)
+        actionDispatcher.async(BootstrapActionRequest.boot)
     }
 
     func applicationDidBecomeActive() {

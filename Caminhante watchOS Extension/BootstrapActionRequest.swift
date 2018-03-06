@@ -19,6 +19,12 @@ enum BootstrapActionRequest: ActionRequest {
                  dispatchAsync: @escaping (AnyActionAsync<AppState>) -> Void) {
         switch self {
         case .boot:
+            WKInterfaceController.reloadRootPageControllers(withNames: [NavigationTree.activityControls.controller,
+                                                                        NavigationTree.activityPhotoStream.controller],
+                                                            contexts: nil,
+                                                            orientation: WKPageOrientation.horizontal,
+                                                            pageIndex: 0)
+
             dispatch(RouterAction.didStart)
 
             locationTracker.requestAuthorization()

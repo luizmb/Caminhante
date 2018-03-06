@@ -16,7 +16,6 @@ class ActivitySnapshotsInterfaceController: WKInterfaceController {
     @IBOutlet var photoTable: WKInterfaceTable!
     @IBOutlet var noActivityLabel: WKInterfaceLabel!
     var tableController: ActivitySnapshotsTableController!
-    var lastKnownActivityState = ActivityState.finished
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -31,6 +30,10 @@ class ActivitySnapshotsInterfaceController: WKInterfaceController {
         }.bind(to: self)
     }
 
+    override func willActivate() {
+        actionDispatcher.dispatch(RouterAction.didNavigate(.activityControls))
+    }
+
     private func update(state: AppState) {
         guard let activity = state.currentActivity else {
             photoTable.setHidden(true)
@@ -39,9 +42,8 @@ class ActivitySnapshotsInterfaceController: WKInterfaceController {
             return
         }
 
-        // TODO: Navigation should be done via proper routing state
-        if lastKnownActivityState != .inProgress && activity.state == .inProgress {
-            self.becomeCurrentPage()
+        if state.deviceState.navigation == .activityPhotoStream {
+            becomeCurrentPage()
         }
 
         photoTable.setHidden(false)

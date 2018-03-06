@@ -12,10 +12,9 @@ import KleinKit
 
 public enum RouterAction: Action {
     #if os(iOS)
-    case didStart(UIApplication, UINavigationController)
+    case didStart(UIApplication)
     #else
     case didStart
     #endif
-//    case willNavigate(NavigationRoute)
-//    case didNavigate(NavigationTree)
+    case didNavigate(NavigationTree)
 }

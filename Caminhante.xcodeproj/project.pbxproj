@@ -90,12 +90,6 @@
 		D5658E82204B44CD008D45E7 /* DefaultMapResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */; };
 		D5658E83204B44CE008D45E7 /* DefaultMapResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */; };
 		D5658E85204B454A008D45E7 /* BootstrapActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E84204B454A008D45E7 /* BootstrapActionRequest.swift */; };
-		D5658E88204B4750008D45E7 /* KnownRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E87204B4750008D45E7 /* KnownRoute.swift */; };
-		D5658E89204B4750008D45E7 /* KnownRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E87204B4750008D45E7 /* KnownRoute.swift */; };
-		D5658E8B204B476E008D45E7 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E8A204B476E008D45E7 /* NavigationRoute.swift */; };
-		D5658E8C204B476E008D45E7 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E8A204B476E008D45E7 /* NavigationRoute.swift */; };
-		D5658E8E204B478A008D45E7 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E8D204B478A008D45E7 /* NavigationState.swift */; };
-		D5658E8F204B478A008D45E7 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E8D204B478A008D45E7 /* NavigationState.swift */; };
 		D5658E91204B47A5008D45E7 /* NavigationTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E90204B47A5008D45E7 /* NavigationTree.swift */; };
 		D5658E92204B47A5008D45E7 /* NavigationTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E90204B47A5008D45E7 /* NavigationTree.swift */; };
 		D5975CD52049D1830004F371 /* CommonLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = D5975CD32049D1830004F371 /* CommonLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -152,6 +146,7 @@
 		D59AF561204A3CC800BB8DA5 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF560204A3CC800BB8DA5 /* URLRequest.swift */; };
 		D59AF562204A3CC800BB8DA5 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF560204A3CC800BB8DA5 /* URLRequest.swift */; };
 		D59AF564204A3CFA00BB8DA5 /* URLRequestExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59AF563204A3CFA00BB8DA5 /* URLRequestExtensionsTests.swift */; };
+		D5DDDD02204EE079008FC152 /* SplashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */; };
 		D5E72094204A100E005E4E3B /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D3E2049D7820004F371 /* KleinKit.framework */; };
 		D5E7209A204A16B4005E4E3B /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E72099204A16B4005E4E3B /* PhotoResponse.swift */; };
 		D5E7209C204A1768005E4E3B /* PhotoDecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E7209B204A1768005E4E3B /* PhotoDecodableTests.swift */; };
@@ -303,9 +298,6 @@
 		D5658E7E204B3B70008D45E7 /* ActivitySnapshotsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySnapshotsInterfaceController.swift; sourceTree = "<group>"; };
 		D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMapResolver.swift; sourceTree = "<group>"; };
 		D5658E84204B454A008D45E7 /* BootstrapActionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapActionRequest.swift; sourceTree = "<group>"; };
-		D5658E87204B4750008D45E7 /* KnownRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownRoute.swift; sourceTree = "<group>"; };
-		D5658E8A204B476E008D45E7 /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
-		D5658E8D204B478A008D45E7 /* NavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationState.swift; sourceTree = "<group>"; };
 		D5658E90204B47A5008D45E7 /* NavigationTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTree.swift; sourceTree = "<group>"; };
 		D5975CD02049D1830004F371 /* CommonLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5975CD32049D1830004F371 /* CommonLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonLibrary.h; sourceTree = "<group>"; };
@@ -349,6 +341,7 @@
 		D59AF55D204A3B4000BB8DA5 /* PhotoEndpoint.URLEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEndpoint.URLEndpoint.swift; sourceTree = "<group>"; };
 		D59AF560204A3CC800BB8DA5 /* URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		D59AF563204A3CFA00BB8DA5 /* URLRequestExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtensionsTests.swift; sourceTree = "<group>"; };
+		D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInterfaceController.swift; sourceTree = "<group>"; };
 		D5E72099204A16B4005E4E3B /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		D5E7209B204A1768005E4E3B /* PhotoDecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDecodableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -530,9 +523,6 @@
 		D5658E86204B4739008D45E7 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				D5658E87204B4750008D45E7 /* KnownRoute.swift */,
-				D5658E8A204B476E008D45E7 /* NavigationRoute.swift */,
-				D5658E8D204B478A008D45E7 /* NavigationState.swift */,
 				D5658E90204B47A5008D45E7 /* NavigationTree.swift */,
 			);
 			path = Navigation;
@@ -595,6 +585,7 @@
 		D5975D272049D69F0004F371 /* Caminhante watchOS Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D5DDDD00204EE068008FC152 /* Bootstrap */,
 				D53125F0204B658B00D3A756 /* Caminhante watchOS Extension.entitlements */,
 				D5658E7B204B3B1E008D45E7 /* ActivityControls */,
 				D5658E7A204B3AF3008D45E7 /* ActivitySnapshots */,
@@ -709,6 +700,14 @@
 				D59AF55D204A3B4000BB8DA5 /* PhotoEndpoint.URLEndpoint.swift */,
 			);
 			path = FlickrAPI;
+			sourceTree = "<group>";
+		};
+		D5DDDD00204EE068008FC152 /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */,
+			);
+			path = Bootstrap;
 			sourceTree = "<group>";
 		};
 		D5EEB97D2049D0BA00F37A36 = {
@@ -1146,14 +1145,11 @@
 				D59AF55E204A3B4000BB8DA5 /* PhotoEndpoint.URLEndpoint.swift in Sources */,
 				D59AF557204A391500BB8DA5 /* PhotoAPI.swift in Sources */,
 				D5658E38204B063C008D45E7 /* AppState.swift in Sources */,
-				D5658E88204B4750008D45E7 /* KnownRoute.swift in Sources */,
-				D5658E8E204B478A008D45E7 /* NavigationState.swift in Sources */,
 				D59AF55B204A39DE00BB8DA5 /* FlickrAPI.swift in Sources */,
 				D59AF54E204A38EF00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */,
 				D5312607204B721300D3A756 /* LocationReducer.swift in Sources */,
 				D5658E60204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF54B204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
-				D5658E8B204B476E008D45E7 /* NavigationRoute.swift in Sources */,
 				D50CBF0C204C44E3003A337E /* PhotoAction.swift in Sources */,
 				D5658E91204B47A5008D45E7 /* NavigationTree.swift in Sources */,
 				D53125FA204B686200D3A756 /* LocationTracker.swift in Sources */,
@@ -1205,14 +1201,11 @@
 				D59AF55F204A3B4000BB8DA5 /* PhotoEndpoint.URLEndpoint.swift in Sources */,
 				D59AF558204A391500BB8DA5 /* PhotoAPI.swift in Sources */,
 				D5658E39204B063C008D45E7 /* AppState.swift in Sources */,
-				D5658E89204B4750008D45E7 /* KnownRoute.swift in Sources */,
-				D5658E8F204B478A008D45E7 /* NavigationState.swift in Sources */,
 				D59AF55C204A39DE00BB8DA5 /* FlickrAPI.swift in Sources */,
 				D59AF54C204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
 				D5312608204B721300D3A756 /* LocationReducer.swift in Sources */,
 				D5658E61204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF553204A38FA00BB8DA5 /* PhotoResponsePage.swift in Sources */,
-				D5658E8C204B476E008D45E7 /* NavigationRoute.swift in Sources */,
 				D50CBF0D204C44E3003A337E /* PhotoAction.swift in Sources */,
 				D5658E92204B47A5008D45E7 /* NavigationTree.swift in Sources */,
 				D53125FB204B686200D3A756 /* LocationTracker.swift in Sources */,
@@ -1249,6 +1242,7 @@
 			files = (
 				D5658E85204B454A008D45E7 /* BootstrapActionRequest.swift in Sources */,
 				D50CBF04204BAC64003A337E /* ActivitySnapshotsRowController.swift in Sources */,
+				D5DDDD02204EE079008FC152 /* SplashInterfaceController.swift in Sources */,
 				D5658E7F204B3B70008D45E7 /* ActivitySnapshotsInterfaceController.swift in Sources */,
 				D50CBF06204C3349003A337E /* ActivitySnapshotsTableController.swift in Sources */,
 				D5975D2D2049D69F0004F371 /* NotificationController.swift in Sources */,

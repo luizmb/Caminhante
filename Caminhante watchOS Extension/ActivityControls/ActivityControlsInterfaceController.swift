@@ -48,12 +48,17 @@ class ActivityControlsInterfaceController: WKInterfaceController {
         healthPermissionLabel.setText(state.deviceState.healthPermission.englishDescription)
     }
 
+    override func willActivate() {
+        actionDispatcher.dispatch(RouterAction.didNavigate(.activityControls))
+    }
+
     func enable(buttons: [WKInterfaceButton]) {
         allButtons.forEach { $0.setEnabled(buttons.contains($0)) }
     }
 
     @IBAction func startButtonTap() {
         actionDispatcher.async(ActivityActionRequest.startActivity)
+        actionDispatcher.dispatch(RouterAction.didNavigate(.activityPhotoStream))
     }
 
     @IBAction func pauseButtonTap() {

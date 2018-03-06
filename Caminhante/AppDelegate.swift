@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // TODO: Implement navigation
-        actionDispatcher.async(BootstrapActionRequest.boot(application, UINavigationController()))
+        actionDispatcher.async(BootstrapActionRequest.boot(application))
         return true
     }
 }
