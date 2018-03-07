@@ -5,12 +5,33 @@
 //  Created by Luiz Rodrigo Martins Barbosa on 04.03.18.
 //
 
+import CoreLocation
 import Foundation
 import HealthKit
 import KleinKit
 
 public class HealthStore: NSObject, HealthKitTracker {
     let healthStore = HKHealthStore()
+    var state: WorkoutSessionState?
+
+    struct WorkoutSessionState {
+        var session: HKWorkoutSession
+        var events = [HKWorkoutEvent]()
+        var queries = [HKQuery]()
+
+        init(session: HKWorkoutSession) {
+            self.session = session
+        }
+
+        init?() {
+            let config = HKWorkoutConfiguration()
+            config.activityType = .walking
+            config.locationType = .outdoor
+            guard let session = try? HKWorkoutSession(configuration: config) else { return nil }
+            self.session = session
+        }
+    }
+
     let monitoredTypes = Set([HKObjectType.workoutType(),
                               HKSeriesType.workoutRoute(),
                               HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
@@ -43,7 +64,7 @@ public class HealthStore: NSObject, HealthKitTracker {
         }
     }
 
-    func getCurrentPermission(for types: Set<HKObjectType>) -> Permission {
+    private func getCurrentPermission(for types: Set<HKObjectType>) -> Permission {
         var worstCase = Permission.authorized
         for type in types {
             switch healthStore.authorizationStatus(for: type) {
@@ -62,13 +83,232 @@ public class HealthStore: NSObject, HealthKitTracker {
     }
 
     public func start() {
-//        manager.allowsBackgroundLocationUpdates = true
-//        manager.startUpdatingLocation()
+        guard state == nil else { return }
+
+        state = WorkoutSessionState()
+
+        guard let state = state else { return }
+
+        state.session.delegate = self
+        healthStore.start(state.session)
+    }
+
+    public func pause() {
+        guard let state = state,
+            state.session.state == .running else { return }
+
+        healthStore.pause(state.session)
+    }
+
+    public func resume() {
+        guard let state = state,
+            state.session.state == .paused else { return }
+
+        healthStore.resumeWorkoutSession(state.session)
     }
 
     public func stop() {
-//        manager.allowsBackgroundLocationUpdates = false
-//        manager.stopUpdatingLocation()
+        guard let state = state,
+            [HKWorkoutSessionState.paused, .running].contains(state.session.state) else { return }
+
+        healthStore.end(state.session)
+    }
+
+    public func reset() {
+        guard let state = state else { return }
+
+        if state.session.state == .paused || state.session.state == .running {
+            stop()
+        }
+
+        self.state = nil
+    }
+}
+
+// MARK: - Data accumulation
+
+extension HealthStore {
+    public func startAccumulatingData(from startDate: Date) {
+        startWalkingRunningQuery(from: startDate)
+        startActiveEnergyBurnedQuery(from: startDate)
+    }
+
+    private func startWalkingRunningQuery(from startDate: Date) {
+        let typeIdentifier: HKQuantityTypeIdentifier = .distanceWalkingRunning
+        startQuery(ofType: typeIdentifier, from: startDate) { [unowned self] (result: Result<[HKQuantitySample]>) in
+            switch result {
+            case .failure(let error):
+                print("Distance walking running query failed with error: \(String(describing: error))")
+            case .success(let samples):
+                guard let state = self.state, state.session.state != .paused else { return }
+
+                let distance = samples.reduce(Measurement(value: 0, unit: UnitLength.meters)) { (total, sample) in
+                    total + Measurement(value: sample.quantity.doubleValue(for: .meter()), unit: UnitLength.meters)
+                }
+                self.actionDispatcher.dispatch(ActivityAction.healthTrackerDidWalkDistance(distance))
+            }
+        }
+    }
+
+    private func startActiveEnergyBurnedQuery(from startDate: Date) {
+        let typeIdentifier: HKQuantityTypeIdentifier = .activeEnergyBurned
+        startQuery(ofType: typeIdentifier, from: startDate) { [unowned self] (result: Result<[HKQuantitySample]>) in
+            switch result {
+            case .failure(let error):
+                print("Active energy burned query failed with error: \(String(describing: error))")
+            case .success(let samples):
+                guard let state = self.state, state.session.state != .paused else { return }
+
+                let energyBurned = samples.reduce(Measurement(value: 0, unit: UnitEnergy.kilocalories)) { (total, sample) in
+                    total + Measurement(value: sample.quantity.doubleValue(for: .kilocalorie()), unit: UnitEnergy.kilocalories)
+                }
+
+                self.actionDispatcher.dispatch(ActivityAction.healthTrackerDidBurnEnergy(energyBurned))
+            }
+        }
+    }
+
+    private func startQuery<T: HKSample>(ofType type: HKQuantityTypeIdentifier,
+                                         from startDate: Date,
+                                         signal: @escaping (Result<[T]>) -> Void) {
+        guard state != nil else { return }
+
+        let datePredicate = HKQuery.predicateForSamples(withStart: startDate, end: nil, options: .strictStartDate)
+        let devicePredicate = HKQuery.predicateForObjects(from: [HKDevice.local()])
+        let queryPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate, devicePredicate])
+
+        let quantityType = HKObjectType.quantityType(forIdentifier: type)!
+
+        let handler: (HKAnchoredObjectQuery, [HKSample]?, [HKDeletedObject]?, HKQueryAnchor?, Error?) -> Void = {
+            _, sample, _, _, error in
+            switch (sample as? [T], error) {
+            case (let result?, _): signal(.success(result))
+            case (_, let error?): signal(.failure(error))
+            default: signal(.failure(NSError(domain: "HealthKit inconsistent result", code: 999, userInfo: nil)))
+            }
+        }
+
+        let query = HKAnchoredObjectQuery(type: quantityType,
+                                          predicate: queryPredicate,
+                                          anchor: nil,
+                                          limit: HKObjectQueryNoLimit,
+                                          resultsHandler: handler)
+        query.updateHandler = handler
+        healthStore.execute(query)
+
+        state?.queries.append(query)
+    }
+
+    private func stopAccumulatingData() {
+        state?.queries.forEach(healthStore.stop)
+        state?.queries.removeAll()
+    }
+}
+
+// MARK: - Save data
+extension HealthStore {
+    public func save(from startDate: Date,
+                     to endDate: Date,
+                     distance: Measurement<UnitLength>,
+                     energy: Measurement<UnitEnergy>,
+                     locations: [CLLocation]) {
+        // Create and save a workout sample
+        guard let state = state else { return }
+
+        let configuration = state.session.workoutConfiguration
+        var metadata = [String: Any]()
+        metadata[HKMetadataKeyIndoorWorkout] = (configuration.locationType == .indoor)
+
+        let workout = HKWorkout(activityType: configuration.activityType,
+                                start: startDate,
+                                end: endDate,
+                                workoutEvents: state.events,
+                                totalEnergyBurned: energy.toQuantity(),
+                                totalDistance: distance.toQuantity(),
+                                metadata: metadata)
+
+        healthStore.save(workout) { success, _ in
+            guard success else { return }
+            self.addSamples(toWorkout: workout,
+                            from: startDate,
+                            to: endDate,
+                            distance: distance,
+                            energy: energy,
+                            locations: locations)
+        }
+    }
+
+    private func addSamples(toWorkout workout: HKWorkout,
+                            from startDate: Date,
+                            to endDate: Date,
+                            distance: Measurement<UnitLength>,
+                            energy: Measurement<UnitEnergy>,
+                            locations: [CLLocation]) {
+        // Create energy and distance samples
+        let totalEnergyBurnedSample = HKQuantitySample(type: HKQuantityType.activeEnergyBurned(),
+                                                       quantity: energy.toQuantity(),
+                                                       start: startDate,
+                                                       end: endDate)
+
+        let totalDistanceSample = HKQuantitySample(type: HKQuantityType.distanceWalkingRunning(),
+                                                   quantity: distance.toQuantity(),
+                                                   start: startDate,
+                                                   end: endDate)
+
+        // Add samples to workout
+        healthStore.add([totalEnergyBurnedSample, totalDistanceSample], to: workout) { success, error in
+            guard success else {
+                print("Adding workout subsamples failed with error: \(String(describing: error))")
+                return
+            }
+        }
+
+        // Finish the route with a sync identifier so we can easily update the route later
+        var metadata = [String: Any]()
+        metadata[HKMetadataKeySyncIdentifier] = UUID().uuidString
+        metadata[HKMetadataKeySyncVersion] = NSNumber(value: 1)
+
+        guard !locations.isEmpty else { return }
+        let workoutRouteBuilder = HKWorkoutRouteBuilder(healthStore: healthStore, device: nil)
+        workoutRouteBuilder.insertRouteData(locations) { [unowned workoutRouteBuilder] success, error in
+            guard success else {
+                print("inserting route data failed with error: \(String(describing: error))")
+                return
+            }
+
+            workoutRouteBuilder.finishRoute(with: workout, metadata: metadata) { (workoutRoute, error) in
+                if workoutRoute == nil {
+                    print("Finishing route failed with error: \(String(describing: error))")
+                }
+            }
+        }
+    }
+}
+
+// MARK: - HKWorkoutSessionDelegate
+extension HealthStore: HKWorkoutSessionDelegate {
+    public func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
+        print("workout session did fail with error: \(error)")
+    }
+
+    public func workoutSession(_ workoutSession: HKWorkoutSession,
+                               didChangeTo toState: HKWorkoutSessionState,
+                               from fromState: HKWorkoutSessionState,
+                               date: Date) {
+        switch (fromState, toState) {
+        case (.notStarted, .running):
+            actionDispatcher.async(ActivityActionRequest.healthTrackerDidStart)
+        case (_, .ended):
+            actionDispatcher.async(ActivityActionRequest.healthTrackerDidFinish)
+        default:
+            break
+        }
+    }
+
+    public func workoutSession(_ workoutSession: HKWorkoutSession, didGenerate event: HKWorkoutEvent) {
+        DispatchQueue.main.async {
+            self.state?.events.append(event)
+        }
     }
 }
 

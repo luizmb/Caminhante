@@ -18,6 +18,8 @@ public struct LocationReducer: Reducer {
         switch locationAction {
         case .permissionChanged(let newPermission):
             stateCopy.deviceState.locationPermission = newPermission
+        case .receivedNewLocations(let locations):
+            stateCopy.currentActivity?.locations.append(contentsOf: locations)
         case .receivedNewSignificantLocation(let location, let id, let photoTask):
             guard var activity = stateCopy.currentActivity,
                 activity.state == .inProgress else { return currentState }

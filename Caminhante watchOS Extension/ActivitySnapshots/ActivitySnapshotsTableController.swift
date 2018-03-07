@@ -37,6 +37,9 @@ final class ActivitySnapshotsTableController: NSObject {
             table.removeRows(at: IndexSet(integer: 0))
         }
 
+        guard !newPoints.isEmpty else { return }
+
+        WKInterfaceDevice.current().play(.click)
         displayedIds += newPoints.map { $0.identifier }
 
         newPoints.reversed().forEach { newPoint in

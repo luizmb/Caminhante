@@ -26,6 +26,12 @@ public struct ActivityReducer: Reducer {
             stateCopy.currentActivity?.state = .finished
         case .activityDidReset:
             stateCopy.currentActivity = nil
+        case .healthTrackerDidWalkDistance(let distance):
+            guard let activity = stateCopy.currentActivity else { return currentState }
+            stateCopy.currentActivity?.totalDistance = activity.totalDistance + distance
+        case .healthTrackerDidBurnEnergy(let energy):
+            guard let activity = stateCopy.currentActivity else { return currentState }
+            stateCopy.currentActivity?.totalEnergyBurned = activity.totalEnergyBurned + energy
         }
         return stateCopy
     }

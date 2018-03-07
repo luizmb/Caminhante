@@ -5,11 +5,17 @@
 //  Created by Luiz Rodrigo Martins Barbosa on 03.03.18.
 //
 
+import CoreLocation
 import Foundation
 
 public struct Activity {
+    public var startDate: Date?
+    public var endDate: Date?
     public var state: ActivityState
+    public var locations: [CLLocation] = []
     public var snapshotPoints: [SnapshotPoint]
+    public var totalEnergyBurned = Measurement(value: 0, unit: UnitEnergy.kilocalories)
+    public var totalDistance = Measurement(value: 0, unit: UnitLength.meters)
 
     public init(state: ActivityState, snapshotPoints: [SnapshotPoint]) {
         self.state = state

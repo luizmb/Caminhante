@@ -22,6 +22,12 @@ public class CoreLocationTracker: NSObject, LocationTracker {
         manager.delegate = self
     }
 
+    public var isAllowed: Bool {
+        let status = CLLocationManager.authorizationStatus()
+        return [CLAuthorizationStatus.authorizedAlways, .authorizedWhenInUse].contains(status) &&
+            CLLocationManager.locationServicesEnabled()
+    }
+
     public func requestAuthorization() {
         guard CLLocationManager.authorizationStatus() == .notDetermined else { return }
 
@@ -31,6 +37,7 @@ public class CoreLocationTracker: NSObject, LocationTracker {
 
     public func start() {
         manager.allowsBackgroundLocationUpdates = true
+        manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
     }
 
@@ -42,8 +49,7 @@ public class CoreLocationTracker: NSObject, LocationTracker {
 
 extension CoreLocationTracker: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        actionDispatcher.async(LocationActionRequest.evaluateNewLocation(location: location))
+        actionDispatcher.async(LocationActionRequest.evaluateNewLocations(locations))
     }
 
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

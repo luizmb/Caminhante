@@ -26,7 +26,7 @@ extension PhotoActionRequest: ActionRequest {
             let id = UUID()
             let store = StoreAccessors(getState: getState, dispatch: dispatch, dispatchAsync: dispatchAsync)
             let photoTask = PhotoActionRequest.fetchPhotoInformation(from: newLocation, id: id, with: store)
-            dispatch(LocationAction.receivedNewSignificantLocation(location: newLocation,
+            dispatch(LocationAction.receivedNewSignificantLocation(newLocation,
                                                                    id: id,
                                                                    photoTask: photoTask))
         }
