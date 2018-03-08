@@ -20,6 +20,8 @@ class ActivityControlsInterfaceController: WKInterfaceController {
     var allButtons: [WKInterfaceButton] = []
     @IBOutlet var locationPermissionLabel: WKInterfaceLabel!
     @IBOutlet var healthPermissionLabel: WKInterfaceLabel!
+    @IBOutlet var distanceLabel: WKInterfaceLabel!
+    @IBOutlet var energyLabel: WKInterfaceLabel!
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -44,8 +46,45 @@ class ActivityControlsInterfaceController: WKInterfaceController {
         case (.authorized, nil):            enable(buttons: [startButton])
         }
 
-        locationPermissionLabel.setText(state.deviceState.locationPermission.englishDescription)
-        healthPermissionLabel.setText(state.deviceState.healthPermission.englishDescription)
+        locationPermissionLabel.setTextColor(mapToColor(permission: state.deviceState.locationPermission))
+        healthPermissionLabel.setTextColor(mapToColor(permission: state.deviceState.healthPermission))
+        distanceLabel.setText(state.currentActivity.map { format(distance: $0.totalDistance) } ?? "-")
+        energyLabel.setText(state.currentActivity.map { format(energy: $0.totalEnergyBurned) } ?? "-")
+    }
+
+    private func mapToColor(permission: Permission) -> UIColor {
+        switch permission {
+        case .pending: return .gray
+        case .authorized: return .green
+        case .denied: return .red
+        }
+    }
+
+    private func format(distance: Measurement<UnitLength>) -> String {
+        let m = distance.converted(to: .meters)
+        if m.value >= 1_000 {
+            let km = distance.converted(to: .kilometers)
+            return "\(format(value: km.value))km"
+        } else {
+            return "\(format(value: m.value))m"
+        }
+    }
+
+    private func format(energy: Measurement<UnitEnergy>) -> String {
+        let cal = energy.converted(to: .calories)
+        if cal.value >= 1_000 {
+            let kcal = energy.converted(to: .kilocalories)
+            return "\(format(value: kcal.value))kcal"
+        } else {
+            return "\(format(value: cal.value))cal"
+        }
+    }
+
+    private func format(value: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.maximumFractionDigits = 1
+        return formatter.string(from: NSNumber(value: value)) ?? "0"
     }
 
     override func willActivate() {

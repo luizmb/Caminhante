@@ -22,4 +22,5 @@ public protocol HealthKitTracker {
               energy: Measurement<UnitEnergy>,
               locations: [CLLocation])
     func startAccumulatingData(from startDate: Date)
+    func appendLocations(_ locations: [CLLocation])
 }

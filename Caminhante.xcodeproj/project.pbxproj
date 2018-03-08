@@ -150,6 +150,9 @@
 		D5AE3FAE20509D6100E60662 /* HKQuantityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FAB20509D4F00E60662 /* HKQuantityType.swift */; };
 		D5AE3FB12050A8DF00E60662 /* HKQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FAF2050A8DB00E60662 /* HKQuantity.swift */; };
 		D5AE3FB22050A8E000E60662 /* HKQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FAF2050A8DB00E60662 /* HKQuantity.swift */; };
+		D5AE3FB32050B7AB00E60662 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260A204B7E7200D3A756 /* HealthStore.swift */; };
+		D5AE3FB52050B7D900E60662 /* WorkoutSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FB42050B7D900E60662 /* WorkoutSessionState.swift */; };
+		D5AE3FB62050B7D900E60662 /* WorkoutSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FB42050B7D900E60662 /* WorkoutSessionState.swift */; };
 		D5DDDD02204EE079008FC152 /* SplashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */; };
 		D5DDDD0B204EFB1A008FC152 /* RemoteDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */; };
 		D5DDDD0C204EFB1A008FC152 /* RemoteDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */; };
@@ -360,6 +363,7 @@
 		D5AE3FA9205079BB00E60662 /* NavigationTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTreeTests.swift; sourceTree = "<group>"; };
 		D5AE3FAB20509D4F00E60662 /* HKQuantityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQuantityType.swift; sourceTree = "<group>"; };
 		D5AE3FAF2050A8DB00E60662 /* HKQuantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQuantity.swift; sourceTree = "<group>"; };
+		D5AE3FB42050B7D900E60662 /* WorkoutSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionState.swift; sourceTree = "<group>"; };
 		D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInterfaceController.swift; sourceTree = "<group>"; };
 		D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDevice.swift; sourceTree = "<group>"; };
 		D5DDDD0D204EFB2A008FC152 /* RemoteDevice.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDevice.DI.swift; sourceTree = "<group>"; };
@@ -433,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				D531260A204B7E7200D3A756 /* HealthStore.swift */,
+				D5AE3FB42050B7D900E60662 /* WorkoutSessionState.swift */,
 			);
 			path = HealthStore;
 			sourceTree = "<group>";
@@ -1180,6 +1185,7 @@
 				D5658E51204B2BBE008D45E7 /* Store.swift in Sources */,
 				D50CBF17204C72BD003A337E /* ActivityActionRequest.swift in Sources */,
 				D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */,
+				D5AE3FB32050B7AB00E60662 /* HealthStore.swift in Sources */,
 				D5312604204B700100D3A756 /* Permission.swift in Sources */,
 				D5658E47204B0DF8008D45E7 /* DeviceState.swift in Sources */,
 				D5658E6F204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
@@ -1293,6 +1299,7 @@
 				D59AF551204A38FA00BB8DA5 /* PhotoResponse.swift in Sources */,
 				D59AF54D204A38EE00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */,
 				D5312618204B84FA00D3A756 /* HealthKitReducer.swift in Sources */,
+				D5AE3FB52050B7D900E60662 /* WorkoutSessionState.swift in Sources */,
 				D5658E64204B2ECF008D45E7 /* EntryPointReducer.swift in Sources */,
 				D5658E45204B0D28008D45E7 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				D5658E3F204B0C3A008D45E7 /* ActivityState.swift in Sources */,
@@ -1337,6 +1344,7 @@
 				D5975D70204A062A0004F371 /* PhotoTests.swift in Sources */,
 				D5975D66204A05410004F371 /* BaseTests.swift in Sources */,
 				D5658E73204B372F008D45E7 /* StoreTests.swift in Sources */,
+				D5AE3FB62050B7D900E60662 /* WorkoutSessionState.swift in Sources */,
 				D5AE3FAA205079BB00E60662 /* NavigationTreeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

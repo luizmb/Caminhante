@@ -10,27 +10,12 @@ import Foundation
 import HealthKit
 import KleinKit
 
-public class HealthStore: NSObject, HealthKitTracker {
+public class HealthStore: NSObject {
     let healthStore = HKHealthStore()
+
+    #if os(watchOS)
     var state: WorkoutSessionState?
-
-    struct WorkoutSessionState {
-        var session: HKWorkoutSession
-        var events = [HKWorkoutEvent]()
-        var queries = [HKQuery]()
-
-        init(session: HKWorkoutSession) {
-            self.session = session
-        }
-
-        init?() {
-            let config = HKWorkoutConfiguration()
-            config.activityType = .walking
-            config.locationType = .outdoor
-            guard let session = try? HKWorkoutSession(configuration: config) else { return nil }
-            self.session = session
-        }
-    }
+    #endif
 
     let monitoredTypes = Set([HKObjectType.workoutType(),
                               HKSeriesType.workoutRoute(),
@@ -81,11 +66,33 @@ public class HealthStore: NSObject, HealthKitTracker {
         }
         return worstCase
     }
+}
 
+#if os(iOS)
+extension HealthStore: HealthKitTracker {
+    // Not needed because the workout will can be triggered by the phone using the regular buttons
+    // Could be used to open watchApp remotely, tho.
+    public func start() { }
+    public func pause() { }
+    public func resume() { }
+    public func stop() { }
+    public func reset() { }
+    public func save(from startDate: Date,
+                     to endDate: Date,
+                     distance: Measurement<UnitLength>,
+                     energy: Measurement<UnitEnergy>,
+                     locations: [CLLocation]) { }
+    public func startAccumulatingData(from startDate: Date) { }
+    public func appendLocations(_ locations: [CLLocation]) { }
+}
+#endif
+
+#if os(watchOS)
+extension HealthStore: HealthKitTracker {
     public func start() {
         guard state == nil else { return }
 
-        state = WorkoutSessionState()
+        state = WorkoutSessionState(store: healthStore)
 
         guard let state = state else { return }
 
@@ -268,18 +275,18 @@ extension HealthStore {
         metadata[HKMetadataKeySyncIdentifier] = UUID().uuidString
         metadata[HKMetadataKeySyncVersion] = NSNumber(value: 1)
 
-        guard !locations.isEmpty else { return }
-        let workoutRouteBuilder = HKWorkoutRouteBuilder(healthStore: healthStore, device: nil)
-        workoutRouteBuilder.insertRouteData(locations) { [unowned workoutRouteBuilder] success, error in
+        state?.workoutRouteBuilder.finishRoute(with: workout, metadata: metadata) { (workoutRoute, error) in
+            if workoutRoute == nil {
+                print("Finishing route failed with error: \(String(describing: error))")
+            }
+        }
+    }
+
+    public func appendLocations(_ locations: [CLLocation]) {
+        state?.workoutRouteBuilder.insertRouteData(locations) { success, error in
             guard success else {
                 print("inserting route data failed with error: \(String(describing: error))")
                 return
-            }
-
-            workoutRouteBuilder.finishRoute(with: workout, metadata: metadata) { (workoutRoute, error) in
-                if workoutRoute == nil {
-                    print("Finishing route failed with error: \(String(describing: error))")
-                }
             }
         }
     }
@@ -311,5 +318,6 @@ extension HealthStore: HKWorkoutSessionDelegate {
         }
     }
 }
+#endif
 
 extension HealthStore: HasActionDispatcher { }
