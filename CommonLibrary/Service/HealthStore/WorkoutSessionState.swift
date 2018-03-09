@@ -14,17 +14,21 @@ struct WorkoutSessionState {
     var queries = [HKQuery]()
     let workoutRouteBuilder: HKWorkoutRouteBuilder
 
-    init(session: HKWorkoutSession, store: HKHealthStore) {
+    init(session: HKWorkoutSession, healthStore: HealthStore) {
         self.session = session
-        self.workoutRouteBuilder = HKWorkoutRouteBuilder(healthStore: store, device: nil)
+        // TODO: Don't force cast, to be able to test (proxy HKWorkoutRouteBuilder instead)
+        self.workoutRouteBuilder = HKWorkoutRouteBuilder(healthStore: healthStore as! HKHealthStore,
+                                                         device: nil)
     }
 
-    init?(store: HKHealthStore) {
+    init?(healthStore: HealthStore) {
         let config = HKWorkoutConfiguration()
         config.activityType = .walking
         config.locationType = .outdoor
         guard let session = try? HKWorkoutSession(configuration: config) else { return nil }
         self.session = session
-        self.workoutRouteBuilder = HKWorkoutRouteBuilder(healthStore: store, device: nil)
+        // TODO: Don't force cast, to be able to test (proxy HKWorkoutRouteBuilder instead)
+        self.workoutRouteBuilder = HKWorkoutRouteBuilder(healthStore: healthStore as! HKHealthStore,
+                                                         device: nil)
     }
 }

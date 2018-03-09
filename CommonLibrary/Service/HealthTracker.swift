@@ -1,5 +1,5 @@
 //
-//  HealthKitTracker.swift
+//  HealthTracker.swift
 //  Caminhante
 //
 //  Created by Luiz Rodrigo Martins Barbosa on 04.03.18.
@@ -9,7 +9,7 @@ import CoreLocation
 import Foundation
 import KleinKit
 
-public protocol HealthKitTracker {
+public protocol HealthTracker {
     func requestAuthorization()
     func start()
     func pause()

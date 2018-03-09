@@ -70,9 +70,9 @@ extension ActivityActionRequest {
         dispatch(ActivityAction.activityDidStart)
         dispatch(RouterAction.didNavigate(.activityPhotoStream))
         if state.currentActivity?.state == .paused {
-            healthKitTracker.resume()
+            healthTracker.resume()
         } else {
-            healthKitTracker.start()
+            healthTracker.start()
         }
     }
 
@@ -81,7 +81,7 @@ extension ActivityActionRequest {
 
         locationTracker.stop()
         dispatch(ActivityAction.activityDidPause)
-        healthKitTracker.pause()
+        healthTracker.pause()
     }
 
     private func watchFinishActivity(state: AppState, dispatch: @escaping DispatchFunction) {
@@ -89,7 +89,7 @@ extension ActivityActionRequest {
 
         locationTracker.stop()
         dispatch(ActivityAction.activityDidFinish)
-        healthKitTracker.stop()
+        healthTracker.stop()
     }
 
     private func watchResetActivity(state: AppState, dispatch: @escaping DispatchFunction) {
@@ -97,24 +97,24 @@ extension ActivityActionRequest {
 
         locationTracker.stop()
         dispatch(ActivityAction.activityDidReset)
-        healthKitTracker.reset()
+        healthTracker.reset()
     }
 
     private func watchHealthTrackerDidStart(state: AppState, dispatch: @escaping DispatchFunction) {
         guard let activity = state.currentActivity,
             let startDate = activity.startDate else { return }
-        healthKitTracker.startAccumulatingData(from: startDate)
+        healthTracker.startAccumulatingData(from: startDate)
     }
 
     private func watchHealthTrackerDidFinish(state: AppState, dispatch: @escaping DispatchFunction) {
         guard let activity = state.currentActivity,
             let startDate = activity.startDate,
             let endDate = activity.endDate else { return }
-        healthKitTracker.save(from: startDate,
-                              to: endDate,
-                              distance: activity.totalDistance,
-                              energy: activity.totalEnergyBurned,
-                              locations: activity.locations)
+        healthTracker.save(from: startDate,
+                           to: endDate,
+                           distance: activity.totalDistance,
+                           energy: activity.totalEnergyBurned,
+                           locations: activity.locations)
     }
 }
 
@@ -159,5 +159,5 @@ extension ActivityActionRequest {
 }
 
 extension ActivityActionRequest: HasLocationTracker { }
-extension ActivityActionRequest: HasHealthKitTracker { }
+extension ActivityActionRequest: HasHealthTracker { }
 extension ActivityActionRequest: HasRemoteDevice { }

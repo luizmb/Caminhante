@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import HealthKit
 import KleinKit
 
 public class DefaultMapResolver {
@@ -17,7 +18,8 @@ public class DefaultMapResolver {
         injector.mapper.mapSingleton(StateProvider.self) { Store.shared }
         injector.mapper.mapSingleton(LocationTracker.self) { CoreLocationTracker.shared }
         injector.mapper.mapSingleton(RemoteDevice.self) { WatchConnectivityControl.shared }
-        injector.mapper.mapSingleton(HealthKitTracker.self) { HealthStore.shared }
+        injector.mapper.mapSingleton(HealthTracker.self) { HealthKitTracker.shared }
+        injector.mapper.mapFactory(HealthStore.self) { { HKHealthStore() } }
     }
 }
 

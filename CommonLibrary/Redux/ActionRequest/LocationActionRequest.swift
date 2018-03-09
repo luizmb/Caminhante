@@ -34,7 +34,7 @@ extension LocationActionRequest: ActionRequest {
 
             guard !filteredLocations.isEmpty, let mostRecentLocation = filteredLocations.last else { return }
             dispatch(LocationAction.receivedNewLocations(filteredLocations))
-            healthKitTracker.appendLocations(filteredLocations)
+            healthTracker.appendLocations(filteredLocations)
 
             let significantChange = currentState.significantDistance.converted(to: .meters).value
 
@@ -58,4 +58,4 @@ extension LocationActionRequest: ActionRequest {
     }
 }
 
-extension LocationActionRequest: HasHealthKitTracker { }
+extension LocationActionRequest: HasHealthTracker { }

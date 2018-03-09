@@ -34,11 +34,11 @@
 		D5312605204B700100D3A756 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312603204B700100D3A756 /* Permission.swift */; };
 		D5312607204B721300D3A756 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312606204B721300D3A756 /* LocationReducer.swift */; };
 		D5312608204B721300D3A756 /* LocationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312606204B721300D3A756 /* LocationReducer.swift */; };
-		D531260C204B7E7200D3A756 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260A204B7E7200D3A756 /* HealthStore.swift */; };
-		D531260E204B7E9200D3A756 /* HealthKitTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260D204B7E9200D3A756 /* HealthKitTracker.swift */; };
-		D531260F204B7E9200D3A756 /* HealthKitTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260D204B7E9200D3A756 /* HealthKitTracker.swift */; };
-		D5312611204B7E9B00D3A756 /* HealthKitTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312610204B7E9B00D3A756 /* HealthKitTracker.DI.swift */; };
-		D5312612204B7E9B00D3A756 /* HealthKitTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312610204B7E9B00D3A756 /* HealthKitTracker.DI.swift */; };
+		D531260C204B7E7200D3A756 /* HealthKitTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260A204B7E7200D3A756 /* HealthKitTracker.swift */; };
+		D531260E204B7E9200D3A756 /* HealthTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260D204B7E9200D3A756 /* HealthTracker.swift */; };
+		D531260F204B7E9200D3A756 /* HealthTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260D204B7E9200D3A756 /* HealthTracker.swift */; };
+		D5312611204B7E9B00D3A756 /* HealthTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312610204B7E9B00D3A756 /* HealthTracker.DI.swift */; };
+		D5312612204B7E9B00D3A756 /* HealthTracker.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312610204B7E9B00D3A756 /* HealthTracker.DI.swift */; };
 		D5312614204B84DB00D3A756 /* HealthKitAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312613204B84DB00D3A756 /* HealthKitAction.swift */; };
 		D5312615204B84DB00D3A756 /* HealthKitAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312613204B84DB00D3A756 /* HealthKitAction.swift */; };
 		D5312617204B84FA00D3A756 /* HealthKitReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312616204B84FA00D3A756 /* HealthKitReducer.swift */; };
@@ -104,16 +104,12 @@
 		D5975D2D2049D69F0004F371 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D2C2049D69F0004F371 /* NotificationController.swift */; };
 		D5975D2F2049D69F0004F371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5975D2E2049D69F0004F371 /* Assets.xcassets */; };
 		D5975D342049D69F0004F371 /* Caminhante watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D5975D172049D69E0004F371 /* Caminhante watchOS.app */; };
-		D5975D412049D7930004F371 /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D402049D7930004F371 /* KleinKit.framework */; };
 		D5975D442049D8900004F371 /* CommonLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975CD02049D1830004F371 /* CommonLibrary.framework */; };
 		D5975D452049D8900004F371 /* CommonLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5975CD02049D1830004F371 /* CommonLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5975D492049D89F0004F371 /* CommonLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975CDE2049D1AE0004F371 /* CommonLibrary.framework */; };
 		D5975D4A2049D89F0004F371 /* CommonLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5975CDE2049D1AE0004F371 /* CommonLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D5975D512049DA630004F371 /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D3E2049D7820004F371 /* KleinKit.framework */; };
 		D5975D522049DA8A0004F371 /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D3E2049D7820004F371 /* KleinKit.framework */; };
 		D5975D532049DA8A0004F371 /* KleinKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D3E2049D7820004F371 /* KleinKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D5975D542049DA930004F371 /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D402049D7930004F371 /* KleinKit.framework */; };
-		D5975D552049DA930004F371 /* KleinKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D402049D7930004F371 /* KleinKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5975D5A2049F6DD0004F371 /* PhotoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D592049F6DD0004F371 /* PhotoInformation.swift */; };
 		D5975D5C204A02E50004F371 /* PhotoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D5B204A02E50004F371 /* PhotoSize.swift */; };
 		D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5975D5D204A04750004F371 /* PhotoResponsePage.swift */; };
@@ -150,9 +146,17 @@
 		D5AE3FAE20509D6100E60662 /* HKQuantityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FAB20509D4F00E60662 /* HKQuantityType.swift */; };
 		D5AE3FB12050A8DF00E60662 /* HKQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FAF2050A8DB00E60662 /* HKQuantity.swift */; };
 		D5AE3FB22050A8E000E60662 /* HKQuantity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FAF2050A8DB00E60662 /* HKQuantity.swift */; };
-		D5AE3FB32050B7AB00E60662 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260A204B7E7200D3A756 /* HealthStore.swift */; };
+		D5AE3FB32050B7AB00E60662 /* HealthKitTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D531260A204B7E7200D3A756 /* HealthKitTracker.swift */; };
 		D5AE3FB52050B7D900E60662 /* WorkoutSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FB42050B7D900E60662 /* WorkoutSessionState.swift */; };
-		D5AE3FB62050B7D900E60662 /* WorkoutSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FB42050B7D900E60662 /* WorkoutSessionState.swift */; };
+		D5AE3FB82053038600E60662 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FB72053038600E60662 /* HealthStore.swift */; };
+		D5AE3FB92053038600E60662 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FB72053038600E60662 /* HealthStore.swift */; };
+		D5AE3FBC2053051400E60662 /* HKHealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FBB2053051400E60662 /* HKHealthStore.swift */; };
+		D5AE3FBD2053051400E60662 /* HKHealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AE3FBB2053051400E60662 /* HKHealthStore.swift */; };
+		D5B521362053113A00E5AF01 /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D402049D7930004F371 /* KleinKit.framework */; };
+		D5B521372053116C00E5AF01 /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D3E2049D7820004F371 /* KleinKit.framework */; };
+		D5B521382053117A00E5AF01 /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D402049D7930004F371 /* KleinKit.framework */; };
+		D5B5213A205313F400E5AF01 /* HealthStore.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B52139205313F400E5AF01 /* HealthStore.DI.swift */; };
+		D5B5213B205313F900E5AF01 /* HealthStore.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B52139205313F400E5AF01 /* HealthStore.DI.swift */; };
 		D5DDDD02204EE079008FC152 /* SplashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */; };
 		D5DDDD0B204EFB1A008FC152 /* RemoteDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */; };
 		D5DDDD0C204EFB1A008FC152 /* RemoteDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */; };
@@ -258,7 +262,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D5975D4A2049D89F0004F371 /* CommonLibrary.framework in Embed Frameworks */,
-				D5975D552049DA930004F371 /* KleinKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,9 +287,9 @@
 		D5312600204B6F1F00D3A756 /* LocationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAction.swift; sourceTree = "<group>"; };
 		D5312603204B700100D3A756 /* Permission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
 		D5312606204B721300D3A756 /* LocationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReducer.swift; sourceTree = "<group>"; };
-		D531260A204B7E7200D3A756 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
-		D531260D204B7E9200D3A756 /* HealthKitTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitTracker.swift; sourceTree = "<group>"; };
-		D5312610204B7E9B00D3A756 /* HealthKitTracker.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitTracker.DI.swift; sourceTree = "<group>"; };
+		D531260A204B7E7200D3A756 /* HealthKitTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitTracker.swift; sourceTree = "<group>"; };
+		D531260D204B7E9200D3A756 /* HealthTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTracker.swift; sourceTree = "<group>"; };
+		D5312610204B7E9B00D3A756 /* HealthTracker.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTracker.DI.swift; sourceTree = "<group>"; };
 		D5312613204B84DB00D3A756 /* HealthKitAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAction.swift; sourceTree = "<group>"; };
 		D5312616204B84FA00D3A756 /* HealthKitReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitReducer.swift; sourceTree = "<group>"; };
 		D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceEndpointTests.swift; sourceTree = "<group>"; };
@@ -364,6 +367,9 @@
 		D5AE3FAB20509D4F00E60662 /* HKQuantityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQuantityType.swift; sourceTree = "<group>"; };
 		D5AE3FAF2050A8DB00E60662 /* HKQuantity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKQuantity.swift; sourceTree = "<group>"; };
 		D5AE3FB42050B7D900E60662 /* WorkoutSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSessionState.swift; sourceTree = "<group>"; };
+		D5AE3FB72053038600E60662 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		D5AE3FBB2053051400E60662 /* HKHealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKHealthStore.swift; sourceTree = "<group>"; };
+		D5B52139205313F400E5AF01 /* HealthStore.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.DI.swift; sourceTree = "<group>"; };
 		D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInterfaceController.swift; sourceTree = "<group>"; };
 		D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDevice.swift; sourceTree = "<group>"; };
 		D5DDDD0D204EFB2A008FC152 /* RemoteDevice.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDevice.DI.swift; sourceTree = "<group>"; };
@@ -380,7 +386,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5975D512049DA630004F371 /* KleinKit.framework in Frameworks */,
+				D5B521372053116C00E5AF01 /* KleinKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +394,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5975D412049D7930004F371 /* KleinKit.framework in Frameworks */,
+				D5B521382053117A00E5AF01 /* KleinKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,9 +412,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5B521362053113A00E5AF01 /* KleinKit.framework in Frameworks */,
 				D53125F2204B658B00D3A756 /* HealthKit.framework in Frameworks */,
 				D5975D492049D89F0004F371 /* CommonLibrary.framework in Frameworks */,
-				D5975D542049DA930004F371 /* KleinKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +442,8 @@
 		D5312609204B7E1700D3A756 /* HealthStore */ = {
 			isa = PBXGroup;
 			children = (
-				D531260A204B7E7200D3A756 /* HealthStore.swift */,
+				D531260A204B7E7200D3A756 /* HealthKitTracker.swift */,
+				D5AE3FBB2053051400E60662 /* HKHealthStore.swift */,
 				D5AE3FB42050B7D900E60662 /* WorkoutSessionState.swift */,
 			);
 			path = HealthStore;
@@ -705,8 +712,10 @@
 			isa = PBXGroup;
 			children = (
 				D5658E80204B44C7008D45E7 /* DefaultMapResolver.swift */,
-				D5312610204B7E9B00D3A756 /* HealthKitTracker.DI.swift */,
-				D531260D204B7E9200D3A756 /* HealthKitTracker.swift */,
+				D5B52139205313F400E5AF01 /* HealthStore.DI.swift */,
+				D5AE3FB72053038600E60662 /* HealthStore.swift */,
+				D5312610204B7E9B00D3A756 /* HealthTracker.DI.swift */,
+				D531260D204B7E9200D3A756 /* HealthTracker.swift */,
 				D53125FC204B686F00D3A756 /* LocationTracker.DI.swift */,
 				D53125F9204B686200D3A756 /* LocationTracker.swift */,
 				D59AF54A204A38E600BB8DA5 /* PhotoAPI.DI.swift */,
@@ -1185,20 +1194,21 @@
 				D5658E51204B2BBE008D45E7 /* Store.swift in Sources */,
 				D50CBF17204C72BD003A337E /* ActivityActionRequest.swift in Sources */,
 				D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */,
-				D5AE3FB32050B7AB00E60662 /* HealthStore.swift in Sources */,
+				D5AE3FB32050B7AB00E60662 /* HealthKitTracker.swift in Sources */,
 				D5312604204B700100D3A756 /* Permission.swift in Sources */,
 				D5658E47204B0DF8008D45E7 /* DeviceState.swift in Sources */,
 				D5658E6F204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
-				D531260E204B7E9200D3A756 /* HealthKitTracker.swift in Sources */,
+				D531260E204B7E9200D3A756 /* HealthTracker.swift in Sources */,
 				D50CBF0F204C45BB003A337E /* PhotoReducer.swift in Sources */,
 				D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */,
 				D5DDDD1A204F1525008FC152 /* RemoteDeviceActionRequest.swift in Sources */,
 				D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */,
 				D5DDDD0B204EFB1A008FC152 /* RemoteDevice.swift in Sources */,
 				D53125FD204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
+				D5AE3FB82053038600E60662 /* HealthStore.swift in Sources */,
 				D5658E66204B2F41008D45E7 /* RouterReducer.swift in Sources */,
 				D5312614204B84DB00D3A756 /* HealthKitAction.swift in Sources */,
-				D5312611204B7E9B00D3A756 /* HealthKitTracker.DI.swift in Sources */,
+				D5312611204B7E9B00D3A756 /* HealthTracker.DI.swift in Sources */,
 				D5658E5A204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */,
 				D59AF546204A335D00BB8DA5 /* PhotoResponseStatus.swift in Sources */,
 				D5DDDD0E204EFB2A008FC152 /* RemoteDevice.DI.swift in Sources */,
@@ -1217,9 +1227,11 @@
 				D59AF54E204A38EF00BB8DA5 /* PhotoServiceEndpoint.swift in Sources */,
 				D5312607204B721300D3A756 /* LocationReducer.swift in Sources */,
 				D5658E60204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
+				D5B5213A205313F400E5AF01 /* HealthStore.DI.swift in Sources */,
 				D59AF54B204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
 				D50CBF0C204C44E3003A337E /* PhotoAction.swift in Sources */,
 				D5AE3FB22050A8E000E60662 /* HKQuantity.swift in Sources */,
+				D5AE3FBC2053051400E60662 /* HKHealthStore.swift in Sources */,
 				D5658E91204B47A5008D45E7 /* NavigationTree.swift in Sources */,
 				D53125FA204B686200D3A756 /* LocationTracker.swift in Sources */,
 				D59AF561204A3CC800BB8DA5 /* URLRequest.swift in Sources */,
@@ -1245,6 +1257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5B5213B205313F900E5AF01 /* HealthStore.DI.swift in Sources */,
 				D5658E5E204B2CEF008D45E7 /* StateProvider.swift in Sources */,
 				D5658E52204B2BBE008D45E7 /* Store.swift in Sources */,
 				D50CBF18204C72BD003A337E /* ActivityActionRequest.swift in Sources */,
@@ -1253,7 +1266,7 @@
 				D5312605204B700100D3A756 /* Permission.swift in Sources */,
 				D5658E48204B0DF8008D45E7 /* DeviceState.swift in Sources */,
 				D5658E70204B34AC008D45E7 /* ActivityReducer.swift in Sources */,
-				D531260F204B7E9200D3A756 /* HealthKitTracker.swift in Sources */,
+				D531260F204B7E9200D3A756 /* HealthTracker.swift in Sources */,
 				D50CBF10204C45BB003A337E /* PhotoReducer.swift in Sources */,
 				D53125F8204B684F00D3A756 /* CoreLocationTracker.swift in Sources */,
 				D5DDDD1B204F1525008FC152 /* RemoteDeviceActionRequest.swift in Sources */,
@@ -1263,7 +1276,7 @@
 				D53125FE204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
 				D5658E67204B2F41008D45E7 /* RouterReducer.swift in Sources */,
 				D5312615204B84DB00D3A756 /* HealthKitAction.swift in Sources */,
-				D5312612204B7E9B00D3A756 /* HealthKitTracker.DI.swift in Sources */,
+				D5312612204B7E9B00D3A756 /* HealthTracker.DI.swift in Sources */,
 				D5658E5B204B2C87008D45E7 /* ActionDispatcher.DI.swift in Sources */,
 				D59AF554204A38FA00BB8DA5 /* PhotoResponseStatus.swift in Sources */,
 				D5DDDD0F204EFB2A008FC152 /* RemoteDevice.DI.swift in Sources */,
@@ -1279,7 +1292,9 @@
 				D59AF558204A391500BB8DA5 /* PhotoAPI.swift in Sources */,
 				D5658E39204B063C008D45E7 /* AppState.swift in Sources */,
 				D59AF55C204A39DE00BB8DA5 /* FlickrAPI.swift in Sources */,
+				D5AE3FB92053038600E60662 /* HealthStore.swift in Sources */,
 				D59AF54C204A38E600BB8DA5 /* PhotoAPI.DI.swift in Sources */,
+				D5AE3FBD2053051400E60662 /* HKHealthStore.swift in Sources */,
 				D5312608204B721300D3A756 /* LocationReducer.swift in Sources */,
 				D5658E61204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
 				D59AF553204A38FA00BB8DA5 /* PhotoResponsePage.swift in Sources */,
@@ -1290,7 +1305,7 @@
 				D5312602204B6F1F00D3A756 /* LocationAction.swift in Sources */,
 				D5658E55204B2C0D008D45E7 /* ActionRequest.swift in Sources */,
 				D5DDDD12204EFB47008FC152 /* WatchConnectivityControl.swift in Sources */,
-				D531260C204B7E7200D3A756 /* HealthStore.swift in Sources */,
+				D531260C204B7E7200D3A756 /* HealthKitTracker.swift in Sources */,
 				D5658E82204B44CD008D45E7 /* DefaultMapResolver.swift in Sources */,
 				D5DDDD18204F06BD008FC152 /* RemoteDeviceReducer.swift in Sources */,
 				D59AF555204A390100BB8DA5 /* Codable.swift in Sources */,
@@ -1344,7 +1359,6 @@
 				D5975D70204A062A0004F371 /* PhotoTests.swift in Sources */,
 				D5975D66204A05410004F371 /* BaseTests.swift in Sources */,
 				D5658E73204B372F008D45E7 /* StoreTests.swift in Sources */,
-				D5AE3FB62050B7D900E60662 /* WorkoutSessionState.swift in Sources */,
 				D5AE3FAA205079BB00E60662 /* NavigationTreeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

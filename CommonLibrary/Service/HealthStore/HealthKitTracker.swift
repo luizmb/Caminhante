@@ -1,5 +1,5 @@
 //
-//  HealthStore.swift
+//  HealthKitTracker.swift
 //  Caminhante
 //
 //  Created by Luiz Rodrigo Martins Barbosa on 04.03.18.
@@ -10,8 +10,8 @@ import Foundation
 import HealthKit
 import KleinKit
 
-public class HealthStore: NSObject {
-    let healthStore = HKHealthStore()
+public class HealthKitTracker: NSObject {
+    public lazy var healthStore = { healthStoreFactory() }()
 
     #if os(watchOS)
     var state: WorkoutSessionState?
@@ -23,7 +23,7 @@ public class HealthStore: NSObject {
                               HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!])
 
     public static let shared: HealthKitTracker = {
-        let global = HealthStore()
+        let global = HealthKitTracker()
         return global
     }()
 
@@ -69,7 +69,7 @@ public class HealthStore: NSObject {
 }
 
 #if os(iOS)
-extension HealthStore: HealthKitTracker {
+extension HealthKitTracker: HealthTracker {
     // Not needed because the workout will can be triggered by the phone using the regular buttons
     // Could be used to open watchApp remotely, tho.
     public func start() { }
@@ -88,11 +88,11 @@ extension HealthStore: HealthKitTracker {
 #endif
 
 #if os(watchOS)
-extension HealthStore: HealthKitTracker {
+extension HealthKitTracker: HealthTracker {
     public func start() {
         guard state == nil else { return }
 
-        state = WorkoutSessionState(store: healthStore)
+        state = WorkoutSessionState(healthStore: healthStore)
 
         guard let state = state else { return }
 
@@ -134,7 +134,7 @@ extension HealthStore: HealthKitTracker {
 
 // MARK: - Data accumulation
 
-extension HealthStore {
+extension HealthKitTracker {
     public func startAccumulatingData(from startDate: Date) {
         startWalkingRunningQuery(from: startDate)
         startActiveEnergyBurnedQuery(from: startDate)
@@ -213,7 +213,7 @@ extension HealthStore {
 }
 
 // MARK: - Save data
-extension HealthStore {
+extension HealthKitTracker {
     public func save(from startDate: Date,
                      to endDate: Date,
                      distance: Measurement<UnitLength>,
@@ -293,7 +293,7 @@ extension HealthStore {
 }
 
 // MARK: - HKWorkoutSessionDelegate
-extension HealthStore: HKWorkoutSessionDelegate {
+extension HealthKitTracker: HKWorkoutSessionDelegate {
     public func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
         print("workout session did fail with error: \(error)")
     }
@@ -320,4 +320,5 @@ extension HealthStore: HKWorkoutSessionDelegate {
 }
 #endif
 
-extension HealthStore: HasActionDispatcher { }
+extension HealthKitTracker: HasActionDispatcher { }
+extension HealthKitTracker: HasHealthStore { }
