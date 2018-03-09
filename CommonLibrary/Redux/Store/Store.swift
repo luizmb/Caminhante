@@ -20,8 +20,8 @@ final public class Store: StoreBase<AppState, EntryPointReducer>, ActionDispatch
 
     // Workaround while waiting for 'SE-0143: Conditional Conformance'
     // https://github.com/apple/swift-evolution/blob/master/proposals/0143-conditional-conformances.md
-    //extension Signal: StateProvider where A: AppState {
-    //}
+    // extension Signal: StateProvider where A: AppState {
+    // }
     // So we wrap the protocol, instead. And we use the Store itself to wrap it, instead
     // of introducing a new type.
 
