@@ -159,6 +159,8 @@
 		D5B5213B205313F900E5AF01 /* HealthStore.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B52139205313F400E5AF01 /* HealthStore.DI.swift */; };
 		D5B5214A20536EC000E5AF01 /* Today.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B5214920536EC000E5AF01 /* Today.DI.swift */; };
 		D5B5214B20536EC000E5AF01 /* Today.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B5214920536EC000E5AF01 /* Today.DI.swift */; };
+		D5C5DF8E2054907000E5CAE1 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C5DF8D2054907000E5CAE1 /* Measurement.swift */; };
+		D5C5DF8F2054907000E5CAE1 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C5DF8D2054907000E5CAE1 /* Measurement.swift */; };
 		D5DDDD02204EE079008FC152 /* SplashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */; };
 		D5DDDD0B204EFB1A008FC152 /* RemoteDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */; };
 		D5DDDD0C204EFB1A008FC152 /* RemoteDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */; };
@@ -373,6 +375,7 @@
 		D5AE3FBB2053051400E60662 /* HKHealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKHealthStore.swift; sourceTree = "<group>"; };
 		D5B52139205313F400E5AF01 /* HealthStore.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.DI.swift; sourceTree = "<group>"; };
 		D5B5214920536EC000E5AF01 /* Today.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.DI.swift; sourceTree = "<group>"; };
+		D5C5DF8D2054907000E5CAE1 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInterfaceController.swift; sourceTree = "<group>"; };
 		D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDevice.swift; sourceTree = "<group>"; };
 		D5DDDD0D204EFB2A008FC152 /* RemoteDevice.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDevice.DI.swift; sourceTree = "<group>"; };
@@ -687,6 +690,7 @@
 				D59AF560204A3CC800BB8DA5 /* URLRequest.swift */,
 				D5AE3FAB20509D4F00E60662 /* HKQuantityType.swift */,
 				D5AE3FAF2050A8DB00E60662 /* HKQuantity.swift */,
+				D5C5DF8D2054907000E5CAE1 /* Measurement.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1206,6 +1210,7 @@
 				D50CBF0F204C45BB003A337E /* PhotoReducer.swift in Sources */,
 				D53125F7204B684F00D3A756 /* CoreLocationTracker.swift in Sources */,
 				D5DDDD1A204F1525008FC152 /* RemoteDeviceActionRequest.swift in Sources */,
+				D5C5DF8E2054907000E5CAE1 /* Measurement.swift in Sources */,
 				D5975D5E204A04750004F371 /* PhotoResponsePage.swift in Sources */,
 				D5DDDD0B204EFB1A008FC152 /* RemoteDevice.swift in Sources */,
 				D53125FD204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
@@ -1303,6 +1308,7 @@
 				D5AE3FBD2053051400E60662 /* HKHealthStore.swift in Sources */,
 				D5312608204B721300D3A756 /* LocationReducer.swift in Sources */,
 				D5658E61204B2CFD008D45E7 /* StateProvider.DI.swift in Sources */,
+				D5C5DF8F2054907000E5CAE1 /* Measurement.swift in Sources */,
 				D59AF553204A38FA00BB8DA5 /* PhotoResponsePage.swift in Sources */,
 				D50CBF0D204C44E3003A337E /* PhotoAction.swift in Sources */,
 				D5658E92204B47A5008D45E7 /* NavigationTree.swift in Sources */,

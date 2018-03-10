@@ -48,8 +48,8 @@ class ActivityControlsInterfaceController: WKInterfaceController {
 
         locationPermissionLabel.setTextColor(mapToColor(permission: state.deviceState.locationPermission))
         healthPermissionLabel.setTextColor(mapToColor(permission: state.deviceState.healthPermission))
-        distanceLabel.setText(state.currentActivity.map { format(distance: $0.totalDistance) } ?? "-")
-        energyLabel.setText(state.currentActivity.map { format(energy: $0.totalEnergyBurned) } ?? "-")
+        distanceLabel.setText(state.currentActivity.map { $0.totalDistance.format(digits: 1) } ?? "-")
+        energyLabel.setText(state.currentActivity.map { $0.totalEnergyBurned.format(digits: 1) } ?? "-")
     }
 
     private func mapToColor(permission: Permission) -> UIColor {
@@ -58,33 +58,6 @@ class ActivityControlsInterfaceController: WKInterfaceController {
         case .authorized: return .green
         case .denied: return .red
         }
-    }
-
-    private func format(distance: Measurement<UnitLength>) -> String {
-        let m = distance.converted(to: .meters)
-        if m.value >= 1_000 {
-            let km = distance.converted(to: .kilometers)
-            return "\(format(value: km.value))km"
-        } else {
-            return "\(format(value: m.value))m"
-        }
-    }
-
-    private func format(energy: Measurement<UnitEnergy>) -> String {
-        let cal = energy.converted(to: .calories)
-        if cal.value >= 1_000 {
-            let kcal = energy.converted(to: .kilocalories)
-            return "\(format(value: kcal.value))kcal"
-        } else {
-            return "\(format(value: cal.value))cal"
-        }
-    }
-
-    private func format(value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.locale = Locale.current
-        formatter.maximumFractionDigits = 1
-        return formatter.string(from: NSNumber(value: value)) ?? "0"
     }
 
     override func willActivate() {
