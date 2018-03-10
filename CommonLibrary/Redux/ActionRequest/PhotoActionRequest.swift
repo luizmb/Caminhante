@@ -35,17 +35,21 @@ extension PhotoActionRequest: ActionRequest {
     private static func fetchPhotoInformation(from location: CLLocation, id: UUID, with store: StoreAccessors) -> CancelableTask {
         return photoAPI.request(.publicPhotosNearby(location: location.coordinate,
                                                     page: 1,
-                                                    pageSize: 1),
+                                                    pageSize: 20),
                                 completion: photoInformationReceived(id: id, with: store))
     }
 
     private static func photoInformationReceived(id: UUID, with store: StoreAccessors) -> (Result<Data>) -> Void {
         return { result in
+            let currentPhotos = store.getState()
+                                     .currentActivity?
+                                     .snapshotPoints
+                                     .flatMap { $0.photo.possibleValue()?.id } ?? []
             let photoResponseResult: Result<PhotoResponse> = result.flatMap(JsonParser.decode)
             let photoInformationResult: Result<PhotoInformation> = photoResponseResult.flatMap { response in
                 if let page = response.responsePage,
-                    page.photos.count == 1,
-                    var photoInformation = page.photos.first {
+                    !page.photos.isEmpty,
+                    var photoInformation = page.photos.first(where: { !currentPhotos.contains($0.id) }) {
 
                     let task = fetchPhotoBytes(for: photoInformation, with: store)
                     photoInformation.image = .syncing(task: task, oldValue: nil)
