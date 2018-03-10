@@ -18,14 +18,15 @@ public struct ActivityReducer: Reducer {
         case .activityDidStart:
             stateCopy.currentActivity = stateCopy.currentActivity ?? Activity(state: .inProgress, snapshotPoints: [])
             stateCopy.currentActivity?.state = .inProgress
-            stateCopy.currentActivity?.startDate = Date()
+            let startDate = stateCopy.currentActivity?.startDate ?? now()
+            stateCopy.currentActivity?.startDate = startDate
         case .activityDidPause:
             stateCopy.currentActivity = stateCopy.currentActivity ?? Activity(state: .paused, snapshotPoints: [])
             stateCopy.currentActivity?.state = .paused
         case .activityDidFinish:
             stateCopy.currentActivity = stateCopy.currentActivity ?? Activity(state: .finished, snapshotPoints: [])
             stateCopy.currentActivity?.state = .finished
-            stateCopy.currentActivity?.endDate = Date()
+            stateCopy.currentActivity?.endDate = now()
         case .activityDidReset:
             stateCopy.currentActivity = nil
         case .healthTrackerDidWalkDistance(let distance):
@@ -38,3 +39,5 @@ public struct ActivityReducer: Reducer {
         return stateCopy
     }
 }
+
+extension ActivityReducer: HasToday { }

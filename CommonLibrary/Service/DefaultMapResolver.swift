@@ -20,6 +20,7 @@ public class DefaultMapResolver {
         injector.mapper.mapSingleton(RemoteDevice.self) { WatchConnectivityControl.shared }
         injector.mapper.mapSingleton(HealthTracker.self) { HealthKitTracker.shared }
         injector.mapper.mapFactory(HealthStore.self) { { HKHealthStore() } }
+        injector.mapper.mapFactory(Date.self) { { Date() } }
     }
 }
 

@@ -157,6 +157,8 @@
 		D5B521382053117A00E5AF01 /* KleinKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5975D402049D7930004F371 /* KleinKit.framework */; };
 		D5B5213A205313F400E5AF01 /* HealthStore.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B52139205313F400E5AF01 /* HealthStore.DI.swift */; };
 		D5B5213B205313F900E5AF01 /* HealthStore.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B52139205313F400E5AF01 /* HealthStore.DI.swift */; };
+		D5B5214A20536EC000E5AF01 /* Today.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B5214920536EC000E5AF01 /* Today.DI.swift */; };
+		D5B5214B20536EC000E5AF01 /* Today.DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B5214920536EC000E5AF01 /* Today.DI.swift */; };
 		D5DDDD02204EE079008FC152 /* SplashInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */; };
 		D5DDDD0B204EFB1A008FC152 /* RemoteDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */; };
 		D5DDDD0C204EFB1A008FC152 /* RemoteDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */; };
@@ -370,6 +372,7 @@
 		D5AE3FB72053038600E60662 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		D5AE3FBB2053051400E60662 /* HKHealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKHealthStore.swift; sourceTree = "<group>"; };
 		D5B52139205313F400E5AF01 /* HealthStore.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.DI.swift; sourceTree = "<group>"; };
+		D5B5214920536EC000E5AF01 /* Today.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.DI.swift; sourceTree = "<group>"; };
 		D5DDDD01204EE079008FC152 /* SplashInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInterfaceController.swift; sourceTree = "<group>"; };
 		D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDevice.swift; sourceTree = "<group>"; };
 		D5DDDD0D204EFB2A008FC152 /* RemoteDevice.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDevice.DI.swift; sourceTree = "<group>"; };
@@ -723,6 +726,7 @@
 				D59AF548204A37E300BB8DA5 /* PhotoServiceEndpoint.swift */,
 				D5DDDD0D204EFB2A008FC152 /* RemoteDevice.DI.swift */,
 				D5DDDD0A204EFB1A008FC152 /* RemoteDevice.swift */,
+				D5B5214920536EC000E5AF01 /* Today.DI.swift */,
 				D53125FF204B6A6500D3A756 /* CoreLocationTracker */,
 				D59AF559204A39CF00BB8DA5 /* FlickrAPI */,
 				D5312609204B7E1700D3A756 /* HealthStore */,
@@ -1236,6 +1240,7 @@
 				D53125FA204B686200D3A756 /* LocationTracker.swift in Sources */,
 				D59AF561204A3CC800BB8DA5 /* URLRequest.swift in Sources */,
 				D5312601204B6F1F00D3A756 /* LocationAction.swift in Sources */,
+				D5B5214A20536EC000E5AF01 /* Today.DI.swift in Sources */,
 				D5658E54204B2C0D008D45E7 /* ActionRequest.swift in Sources */,
 				D5DDDD11204EFB47008FC152 /* WatchConnectivityControl.swift in Sources */,
 				D5658E83204B44CE008D45E7 /* DefaultMapResolver.swift in Sources */,
@@ -1273,6 +1278,7 @@
 				D5AE3FAE20509D6100E60662 /* HKQuantityType.swift in Sources */,
 				D59AF550204A38F600BB8DA5 /* PhotoInformation.swift in Sources */,
 				D5DDDD0C204EFB1A008FC152 /* RemoteDevice.swift in Sources */,
+				D5B5214B20536EC000E5AF01 /* Today.DI.swift in Sources */,
 				D53125FE204B686F00D3A756 /* LocationTracker.DI.swift in Sources */,
 				D5658E67204B2F41008D45E7 /* RouterReducer.swift in Sources */,
 				D5312615204B84DB00D3A756 /* HealthKitAction.swift in Sources */,

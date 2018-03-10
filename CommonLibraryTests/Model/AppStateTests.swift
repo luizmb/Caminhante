@@ -14,10 +14,10 @@ import XCTest
 class AppStateTests: BaseTests {
     let apple = CLLocation(coordinate: CLLocationCoordinate2D(latitude: 37.332_624_1,
                                                               longitude: -122.030_862_1),
-                                altitude: CLLocationDistance(),
-                                horizontalAccuracy: CLLocationAccuracy(),
-                                verticalAccuracy: CLLocationAccuracy(),
-                                timestamp: Date())
+                           altitude: CLLocationDistance(),
+                           horizontalAccuracy: CLLocationAccuracy(),
+                           verticalAccuracy: CLLocationAccuracy(),
+                           timestamp: Date())
 
     let time = Date(timeIntervalSinceReferenceDate: 0)
 

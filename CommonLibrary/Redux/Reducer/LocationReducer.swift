@@ -26,10 +26,12 @@ public struct LocationReducer: Reducer {
             let point = SnapshotPoint(identifier: id,
                                       location: location,
                                       photo: .syncing(task: photoTask, oldValue: nil),
-                                      time: Date())
+                                      time: now())
             activity.snapshotPoints.insert(point, at: 0)
             stateCopy.currentActivity = activity
         }
         return stateCopy
     }
 }
+
+extension LocationReducer: HasToday { }
