@@ -30,21 +30,21 @@ public class WatchConnectivityControl: NSObject, RemoteDevice {
         }
 
         #if os(watchOS)
-            stateProvider[\.currentActivity]
-                .subscribe(if: { oldActivity, newActivity in
-                    switch (oldActivity?.flatMap { $0 }, newActivity) {
-                    case (.none, .some), (.some, .none):
-                        return true
-                    case (.some(let oldState), .some(let newState)):
-                        return oldState.state != newState.state
-                    default:
-                        return false
-                    }
-                }, { [weak self] activity in
-                    self?.updateState(type: ActivityState.className,
-                                      data: [ActivityState.className: activity?.state])
-                })
-                .bind(to: self)
+        stateProvider[\.currentActivity]
+            .subscribe(if: { oldActivity, newActivity in
+                switch (oldActivity?.flatMap { $0 }, newActivity) {
+                case (.none, .some), (.some, .none):
+                    return true
+                case (.some(let oldState), .some(let newState)):
+                    return oldState.state != newState.state
+                default:
+                    return false
+                }
+            }, { [weak self] activity in
+                self?.updateState(type: ActivityState.className,
+                                  data: [ActivityState.className: activity?.state])
+            })
+            .bind(to: self)
         #endif
 
         if session == nil {
@@ -100,6 +100,7 @@ extension WatchConnectivityControl: WCSessionDelegate {
     public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         DispatchQueue.main.async {
             self.actionDispatcher.dispatch(RemoteDeviceAction.activationComplete(success: activationState == .activated))
+            self.actionDispatcher.dispatch(RemoteDeviceAction.reachabilityChanged(isReachable: session.isReachable))
         }
     }
 
@@ -129,9 +130,15 @@ extension WatchConnectivityControl: WCSessionDelegate {
     }
 
     public func sessionDidBecomeInactive(_ session: WCSession) {
+        DispatchQueue.main.async {
+            self.actionDispatcher.dispatch(RemoteDeviceAction.reachabilityChanged(isReachable: session.isReachable))
+        }
     }
 
     public func sessionDidDeactivate(_ session: WCSession) {
+        DispatchQueue.main.async {
+            self.actionDispatcher.dispatch(RemoteDeviceAction.reachabilityChanged(isReachable: session.isReachable))
+        }
     }
     #endif
 }
