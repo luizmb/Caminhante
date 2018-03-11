@@ -43,6 +43,10 @@
 		D5312615204B84DB00D3A756 /* HealthKitAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312613204B84DB00D3A756 /* HealthKitAction.swift */; };
 		D5312617204B84FA00D3A756 /* HealthKitReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312616204B84FA00D3A756 /* HealthKitReducer.swift */; };
 		D5312618204B84FA00D3A756 /* HealthKitReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5312616204B84FA00D3A756 /* HealthKitReducer.swift */; };
+		D54B1BBF2054DCEE000215E5 /* PhotoActionRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B1BBE2054DCEE000215E5 /* PhotoActionRequestTests.swift */; };
+		D54B1BC12054DDBB000215E5 /* MockPhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B1BC02054DDBB000215E5 /* MockPhotoAPI.swift */; };
+		D54B1BC32054E63C000215E5 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B1BC22054E63C000215E5 /* AnyError.swift */; };
+		D54B1BC52054E81C000215E5 /* JsonSuccessfulResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B1BC42054E81C000215E5 /* JsonSuccessfulResult.swift */; };
 		D5658E22204A468D008D45E7 /* PhotoServiceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */; };
 		D5658E24204A4899008D45E7 /* IntegrationFlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */; };
 		D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E28204A56E1008D45E7 /* Constants.secret.swift */; };
@@ -302,6 +306,10 @@
 		D5312610204B7E9B00D3A756 /* HealthTracker.DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTracker.DI.swift; sourceTree = "<group>"; };
 		D5312613204B84DB00D3A756 /* HealthKitAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAction.swift; sourceTree = "<group>"; };
 		D5312616204B84FA00D3A756 /* HealthKitReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitReducer.swift; sourceTree = "<group>"; };
+		D54B1BBE2054DCEE000215E5 /* PhotoActionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoActionRequestTests.swift; sourceTree = "<group>"; };
+		D54B1BC02054DDBB000215E5 /* MockPhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoAPI.swift; sourceTree = "<group>"; };
+		D54B1BC22054E63C000215E5 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
+		D54B1BC42054E81C000215E5 /* JsonSuccessfulResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSuccessfulResult.swift; sourceTree = "<group>"; };
 		D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceEndpointTests.swift; sourceTree = "<group>"; };
 		D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationFlickrTests.swift; sourceTree = "<group>"; };
 		D5658E25204A55C3008D45E7 /* Constants.example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.example.swift; sourceTree = "<group>"; };
@@ -768,6 +776,7 @@
 				D5C5DF932054A0EE00E5CAE1 /* ActivityActionRequest-iPhone-Tests.swift */,
 				D5C5DF982054B4B200E5CAE1 /* ActivityActionRequest-Watch-Tests.swift */,
 				D5C5DF9E2054C93500E5CAE1 /* LocationActionRequestTests.swift */,
+				D54B1BBE2054DCEE000215E5 /* PhotoActionRequestTests.swift */,
 			);
 			path = ActionRequest;
 			sourceTree = "<group>";
@@ -775,9 +784,12 @@
 		D5C5DF952054AC9100E5CAE1 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				D5C5DF962054ACA300E5CAE1 /* MockRemoteDevice.swift */,
-				D5C5DF9A2054B59B00E5CAE1 /* MockLocationTracker.swift */,
+				D54B1BC22054E63C000215E5 /* AnyError.swift */,
 				D5C5DF9C2054B64200E5CAE1 /* MockHealthTracker.swift */,
+				D5C5DF9A2054B59B00E5CAE1 /* MockLocationTracker.swift */,
+				D54B1BC02054DDBB000215E5 /* MockPhotoAPI.swift */,
+				D5C5DF962054ACA300E5CAE1 /* MockRemoteDevice.swift */,
+				D54B1BC42054E81C000215E5 /* JsonSuccessfulResult.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -1397,12 +1409,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C5DF992054B4B200E5CAE1 /* ActivityActionRequest-Watch-Tests.swift in Sources */,
+				D54B1BC12054DDBB000215E5 /* MockPhotoAPI.swift in Sources */,
 				D5C5DF9B2054B59B00E5CAE1 /* MockLocationTracker.swift in Sources */,
 				D59AF53F204A1E2600BB8DA5 /* CodableExtensionsTests.swift in Sources */,
+				D54B1BC32054E63C000215E5 /* AnyError.swift in Sources */,
 				D59AF564204A3CFA00BB8DA5 /* URLRequestExtensionsTests.swift in Sources */,
 				D5658E24204A4899008D45E7 /* IntegrationFlickrTests.swift in Sources */,
 				D5658E4A204B1500008D45E7 /* AppStateTests.swift in Sources */,
+				D54B1BBF2054DCEE000215E5 /* PhotoActionRequestTests.swift in Sources */,
 				D5E7209C204A1768005E4E3B /* PhotoDecodableTests.swift in Sources */,
+				D54B1BC52054E81C000215E5 /* JsonSuccessfulResult.swift in Sources */,
 				D5C5DF9D2054B64200E5CAE1 /* MockHealthTracker.swift in Sources */,
 				D5658E22204A468D008D45E7 /* PhotoServiceEndpointTests.swift in Sources */,
 				D5C5DF942054A0EE00E5CAE1 /* ActivityActionRequest-iPhone-Tests.swift in Sources */,

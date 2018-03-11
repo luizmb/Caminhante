@@ -128,8 +128,4 @@ class LocationActionRequestTests: BaseTests {
         injector.mapper.mapSingleton(HealthTracker.self) { healthTracker }
         return healthTracker
     }
-
-    private func potsdam() -> CLLocation {
-        return .init(latitude: 52.399_591, longitude: 13.045_899_9)
-    }
 }

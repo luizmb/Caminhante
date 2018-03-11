@@ -22,18 +22,11 @@ public struct DeviceState {
     public var healthPermission: Permission
     public var counterPartConnection: Bool
     public var counterPartReachable: Bool
+    public var deviceType: DeviceType = .iPhone
 
     public var navigation = NavigationTree.root()
     #if os(iOS)
     public weak var application: UIApplication?
-    #endif
-
-    #if TEST
-    public var deviceType: DeviceType = .iPhone
-    #elseif os(iOS)
-    public let deviceType: DeviceType = .iPhone
-    #elseif os(watchOS)
-    public let deviceType: DeviceType = .appleWatch
     #endif
 
     public init(isInBackground: Bool, isActive: Bool, locationPermission: Permission, healthPermission: Permission) {
@@ -43,6 +36,9 @@ public struct DeviceState {
         self.healthPermission = healthPermission
         self.counterPartConnection = false
         self.counterPartReachable = false
+        #if os(watchOS)
+        self.deviceType = .appleWatch
+        #endif
     }
 }
 
