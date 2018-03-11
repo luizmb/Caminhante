@@ -10,9 +10,9 @@ import Foundation
 public enum ActivityState: Int, Codable {
     public static let className = String(describing: ActivityState.self)
 
-    case paused
-    case inProgress
-    case finished
+    case paused = 0
+    case inProgress = 1
+    case finished = 2
 }
 
 extension ActivityState: Equatable {

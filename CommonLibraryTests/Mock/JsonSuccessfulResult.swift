@@ -7,6 +7,7 @@
 
 import Foundation
 
+// swiftlint:disable line_length
 let jsonSuccessfulResult = """
     {
         "photos": {
@@ -240,3 +241,4 @@ let jsonSuccessfulResult = """
         "stat": "ok"
     }
     """
+// swiftlint:enable line_length
