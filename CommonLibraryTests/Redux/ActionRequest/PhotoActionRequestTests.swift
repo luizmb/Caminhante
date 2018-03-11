@@ -93,15 +93,6 @@ class PhotoActionRequestTests: BaseTests {
         }
     }
 
-    private func expectSuccessfulResult<T: Equatable>(result: Result<T>, valid: (T) -> Void) {
-        switch result {
-        case .success(let value):
-            valid(value)
-        default:
-            fail()
-        }
-    }
-
     private func expectFirstPhoto(_ photoInformation: PhotoInformation) {
         expect(photoInformation.id) == "26555751578"
         expect(photoInformation.owner) == "9187590@N04"
@@ -112,15 +103,6 @@ class PhotoActionRequestTests: BaseTests {
         expect(photoInformation.isPublic).to(beTrue())
         expect(photoInformation.isFriend).to(beFalse())
         expect(photoInformation.isFamily).to(beFalse())
-    }
-
-    private func givenActivityInProgress() -> AppState {
-        var state = AppState()
-        state.currentActivity = Activity(state: .inProgress, snapshotPoints: [])
-        state.currentActivity!.startDate = Date(timeIntervalSinceReferenceDate: 0)
-        state.deviceState.locationPermission = .authorized
-        state.deviceState.deviceType = .iPhone
-        return state
     }
 
     private func mock() -> MockPhotoAPI {

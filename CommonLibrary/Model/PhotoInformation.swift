@@ -122,6 +122,7 @@ extension PhotoInformation: Equatable {
             lhs.title == rhs.title &&
             lhs.isPublic == rhs.isPublic &&
             lhs.isFriend == rhs.isFriend &&
-            lhs.isFamily == rhs.isFamily
+            lhs.isFamily == rhs.isFamily &&
+            lhs.image == rhs.image
     }
 }

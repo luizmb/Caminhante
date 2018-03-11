@@ -6,6 +6,7 @@
 //
 
 import KleinKit
+import Nimble
 import XCTest
 
 class BaseTests: XCTestCase {
@@ -19,5 +20,14 @@ class BaseTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
         injector.mapper = .init()
+    }
+
+    func expectSuccessfulResult<T: Equatable>(result: Result<T>, valid: (T) -> Void) {
+        switch result {
+        case .success(let value):
+            valid(value)
+        default:
+            fail()
+        }
     }
 }
