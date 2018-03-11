@@ -50,6 +50,7 @@
 		D54B1BC7205577A6000215E5 /* RemoteDeviceActionRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B1BC6205577A6000215E5 /* RemoteDeviceActionRequestTests.swift */; };
 		D561CD3920558F2F00EA253A /* ActivityReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561CD3820558F2F00EA253A /* ActivityReducerTests.swift */; };
 		D561CD3B2055951300EA253A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561CD3A2055951300EA253A /* State.swift */; };
+		D561CD3D2055983100EA253A /* HealthKitReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561CD3C2055983100EA253A /* HealthKitReducerTests.swift */; };
 		D5658E22204A468D008D45E7 /* PhotoServiceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */; };
 		D5658E24204A4899008D45E7 /* IntegrationFlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */; };
 		D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E28204A56E1008D45E7 /* Constants.secret.swift */; };
@@ -316,6 +317,7 @@
 		D54B1BC6205577A6000215E5 /* RemoteDeviceActionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDeviceActionRequestTests.swift; sourceTree = "<group>"; };
 		D561CD3820558F2F00EA253A /* ActivityReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReducerTests.swift; sourceTree = "<group>"; };
 		D561CD3A2055951300EA253A /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		D561CD3C2055983100EA253A /* HealthKitReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitReducerTests.swift; sourceTree = "<group>"; };
 		D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceEndpointTests.swift; sourceTree = "<group>"; };
 		D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationFlickrTests.swift; sourceTree = "<group>"; };
 		D5658E25204A55C3008D45E7 /* Constants.example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.example.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				D561CD3820558F2F00EA253A /* ActivityReducerTests.swift */,
+				D561CD3C2055983100EA253A /* HealthKitReducerTests.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -1442,6 +1445,7 @@
 				D5658E22204A468D008D45E7 /* PhotoServiceEndpointTests.swift in Sources */,
 				D54B1BC7205577A6000215E5 /* RemoteDeviceActionRequestTests.swift in Sources */,
 				D5C5DF942054A0EE00E5CAE1 /* ActivityActionRequest-iPhone-Tests.swift in Sources */,
+				D561CD3D2055983100EA253A /* HealthKitReducerTests.swift in Sources */,
 				D5975D70204A062A0004F371 /* PhotoTests.swift in Sources */,
 				D5975D66204A05410004F371 /* BaseTests.swift in Sources */,
 				D5C5DF9F2054C93500E5CAE1 /* LocationActionRequestTests.swift in Sources */,
