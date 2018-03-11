@@ -100,7 +100,7 @@ Once all the `Reducers` had the opportunity to reduce the state according to the
 
 We are almost there, there's a final step in this workflow, and it's a very important one: notify whoever is interested.
 
-Differently from the other frameworks I mentioned before, my implementation of redux uses the concept of `Signal` to broadcast a change. `Signal` is a data structure popular from ReactiveCocoa, RxSwift and other web libraries and it's basically a continuous version of a `Promise`, that dispatches not only once but every time that a value changes. My implementation was strongly inspired by Swift Talk episodes [#39](https://talk.objc.io/episodes/S01E39-from-futures-to-signals), [#40](https://talk.objc.io/episodes/S01E40-signal-ownership-and-subscriptions) and [#42](https://talk.objc.io/episodes/S01E42-thread-safety), although I went beyond and changed my `Signal<T>` class to be a [functor and a monad](http://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/), in a way that you can subscribe sub-states.
+Differently from the other frameworks I mentioned before, my implementation of redux uses the concept of `Signal<T>` to broadcast a change. `Signal<T>` is a data structure popular from ReactiveCocoa, RxSwift and some functional languages such as Haskell, and it's basically a continuous version of a `Promise<T>`, but that dispatches not only once but every time that a value changes. My implementation was strongly inspired by Swift Talk episodes [#39](https://talk.objc.io/episodes/S01E39-from-futures-to-signals), [#40](https://talk.objc.io/episodes/S01E40-signal-ownership-and-subscriptions) and [#42](https://talk.objc.io/episodes/S01E42-thread-safety), although I went beyond and changed my `Signal<T>` class to be a [functor and a monad](http://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/), in a way that you can subscribe sub-states.
 
 For example, a `ViewController` wanna observe only certain property of your state, so the subscription call will be something like:
 ```swift
@@ -130,7 +130,7 @@ The second is a assertion library for Unit Tests, which allows natural language 
 ### Dependency Injection
 
 Inspired by [this article](http://www.danielhall.io/a-swift-y-approach-to-dependency-injection) I wrote a Dependency Injection layer using Protocol Extensions to add traits to a client in a very transparent way. If you want to use the API from a class, all you must do is:
-```
+```swift
 class MyClass {
     func checkWeather() {
         apiClient.request(.weather) { w in
