@@ -56,7 +56,9 @@ class MockHealthTracker: HealthTracker {
     }
 
     var appendLocationsCalls = 0
+    var locations: [CLLocation] = []
     func appendLocations(_ locations: [CLLocation]) {
         appendLocationsCalls += 1
+        self.locations += locations
     }
 }
