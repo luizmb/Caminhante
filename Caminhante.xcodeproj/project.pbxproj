@@ -48,6 +48,8 @@
 		D54B1BC32054E63C000215E5 /* AnyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B1BC22054E63C000215E5 /* AnyError.swift */; };
 		D54B1BC52054E81C000215E5 /* JsonSuccessfulResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B1BC42054E81C000215E5 /* JsonSuccessfulResult.swift */; };
 		D54B1BC7205577A6000215E5 /* RemoteDeviceActionRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54B1BC6205577A6000215E5 /* RemoteDeviceActionRequestTests.swift */; };
+		D561CD3920558F2F00EA253A /* ActivityReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561CD3820558F2F00EA253A /* ActivityReducerTests.swift */; };
+		D561CD3B2055951300EA253A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561CD3A2055951300EA253A /* State.swift */; };
 		D5658E22204A468D008D45E7 /* PhotoServiceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */; };
 		D5658E24204A4899008D45E7 /* IntegrationFlickrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */; };
 		D5658E29204A56E1008D45E7 /* Constants.secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5658E28204A56E1008D45E7 /* Constants.secret.swift */; };
@@ -312,6 +314,8 @@
 		D54B1BC22054E63C000215E5 /* AnyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyError.swift; sourceTree = "<group>"; };
 		D54B1BC42054E81C000215E5 /* JsonSuccessfulResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSuccessfulResult.swift; sourceTree = "<group>"; };
 		D54B1BC6205577A6000215E5 /* RemoteDeviceActionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDeviceActionRequestTests.swift; sourceTree = "<group>"; };
+		D561CD3820558F2F00EA253A /* ActivityReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReducerTests.swift; sourceTree = "<group>"; };
+		D561CD3A2055951300EA253A /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		D5658E21204A468D008D45E7 /* PhotoServiceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoServiceEndpointTests.swift; sourceTree = "<group>"; };
 		D5658E23204A4899008D45E7 /* IntegrationFlickrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationFlickrTests.swift; sourceTree = "<group>"; };
 		D5658E25204A55C3008D45E7 /* Constants.example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.example.swift; sourceTree = "<group>"; };
@@ -477,6 +481,14 @@
 			path = HealthStore;
 			sourceTree = "<group>";
 		};
+		D561CD3720558F0A00EA253A /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				D561CD3820558F2F00EA253A /* ActivityReducerTests.swift */,
+			);
+			path = Reducer;
+			sourceTree = "<group>";
+		};
 		D5658E20204A4666008D45E7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,8 +577,9 @@
 		D5658E71204B371F008D45E7 /* Redux */ = {
 			isa = PBXGroup;
 			children = (
-				D5C5DF922054A0C800E5CAE1 /* ActionRequest */,
 				D5658E72204B372F008D45E7 /* StoreTests.swift */,
+				D5C5DF922054A0C800E5CAE1 /* ActionRequest */,
+				D561CD3720558F0A00EA253A /* Reducer */,
 			);
 			path = Redux;
 			sourceTree = "<group>";
@@ -793,6 +806,7 @@
 				D54B1BC02054DDBB000215E5 /* MockPhotoAPI.swift */,
 				D5C5DF962054ACA300E5CAE1 /* MockRemoteDevice.swift */,
 				D54B1BC42054E81C000215E5 /* JsonSuccessfulResult.swift */,
+				D561CD3A2055951300EA253A /* State.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -1414,11 +1428,13 @@
 				D5C5DF992054B4B200E5CAE1 /* ActivityActionRequest-Watch-Tests.swift in Sources */,
 				D54B1BC12054DDBB000215E5 /* MockPhotoAPI.swift in Sources */,
 				D5C5DF9B2054B59B00E5CAE1 /* MockLocationTracker.swift in Sources */,
+				D561CD3920558F2F00EA253A /* ActivityReducerTests.swift in Sources */,
 				D59AF53F204A1E2600BB8DA5 /* CodableExtensionsTests.swift in Sources */,
 				D54B1BC32054E63C000215E5 /* AnyError.swift in Sources */,
 				D59AF564204A3CFA00BB8DA5 /* URLRequestExtensionsTests.swift in Sources */,
 				D5658E24204A4899008D45E7 /* IntegrationFlickrTests.swift in Sources */,
 				D5658E4A204B1500008D45E7 /* AppStateTests.swift in Sources */,
+				D561CD3B2055951300EA253A /* State.swift in Sources */,
 				D54B1BBF2054DCEE000215E5 /* PhotoActionRequestTests.swift in Sources */,
 				D5E7209C204A1768005E4E3B /* PhotoDecodableTests.swift in Sources */,
 				D54B1BC52054E81C000215E5 /* JsonSuccessfulResult.swift in Sources */,

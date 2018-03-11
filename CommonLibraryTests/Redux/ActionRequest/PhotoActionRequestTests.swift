@@ -11,8 +11,6 @@ import KleinKit
 import Nimble
 
 class PhotoActionRequestTests: BaseTests {
-    let injector = Injector.shared as! Injector
-
     func testStartSnapshotProcessPhotoInformationRequest() {
         let photoAPI = mock()
         let state = givenActivityInProgress()

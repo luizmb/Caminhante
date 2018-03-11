@@ -191,42 +191,6 @@ extension ActivityActionRequestTests {
         expect(healthTracker.saveCalls) == 0
     }
 
-    private func givenNoActivity(authorized: Bool) -> AppState {
-        var state = AppState()
-        state.deviceState.locationPermission = authorized ? .authorized : .pending
-        state.deviceState.deviceType = .appleWatch
-        state.currentActivity = nil
-        return state
-    }
-
-    private func givenActivityInProgress() -> AppState {
-        var state = AppState()
-        state.currentActivity = Activity(state: .inProgress, snapshotPoints: [])
-        state.currentActivity!.startDate = Date(timeIntervalSinceReferenceDate: 0)
-        state.deviceState.locationPermission = .authorized
-        state.deviceState.deviceType = .appleWatch
-        return state
-    }
-
-    private func givenActivityPaused() -> AppState {
-        var state = AppState()
-        state.currentActivity = Activity(state: .paused, snapshotPoints: [])
-        state.currentActivity!.startDate = Date(timeIntervalSinceReferenceDate: 0)
-        state.deviceState.locationPermission = .authorized
-        state.deviceState.deviceType = .appleWatch
-        return state
-    }
-
-    private func givenActivityFinished() -> AppState {
-        var state = AppState()
-        state.currentActivity = Activity(state: .finished, snapshotPoints: [])
-        state.currentActivity!.startDate = Date(timeIntervalSinceReferenceDate: 0)
-        state.currentActivity!.endDate = Date(timeIntervalSinceReferenceDate: 30)
-        state.deviceState.locationPermission = .authorized
-        state.deviceState.deviceType = .appleWatch
-        return state
-    }
-
     private func mock() -> (MockLocationTracker, MockHealthTracker) {
         let locationTracker = MockLocationTracker()
         let healthTracker = MockHealthTracker()

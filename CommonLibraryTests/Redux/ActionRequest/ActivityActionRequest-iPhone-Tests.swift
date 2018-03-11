@@ -11,11 +11,9 @@ import KleinKit
 import Nimble
 
 class ActivityActionRequestTests: BaseTests {
-    let injector = Injector.shared as! Injector
-
     func testStartActivityFromIPhone() {
         let remoteDevice = mock()
-        let state = givenNoActivity(authorized: true)
+        let state = givenNoActivity(authorized: true, fromIPhone: true)
         var dispatchedActions: [Action] = []
         ActivityActionRequest.startActivity.execute(getState: { state },
                                                     dispatch: { dispatchedActions.append($0) },
@@ -28,7 +26,7 @@ class ActivityActionRequestTests: BaseTests {
 
     func testStartActivityFromIPhoneNotAuthorized() {
         let remoteDevice = mock()
-        let state = givenNoActivity(authorized: false)
+        let state = givenNoActivity(authorized: false, fromIPhone: true)
         var dispatchedActions: [Action] = []
         ActivityActionRequest.startActivity.execute(getState: { state },
                                                     dispatch: { dispatchedActions.append($0) },
@@ -40,7 +38,7 @@ class ActivityActionRequestTests: BaseTests {
 
     func testResumeActivityFromIPhone() {
         let remoteDevice = mock()
-        let state = givenActivityPaused()
+        let state = givenActivityPaused(fromIPhone: true)
         var dispatchedActions: [Action] = []
         ActivityActionRequest.startActivity.execute(getState: { state },
                                                     dispatch: { dispatchedActions.append($0) },
@@ -53,7 +51,7 @@ class ActivityActionRequestTests: BaseTests {
 
     func testPauseActivityFromIPhone() {
         let remoteDevice = mock()
-        let state = givenActivityInProgress()
+        let state = givenActivityInProgress(fromIPhone: true)
         var dispatchedActions: [Action] = []
         ActivityActionRequest.pauseActivity.execute(getState: { state },
                                                     dispatch: { dispatchedActions.append($0) },
@@ -66,7 +64,7 @@ class ActivityActionRequestTests: BaseTests {
 
     func testFinishActivityFromIPhone() {
         let remoteDevice = mock()
-        let state = givenActivityInProgress()
+        let state = givenActivityInProgress(fromIPhone: true)
         var dispatchedActions: [Action] = []
         ActivityActionRequest.finishActivity.execute(getState: { state },
                                                      dispatch: { dispatchedActions.append($0) },
@@ -79,7 +77,7 @@ class ActivityActionRequestTests: BaseTests {
 
     func testResetActivityFromIPhone() {
         let remoteDevice = mock()
-        let state = givenActivityFinished()
+        let state = givenActivityFinished(fromIPhone: true)
         var dispatchedActions: [Action] = []
         ActivityActionRequest.resetActivity.execute(getState: { state },
                                                     dispatch: { dispatchedActions.append($0) },
@@ -88,42 +86,6 @@ class ActivityActionRequestTests: BaseTests {
         expect(remoteDevice.sendTypeDataCompletionTypes) == [ActivityActionRequest.className]
         expect(dispatchedActions.isEmpty) == true
         remoteDevice.sendTypeDataCompletionLastCompletion!(.success(()))
-    }
-
-    private func givenNoActivity(authorized: Bool) -> AppState {
-        var state = AppState()
-        state.deviceState.locationPermission = authorized ? .authorized : .pending
-        state.deviceState.deviceType = .iPhone
-        state.currentActivity = nil
-        return state
-    }
-
-    private func givenActivityInProgress() -> AppState {
-        var state = AppState()
-        state.currentActivity = Activity(state: .inProgress, snapshotPoints: [])
-        state.currentActivity!.startDate = Date(timeIntervalSinceReferenceDate: 0)
-        state.deviceState.locationPermission = .authorized
-        state.deviceState.deviceType = .iPhone
-        return state
-    }
-
-    private func givenActivityPaused() -> AppState {
-        var state = AppState()
-        state.currentActivity = Activity(state: .paused, snapshotPoints: [])
-        state.currentActivity!.startDate = Date(timeIntervalSinceReferenceDate: 0)
-        state.deviceState.locationPermission = .authorized
-        state.deviceState.deviceType = .iPhone
-        return state
-    }
-
-    private func givenActivityFinished() -> AppState {
-        var state = AppState()
-        state.currentActivity = Activity(state: .finished, snapshotPoints: [])
-        state.currentActivity!.startDate = Date(timeIntervalSinceReferenceDate: 0)
-        state.currentActivity!.endDate = Date(timeIntervalSinceReferenceDate: 30)
-        state.deviceState.locationPermission = .authorized
-        state.deviceState.deviceType = .iPhone
-        return state
     }
 
     private func mock() -> MockRemoteDevice {

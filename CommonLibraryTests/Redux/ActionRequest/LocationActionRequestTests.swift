@@ -12,8 +12,6 @@ import KleinKit
 import Nimble
 
 class LocationActionRequestTests: BaseTests {
-    let injector = Injector.shared as! Injector
-
     func testEvaluateNewLocations() {
         let healthTracker = mock()
         let state = givenActivityInProgress()
@@ -104,23 +102,6 @@ class LocationActionRequestTests: BaseTests {
             fail()
         }
         expect(dispatchedAsync.count) == 0
-    }
-
-    private func givenNoActivity(authorized: Bool) -> AppState {
-        var state = AppState()
-        state.deviceState.locationPermission = authorized ? .authorized : .pending
-        state.deviceState.deviceType = .appleWatch
-        state.currentActivity = nil
-        return state
-    }
-
-    private func givenActivityInProgress() -> AppState {
-        var state = AppState()
-        state.currentActivity = Activity(state: .inProgress, snapshotPoints: [])
-        state.currentActivity!.startDate = Date(timeIntervalSinceReferenceDate: 0)
-        state.deviceState.locationPermission = .authorized
-        state.deviceState.deviceType = .appleWatch
-        return state
     }
 
     private func mock() -> MockHealthTracker {

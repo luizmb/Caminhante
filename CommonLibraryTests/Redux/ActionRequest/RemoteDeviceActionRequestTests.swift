@@ -11,8 +11,6 @@ import KleinKit
 import Nimble
 
 class RemoteDeviceActionRequestTests: BaseTests {
-    let injector = Injector.shared as! Injector
-
     func testHandleUpdatedStateToPause() {
         let state = AppState()
         var dispatchedActions: [Action] = []
