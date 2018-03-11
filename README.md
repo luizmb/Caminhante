@@ -119,6 +119,14 @@ stateSignal[\.substate.grandChild]
     }
 ```
 
+### Frameworks
+
+There are only two frameworks used in this project: [KleinKit](https://github.com/luizmb/KleinKit) and [Nimble](https://github.com/Quick/Nimble).
+
+The first one is a bunch of utility tools that I've created and maintained for some of my small projects, when a big Redux or Reactive framework would be exaggerated. Basically, it introduces a very tiny Redux Store, a `Signal<T>` class, a tiny Dependency Injection mapper, some useful data structures (such as `Result<T>`, `Either<A, B>`, `Async<T>`) and extension methods for `stdlib`, `Foundation` and `CocoaTouch` libraries.
+
+The second is a assertion library for Unit Tests, which allows natural language assertions.
+
 ### Dependency Injection
 
 Inspired by [this article](http://www.danielhall.io/a-swift-y-approach-to-dependency-injection) I wrote a Dependency Injection layer using Protocol Extensions to add traits to a client in a very transparent way. If you want to use the API from a class, all you must do is:
