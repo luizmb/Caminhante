@@ -26,10 +26,13 @@ public struct DeviceState {
     public var navigation = NavigationTree.root()
     #if os(iOS)
     public weak var application: UIApplication?
-    public let deviceType: DeviceType = .iPhone
     #endif
 
-    #if os(watchOS)
+    #if TEST
+    public var deviceType: DeviceType = .iPhone
+    #elseif os(iOS)
+    public let deviceType: DeviceType = .iPhone
+    #elseif os(watchOS)
     public let deviceType: DeviceType = .appleWatch
     #endif
 

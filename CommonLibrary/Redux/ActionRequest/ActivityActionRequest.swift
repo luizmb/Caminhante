@@ -95,7 +95,6 @@ extension ActivityActionRequest {
     private func watchResetActivity(state: AppState, dispatch: @escaping DispatchFunction) {
         guard state.currentActivity?.state == .finished else { return }
 
-        locationTracker.stop()
         dispatch(ActivityAction.activityDidReset)
         healthTracker.reset()
     }
@@ -123,38 +122,22 @@ extension ActivityActionRequest {
     private func phoneStartActivity(state: AppState, dispatch: @escaping DispatchFunction) {
         guard state.deviceState.locationPermission == .authorized else { return }
         remoteDevice.send(type: ActivityActionRequest.className,
-                          data: [ActivityActionRequest.className: ActivityActionRequest.startActivity]) { response in
-                            if case .failure = response {
-                                print("Error controlling Apple Watch")
-                            }
-        }
+                          data: [ActivityActionRequest.className: ActivityActionRequest.startActivity]) { _ in }
     }
 
     private func phonePauseActivity(state: AppState, dispatch: @escaping DispatchFunction) {
         remoteDevice.send(type: ActivityActionRequest.className,
-                          data: [ActivityActionRequest.className: ActivityActionRequest.pauseActivity]) { response in
-                            if case .failure = response {
-                                print("Error controlling Apple Watch")
-                            }
-        }
+                          data: [ActivityActionRequest.className: ActivityActionRequest.pauseActivity]) { _ in }
     }
 
     private func phoneFinishActivity(state: AppState, dispatch: @escaping DispatchFunction) {
         remoteDevice.send(type: ActivityActionRequest.className,
-                          data: [ActivityActionRequest.className: ActivityActionRequest.finishActivity]) { response in
-                            if case .failure = response {
-                                print("Error controlling Apple Watch")
-                            }
-        }
+                          data: [ActivityActionRequest.className: ActivityActionRequest.finishActivity]) { _ in }
     }
 
     private func phoneResetActivity(state: AppState, dispatch: @escaping DispatchFunction) {
         remoteDevice.send(type: ActivityActionRequest.className,
-                          data: [ActivityActionRequest.className: ActivityActionRequest.resetActivity]) { response in
-                            if case .failure = response {
-                                print("Error controlling Apple Watch")
-                            }
-        }
+                          data: [ActivityActionRequest.className: ActivityActionRequest.resetActivity]) { _ in }
     }
 }
 
