@@ -1,10 +1,3 @@
-//
-//  MockPhotoAPI.swift
-//  CommonLibraryTests
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 11.03.18.
-//
-
 @testable import CommonLibrary
 import Foundation
 import KleinKit

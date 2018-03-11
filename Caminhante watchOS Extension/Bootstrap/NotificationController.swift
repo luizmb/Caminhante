@@ -1,10 +1,3 @@
-//
-//  NotificationController.swift
-//  Caminhante watchOS Extension
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 02.03.18.
-//
-
 import Foundation
 import UserNotifications
 import WatchKit

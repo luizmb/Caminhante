@@ -1,10 +1,3 @@
-//
-//  Measurement.swift
-//  Caminhante
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 10.03.18.
-//
-
 import Foundation
 
 extension Measurement {

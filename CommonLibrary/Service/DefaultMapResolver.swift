@@ -1,10 +1,3 @@
-//
-//  DefaultMapper.swift
-//  Caminhante watchOS Extension
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 03.03.18.
-//
-
 import Foundation
 import HealthKit
 import KleinKit

@@ -1,10 +1,3 @@
-//
-//  HKQuantity.swift
-//  CommonLibraryTests
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 08.03.18.
-//
-
 import Foundation
 import HealthKit
 

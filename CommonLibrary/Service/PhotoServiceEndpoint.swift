@@ -1,10 +1,3 @@
-//
-//  PhotoServiceEndpoint.swift
-//  CommonLibraryTests
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 03.03.18.
-//
-
 import CoreLocation
 import Foundation
 

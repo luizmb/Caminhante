@@ -1,10 +1,3 @@
-//
-//  PhotoResult.swift
-//  CommonLibrary iOS
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 02.03.18.
-//
-
 import Foundation
 
 /// Photo successful response container

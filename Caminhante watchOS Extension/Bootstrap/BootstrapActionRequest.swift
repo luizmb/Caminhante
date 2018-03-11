@@ -1,10 +1,3 @@
-//
-//  BootstrapActionRequest.swift
-//  Caminhante watchOS Extension
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 03.03.18.
-//
-
 import CommonLibrary
 import CoreLocation
 import HealthKit

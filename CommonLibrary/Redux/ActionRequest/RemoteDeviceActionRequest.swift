@@ -1,10 +1,3 @@
-//
-//  RemoteDeviceActionRequest.swift
-//  Caminhante
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 06.03.18.
-//
-
 import Foundation
 import KleinKit
 
@@ -34,8 +27,7 @@ extension RemoteDeviceActionRequest: ActionRequest {
                     dispatch(ActivityAction.activityDidReset)
                 }
             }
-        case .handleData(let data):
-            print(data)
+        case .handleData: break
         case .handleDataWithCompletion(let data, let completion):
             if case let .success(actionRequest) = simpleEnumDecode(type: ActivityActionRequest.self, payload: data) {
                 dispatchAsync(AnyActionAsync(actionRequest))

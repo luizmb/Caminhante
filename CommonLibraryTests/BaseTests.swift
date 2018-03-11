@@ -1,10 +1,3 @@
-//
-//  CommonLibraryTests.swift
-//  CommonLibraryTests
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 02.03.18.
-//
-
 import KleinKit
 import Nimble
 import XCTest

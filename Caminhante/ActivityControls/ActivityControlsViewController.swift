@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Caminhante
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 02.03.18.
-//
-
 import CommonLibrary
 import Foundation
 import KleinKit

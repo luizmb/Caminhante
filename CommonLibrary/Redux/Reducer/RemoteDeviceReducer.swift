@@ -1,10 +1,3 @@
-//
-//  RemoteDeviceReducer.swift
-//  Caminhante
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 06.03.18.
-//
-
 import Foundation
 import KleinKit
 

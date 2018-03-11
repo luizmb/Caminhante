@@ -1,10 +1,3 @@
-//
-//  JsonSuccessfulResult.swift
-//  CommonLibraryTests
-//
-//  Created by Luiz Rodrigo Martins Barbosa on 11.03.18.
-//
-
 import Foundation
 
 // swiftlint:disable line_length
