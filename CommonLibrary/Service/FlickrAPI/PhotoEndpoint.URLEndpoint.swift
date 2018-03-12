@@ -20,7 +20,7 @@ extension PhotoServiceEndpoint: URLEndpoint {
                                                 "method": "flickr.photos.search",
                                                 "lat": "\(location.latitude)",
                                                 "lon": "\(location.longitude)",
-                                                "radius": "1",
+                                                "radius": "0.2",
                                                 "radius_units": "km",
                                                 "safe_search": "2",
                                                 "per_page": "\(pageSize)",
