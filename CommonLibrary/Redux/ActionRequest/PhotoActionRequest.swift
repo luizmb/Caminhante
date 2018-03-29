@@ -37,7 +37,7 @@ extension PhotoActionRequest: ActionRequest {
             let currentPhotos = store.getState()
                                      .currentActivity?
                                      .snapshotPoints
-                                     .flatMap { $0.photo.possibleValue()?.id } ?? []
+                                     .compactMap { $0.photo.possibleValue()?.id } ?? []
             let photoResponseResult: Result<PhotoResponse> = result.flatMap(JsonParser.decode)
             let photoInformationResult: Result<PhotoInformation> = photoResponseResult.flatMap { response in
                 if let page = response.responsePage,
@@ -45,7 +45,7 @@ extension PhotoActionRequest: ActionRequest {
                     var photoInformation = page.photos.first(where: { !currentPhotos.contains($0.id) }) {
 
                     let task = fetchPhotoBytes(for: photoInformation, with: store)
-                    photoInformation.image = .syncing(task: task, oldValue: nil)
+                    photoInformation.image = .loading(task: task, oldValue: nil)
                     return .success(photoInformation)
                 }
 

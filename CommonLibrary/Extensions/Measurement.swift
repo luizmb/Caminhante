@@ -14,9 +14,9 @@ extension Measurement {
 
 extension Measurement where UnitType == UnitLength {
     public func format(digits: Int = 1) -> String {
-        let m = converted(to: .meters)
-        return m.value < 1_000
-            ? m.string(digits: digits)
+        let meters = converted(to: .meters)
+        return meters.value < 1_000
+            ? meters.string(digits: digits)
             : converted(to: .kilometers).string(digits: digits)
     }
 }

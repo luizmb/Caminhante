@@ -32,7 +32,7 @@ public struct PhotoInformation: Codable {
     public let isFamily: Bool
 
     /// Image or network task to download it
-    public var image: SyncableResult<Data> = .neverLoaded
+    public var image: AsyncResult<Data> = .notLoaded
 
     /// Default initializer with all properties
     ///

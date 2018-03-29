@@ -5,10 +5,10 @@ import KleinKit
 public struct SnapshotPoint {
     public var identifier: UUID
     public var location: CLLocation
-    public var photo: SyncableResult<PhotoInformation>
+    public var photo: AsyncResult<PhotoInformation>
     public var time: Date
 
-    public init(identifier: UUID = UUID(), location: CLLocation, photo: SyncableResult<PhotoInformation>, time: Date) {
+    public init(identifier: UUID = UUID(), location: CLLocation, photo: AsyncResult<PhotoInformation>, time: Date) {
         self.identifier = identifier
         self.location = location
         self.photo = photo
